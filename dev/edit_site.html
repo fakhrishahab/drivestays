@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Drive Stays</title>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width"/>
+	<title>Drive Stays</title>
+	<!-- <link rel="stylesheet" type="text/css" href="./assets/style/bootstrap.css" /> -->
+	<link rel="stylesheet" href="./assets/style/normalize.css">
+	<link rel="stylesheet" href="./assets/style/croppie.css">
+	<link rel="stylesheet" href="./assets/style/jquery-ui-slider.css">
+	<link rel="stylesheet" href="./assets/style/style.css">
+
+	<link rel="stylesheet" type="text/css" href="./assets/style/pikaday.css" />
+
+</head>
+<body>
+	
+	<div class="wrapper-body">
+		<header class="header-flat">
+			<div class="ds-container-1200">
+				<div class="ds-row">
+					<div class="content ds-header-fix">
+						<div class="toggle-menu">
+							<div></div>
+							<div></div>
+							<div></div>
+				        </div>
+
+				        <div class="logo-wrapper">
+				        	<a href="./"><img src="./assets/images/drivestays_logo.png" height="55" class="img-logo" alt=""></a>
+				        </div>
+
+				        <div class="menu-wrapper">
+				        	<div class="main-menu">
+				        		<ul class="menu-header">
+				            		<li><a href="">List a Site</a></li>
+				                	<!-- <li><a href="">List a Site</a></li> -->
+				                </ul>
+				          	</div>
+
+				          	<div class="main-menu-user">
+				            	<a href="login.html" class="register-head"><button class="btn-register">Sign In / Register</button></a>
+				            	<div class="user-wrapper">
+				              		<img src="./assets/images/user-upload.png" align="middle" alt="">
+				              		<div class="user-name"> Hi, <strong id="profile-username">Steve</strong> </div>
+				              		<div class="icon ds-chevron-down user-menu-trigger"></div>
+
+				              		<ul class="user-menu">
+				                		<li><a href="register.html"><div class="ds-user"></div>	My Profile</a></li>
+				                		<li><a href="my_caravan.html"><div class="ds-caravan"></div>My Caravan</a></li>
+				                		<li><a href="my_site.html"><div class="ds-site"></div>My Sites</a></li>
+				                		<li><a href="transaction_list.html"><div class="ds-booked"></div>Transaction List</a></li>
+				                		<li><a href="account_setting.html"><div class="ds-setting"></div>Account Setting</a></li>
+				                		<li><a href="my_payment.html"><div class="ds-card"></div>Account Payment</a></li>
+				                		<li id="btn-logout"><a><div class="ds-lock"></div>Logout</a></li>
+				              		</ul>
+				            	</div>
+				          </div>
+
+				        </div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<section>
+			<div class="ds-container-1200 section">
+				<!-- <div class="pre-content">
+					<h1>My Caravan</h1>					
+				</div> -->
+
+				<div class="headline-wrapper">
+					<div class="headline-thumb"><div class="ds-site"></div></div>
+					<div class="headline-text">
+						<h1>93 Maker Street</h1>
+						<h3>Poughkeepsie, NY <br/>We are coolest family</h3>
+					</div>
+				</div>
+				<!-- <div class="ds-row push-top content-center form-register-container" id="profile-form">
+					<div class="col-12"><h1>My Caravan</h1></div>
+					<div class="col-12 push-top"><h3>Input your caravan data here</h3></div>
+				</div> -->
+				
+				<div class="user-detail">
+					<div class="site-tab-wrapper">
+						<div class="active" data-target="profile-form">Site Info</div>
+						<div data-target="amenities-form">Amenities</div>
+						<div data-target="availability-form">Availability</div>
+						<div data-target="site-rate-form">Rate</div>
+					</div>
+
+					<!-- START FORM SITE INFO -->
+					<div class="ds-row form-add-site" id="profile-form">
+						<div class="col-md-12 col-6" id="site-info">
+							<div class="ds-container-fluid">
+								<div class="content">
+									<div class="ds-row">
+										<div class="col-12">
+											<label for="Address1">Address Line 1</label>
+											<div class="input-el outline require">
+												<input type="text" placeholder="Address Line 1" id="site-address1">
+											</div>
+										</div>
+										<div class="col-12">
+											<label for="Address1">Address Line 2</label>
+											<div class="input-el outline require">
+												<input type="text" placeholder="Address Line 2" id="site-address2">
+											</div>
+										</div>
+										<div class="col-12">
+											<label for="Address1">Address Line 3</label>
+											<div class="input-el outline require">
+												<input type="text" placeholder="Address Line 3" id="site-address3">
+											</div>
+										</div>
+										<div class="col-6">
+											<label for="Address1">City</label>
+											<div class="input-el outline require">
+												<input type="text" placeholder="City" id="site-city">
+											</div>
+										</div>
+										<div class="col-6">
+											<label for="Address1">State</label>
+											<div class="input-el outline require">
+												<input type="text" placeholder="State" id="site-state">
+											</div>
+										</div>
+										<div class="col-6">
+											<label for="Address1">Postal Code</label>
+											<div class="input-el outline require">
+												<input type="text" placeholder="Postal Code" id="site-postalcode">
+											</div>
+										</div>
+									</div>
+
+									<div class="ds-row">
+										<div class="col-12">
+											<label for="location">Field with a specific location of your available site (click on the map below to detect your location detail)</label>
+										</div>
+										<div class="col-6">
+											<label for="latitude">Latitude</label>
+											<div class="input-el outline require">
+												<input type="text" placeholder="Latitude" id="site-latitude">
+											</div>
+										</div>
+										<div class="col-6">
+											<label for="longitude">Longitude</label>
+											<div class="input-el outline require">
+												<input type="text" placeholder="Longitude" id="site-longitude">
+											</div>
+										</div>
+										<div class="col-12 push-top">
+											<div id="map-site"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-12 col-6">
+							<div class="ds-container-fluid">
+								<div class="ds-row content">
+									<div class="col-4">
+										<label for="length">Length</label>
+										<div class="input-el outline require">
+											<input type="text" placeholder="Length" id="site-length" data-validate="required">
+										</div>
+									</div>
+									<div class="col-4">
+										<label for="length">Width</label>
+										<div class="input-el outline require">
+											<input type="text" placeholder="Width" id="site-width" data-validate="required">
+										</div>
+									</div>
+									<div class="col-4">
+										<label for="length">Height</label>
+										<div class="input-el outline require">
+											<input type="text" placeholder="Height" id="site-height" data-validate="required">
+										</div>
+									</div>
+
+									<div class="col-4">
+										<label for="Access">Access</label>
+										<div class="input-toggle" id="site-access-toggle" data-toggle="Lock,No Lock">
+											<input type="checkbox" id="site-access" value="0">
+											<div class="toggle-panel"></div>
+											<div class="toggle-status">Lock</div>
+										</div>
+									</div>
+
+									<div class="col-4">
+										<label for="Access">Security</label>
+										<div class="input-toggle" id="site-security-toggle" data-toggle="No,Yes">
+											<input type="checkbox" id="site-security" value="0">
+											<div class="toggle-panel"></div>
+											<div class="toggle-status">No</div>
+										</div>
+									</div>
+
+									<div class="col-4">
+										<label for="Access">Power</label>
+										<div class="input-toggle" id="site-power-toggle" data-toggle="No,Yes">
+											<input type="checkbox" id="site-power" value="0">
+											<div class="toggle-panel"></div>
+											<div class="toggle-status">No</div>
+										</div>
+									</div>
+									<div class="col-2">
+										<label for="Noise">Noise</label>
+										<div class="input-el outline disable">
+											<input type="text" disabled placeholder="Noise" id="site-noise">	
+										</div>
+									</div>
+									<div class="col-4">
+										<label for="none">Noise Level</label>
+										<div class="slider-container">
+											<div class="icon-slider">
+												<div class="ds-noise left"></div>
+												<div class="ds-noise-full right"></div>	
+											</div>
+											
+											<div id="slider" class="slider-item"></div>	
+										</div>
+									</div>
+									<div class="col-6 pull-left">
+										<label for="power capacity">Power Capacity (watt)</label>
+										<div class="input-el outline">
+											<input type="text" placeholder="Power Capacity" id="site-power-capacity">
+										</div>
+									</div>
+
+									<div class="col-12 push-top">
+										<div class="border-left upload-wrapper">
+											<div class="header-upload content">
+												<div class="ds-image"></div>
+												<div><h3>Upload Image</h3></div>
+											</div>
+											
+											<div class="ds-container-fluid push-top content">
+												<div class="ds-row">
+													<div class="col-12">
+														<p>You can upload up to 5 image</p>
+														<div class="image-uploaded push-top">
+															<!-- <div class="img-thumb" style="background:url(./assets/images/site/1.png)"><div class="ds-delete"></div></div>
+															<div class="img-thumb" style="background:url(./assets/images/site/2.png)"><div class="ds-delete"></div></div>
+															<div class="img-thumb" style="background:url(./assets/images/site/3.png)"><div class="ds-delete"></div></div>
+															<div class="img-thumb" style="background:url(./assets/images/site/4.png)"><div class="ds-delete"></div></div>
+															<div class="img-thumb" style="background:url(./assets/images/site/5.png)"><div class="ds-delete"></div></div> -->
+														</div>
+														<input type="file" class="hide" id="file-upload">
+														<div class="upload-container">
+															<div class="ds-add-image"></div>			
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 push-top">
+							<div class="content"><mark>*) required field</mark></div>
+						</div>
+						<div class="col-md-offset-2 col-md-8 col-4 push-top">
+							<div class="content">
+								<button class="btn-site btn-blue">Save</button>	
+							</div>
+						</div>
+					</div>
+					<!-- END FORM SITE INFO -->
+
+					<!-- START AMENITIES SITE FORM -->
+					<div class="ds-row form-add-site amenities-wrapper" id="amenities-form">
+						<div class="content">
+							<h3>Add Facilities</h3>	
+
+							<div class="ds-row push-top">
+								<div class="col-6">
+									<div class="ds-row">
+										<div class="col-12">
+											<div class="input-el outline require">
+												<div class="select-area" tabindex="2">Amenities</div>
+					                        	<span class="ds-chevron-down"></span>
+					                        	<input type="hidden" id="amenities-type" name="amenities-type" tabindex="2" data-validate="required">
+					                        	<ul>
+					                          		<li class="selected" value="1">Bathroom</li>
+					                          		<li value="2">Kitchen</li>
+					                          		<li value="3">Laundry</li>
+					                          		<li value="4">Power</li>
+					                          		<li value="5">Wifi</li>
+					                        	</ul>
+											</div>
+										</div>
+										<div class="col-6">
+											<label for="amenities-price">Price /day</label>
+											<div class="input-el outline require">
+												<input type="text" placeholder="Price" id="amenities-price" data-validate="required">
+											</div>
+										</div>
+									</div>
+									<div class="ds-row push-top">
+										<div class="col-6">
+											<button class="btn-site btn-orange">Add</button>
+										</div>
+									</div>
+								</div>
+								<div class="col-12 push-top">
+									<table class="table-profile">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Amenitites</th>
+												<th>Price</th>
+												<th>Action</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>Bathroom</td>
+												<td>$ 20.00</td>
+												<td class="action">
+													<button>
+														<div class="ds-edit"></div> <span>Edit</span>
+													</button>
+													<button>
+														<div class="ds-delete"></div> <span>Delete</span> 
+													</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>						
+						</div>
+						
+					</div>
+					<!-- END AMENITIES SITE FORM -->
+
+					<!-- START AVAILABILITY SITE FORM -->
+					<div class="ds-row form-add-site amenities-wrapper" id="availability-form">
+						<div class="content">
+							<h3>Availability Setting</h3>
+							<p>Setting your blackout date, so user can't book your site at the spesific date</p>
+							<div class="ds-row push-top">
+								<div class="col-md-12 col-6">
+									<div class="ds-row">
+										<div class="col-6">
+											<label for="effective-from">Effective From</label>
+											<div class="input-el outline require">
+												<span class="ds-calendar"></span>
+												<input type="text" placeholder="Effective From" id="effective-from-available" data-validate="required">
+											</div>
+										</div>
+										<div class="col-6">
+											<label for="effective-from">Effective To</label>
+											<div class="input-el outline require">
+												<span class="ds-calendar"></span>
+												<input type="text" placeholder="Effective To" id="effective-to-available" data-validate="required">
+											</div>
+										</div>
+									</div>
+									<div class="ds-row">
+										<div class="col-12">
+											<div class="input-el push-top no-bg">
+												<input type="checkbox">
+												<div class="checkbox-label">Annual Repeat</div>
+							                 </div>
+										</div>
+									</div>
+									<div class="ds-row">
+										<div class="col-12">
+											<label for="blackout-desc">Description</label>
+											<div class="input-el outline require">
+												<textarea name="blackout-desc" id="blackout-desc" placeholder="Description" cols="30" rows="10"></textarea>
+											</div>
+										</div>
+									</div>
+									<div class="ds-row push-top">
+										<div class="col-6">
+											<button class="btn-site">Save</button>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-12 col-6">
+									<div class="content">
+										<label for="year">Choose Year</label>
+										<div class="input-el outline">
+				                        	<input type="hidden" id="available-filter" name="available-filter" tabindex="2" data-validate="required">
+											<div class="select-area" tabindex="2">Stay Type</div>
+											<span class="ds-chevron-down"></span>
+				                        	<ul id="year-select">
+				                          		<li class="selected" value="2016">2016</li>
+				                          		<li value="2017">2017</li>
+				                          		<li value="2018">2018</li>
+				                          		<li value="2019">2019</li>
+				                          		<li value="2020">2020</li>
+				                        	</ul>
+										</div>
+									</div>
+									<div class="content push-top">
+										<div class="date-legend-wrapper">
+											<div class="legend">
+												<div class="legend-color orange"></div>
+												<div class="legend-label">Booked</div>
+											</div>
+											<div class="legend">
+												<div class="legend-color blue"></div>
+												<div class="legend-label">Blackout</div>
+											</div>
+										</div>	
+									</div>
+									
+									<div class="content push-top" id="date-container"></div>
+								</div>
+							</div>
+							<div class="ds-row push-top">
+								<div class="col-12">
+									<table class="table-profile">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Effective From</th>
+												<th>Effective To</th>
+												<th>Description</th>
+												<th>Action</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>20/12/2015</td>
+												<td>5/01/2016</td>
+												<td>This is our private date</td>
+												<td class="action">
+													<button>
+														<div class="ds-edit"></div> <span>Edit</span>
+													</button>
+													<button>
+														<div class="ds-delete"></div> <span>Delete</span> 
+													</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END AVAILABILITY SITE FORM -->
+
+					<!-- START SITE RATE SETTING -->
+					<div class="ds-row form-add-site amenities-wrapper" id="site-rate-form">
+						<div class="content">
+							<h3>Rate Setting</h3>
+							<p>You can dynamically setting the site rate</p>
+							<div class="ds-row push-top">
+								<div class="col-6">
+									<div class="ds-row">
+										<div class="col-6">
+											<label for="effective-from">Effective From</label>
+											<div class="input-el outline require">
+												<span class="ds-calendar"></span>
+												<input type="text" placeholder="Effective From" id="effective-from-rate" data-validate="required">
+											</div>
+										</div>
+										<div class="col-6">
+											<label for="effective-from">Effective To</label>
+											<div class="input-el outline require">
+												<span class="ds-calendar"></span>
+												<input type="text" placeholder="Effective To" id="effective-to-rate" data-validate="required">
+											</div>
+										</div>
+									</div>
+									<div class="ds-row">
+										<div class="col-12">
+											<div class="input-el push-top no-bg">
+												<input type="checkbox">
+												<div class="checkbox-label">Annual Repeat</div>
+							                 </div>
+										</div>
+									</div>
+									<div class="ds-row">
+										<div class="col-6">
+											<label for="daily-rate">Rate ($US)</label>
+											<div class="input-el outline require">
+												<input type="text" placeholder="Rate" id="site-rate" data-validate="required">
+											</div>
+										</div>
+
+										<div class="col-6">
+											<label for="daily-rate">Weekend Surcharge</label>
+											<div class="input-el outline require">
+												<input type="text" placeholder="Surcharge" id="site-surcharge" data-validate="required">
+											</div>
+										</div>
+									</div>
+									<div class="ds-row push-top">
+										<div class="col-6">
+											<button class="btn-site">Save</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="ds-row push-top">
+								<div class="col-12">
+									<table class="table-profile">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Effective From</th>
+												<th>Effective To</th>
+												<th>Rate</th>
+												<th>Action</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>20/12/2015</td>
+												<td>5/01/2016</td>
+												<td>$ 150.00</td>
+												<td class="action">
+													<button>
+														<div class="ds-edit"></div> <span>Edit</span>
+													</button>
+													<button>
+														<div class="ds-delete"></div> <span>Delete</span> 
+													</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END SITE RATE SETTING -->
+					
+				</div>
+
+				
+				
+			</div>
+		</section>
+
+		<section>
+			<div class="ds-container-fluid section footer-section">
+				<div class="ds-row">
+					<div class="ds-container-1200">
+						<div class="ds-row">
+							
+							<div class="col-md-12 col-8">
+								<div class="menu-footer">
+									<h4>Company</h4>	
+									<ul>
+										<li><a href="">About Us</a></li>
+										<li><a href="">Information</a></li>
+										<li><a href="">Press</a></li>
+									</ul>
+								</div>
+
+								<div class="menu-footer">
+									<h4>Support</h4>
+						            <ul>
+						             	<li><a href="">Contact Us</a></li>
+						              	<li><a href="">Help</a></li>
+						              	<li><a href="">Privacy</a></li>
+						              	<li><a href="">Term of Use</a></li>
+						              	<li><a href="">Site Map</a></li>
+						            </ul>
+								</div>
+
+								<div class="menu-footer social-icon">
+									<h4>Get Exclusive Content from Us</h4>
+						            <ul class="no-tab">
+						            	<li><a href=""><img src="./assets/images/facebook.png" alt="" height="50"></a></li>
+						              	<li><a href=""><img src="./assets/images/twitter.png" alt="" height="50"></a></li>
+						              	<li><a href=""><img src="./assets/images/google_plus.png" alt="" height="50"></a></li>
+						            </ul>
+								</div>
+								
+							</div>
+
+							<div class="col-md-12 col-4">
+				            <!-- <div class="form-wrapper"> -->
+				            	<h4>Leave a comment</h4>
+				            	<div class="input-el">
+				              		<input type="text" placeholder="Your Email">
+				            	</div>
+				            	<div class="input-el push-top">
+				              		<input type="text" placeholder="Your Name">
+				            	</div>
+				            	<div class="input-el push-top">
+				              		<textarea name="" id="" cols="30" rows="10" placeholder="Input your comment here"></textarea>
+				            	</div>	
+				            	<button class="send-comment push-top">Send Comment</button>
+				            <!-- </div> -->
+				          	</div>
+
+						</div>
+
+						<div class="ds-row copyright">
+				          	2016 DriveStays. All rights reserved
+				        </div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<div class="modal modal-container hide" id="modal-upload">
+		<div class="modal-table">
+			<div class="modal-cell">
+				<div class="modal-content-container small">
+					<div class="ds-close modal-close"></div>
+					<div class="modal-content content">
+						<div class="upload-container-modal">
+							<div class="text">Upload File Here</div>
+						</div>
+						<button class="btn-site push-top" id="btn-crop">Crop</button>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+<script src="./script/jquery.min.js"></script>
+<!-- <script src="./script/jquery.mobile-1.4.5.min.js"></script> -->
+<script src="./script/underscore-min.js"></script>
+<script type="text/javascript" src="./script/moment.min.js"></script>
+<script type="text/javascript" src="./script/pikaday.js"></script>
+<script src="./script/ds-script.js"></script>
+<script src="./script/ds-cookies.js"></script>
+<script src="./script/ds-element.js"></script>
+<script src="./script/croppie.js"></script>
+<script src="./script/jquery-ui-slider.js"></script>
+<script src="./script/validation.js"></script>
+<script src="./script/app/edit_site.js"></script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfSvkBOL2nOfLZKDWaf66EbbO9poShFaA&libraries=places&callback=initMap">
+</script>
+</body>
+
+</html>

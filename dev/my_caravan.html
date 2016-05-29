@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Drive Stays</title>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width"/>
+	<title>Drive Stays</title>
+	<!-- <link rel="stylesheet" type="text/css" href="./assets/style/bootstrap.css" /> -->
+	<link rel="stylesheet" href="./assets/style/normalize.css">
+	<link rel="stylesheet" href="./assets/style/croppie.css">
+	<!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"> -->
+	<link rel="stylesheet" href="./assets/style/style.css">
+
+	<link rel="stylesheet" type="text/css" href="./assets/style/pikaday.css" />
+
+</head>
+<body>
+	
+	<div class="wrapper-body">
+		<header class="header-flat">
+			<div class="ds-container-1200">
+				<div class="ds-row">
+					<div class="content ds-header-fix">
+						<div class="toggle-menu">
+							<div></div>
+							<div></div>
+							<div></div>
+				        </div>
+
+				        <div class="logo-wrapper">
+				        	<a href="./"><img src="./assets/images/drivestays_logo.png" height="55" class="img-logo" alt=""></a>
+				        </div>
+
+				        <div class="menu-wrapper">
+				        	<div class="main-menu">
+				        		<ul class="menu-header">
+				            		<li><a href="">List a Site</a></li>
+				                	<!-- <li><a href="">List a Site</a></li> -->
+				                </ul>
+				          	</div>
+
+				          	<div class="main-menu-user">
+				            	<a href="login.html" class="register-head"><button class="btn-register">Sign In / Register</button></a>
+				            	<div class="user-wrapper">
+				              		<img src="./assets/images/user-upload.png" align="middle" alt="">
+				              		<div class="user-name"> Hi, <strong id="profile-username">Steve</strong> </div>
+				              		<div class="icon ds-chevron-down user-menu-trigger"></div>
+
+				              		<ul class="user-menu">
+				                		<li><a href="register.html"><div class="ds-user"></div>	My Profile</a></li>
+				                		<li><a href="my_caravan.html"><div class="ds-caravan"></div>My Caravan</a></li>
+				                		<li><a href="my_site.html"><div class="ds-site"></div>My Sites</a></li>
+				                		<li><a href="transaction_list.html"><div class="ds-booked"></div>Transaction List</a></li>
+				                		<li><a href="account_setting.html"><div class="ds-setting"></div>Account Setting</a></li>
+				                		<li><a href="my_payment.html"><div class="ds-card"></div>Account Payment</a></li>
+				                		<li id="btn-logout"><a><div class="ds-lock"></div>Logout</a></li>
+				              		</ul>
+				            	</div>
+				          </div>
+
+				        </div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<section>
+			<div class="ds-container-1200 section">
+				<!-- <div class="pre-content">
+					<h1>My Caravan</h1>					
+				</div> -->
+
+				<div class="headline-wrapper">
+					<div class="headline-thumb"><div class="ds-caravan"></div></div>
+					<div class="headline-text">
+						<h1>My Caravan</h1>
+						<h3>Input your caravan data here</h3>
+					</div>
+				</div>
+				<!-- <div class="ds-row push-top content-center form-register-container" id="profile-form">
+					<div class="col-12"><h1>My Caravan</h1></div>
+					<div class="col-12 push-top"><h3>Input your caravan data here</h3></div>
+				</div> -->
+				<div class="user-detail push-top">
+					<div class="ds-row" id="profile-form">
+
+						<div class="col-md-12 col-6">
+							<div class="ds-container-fluid">
+								<div class="ds-row">
+									<div class="content push-left">
+										<div class="col-6">
+											<label for="brand">Brand</label>
+											<div class="input-el outline require">
+												<input type="text" placeholder="Brand" id="input-brand" data-validate="required">
+											</div>			
+										</div>
+
+										<div class="col-6">
+											<label for="year">Year</label>
+											<div class="input-el outline require">
+												<input type="text" placeholder="Year" id="input-year" data-validate="require">
+											</div>		
+										</div>
+
+										<div class="col-4">
+											<label for="width">Width</label>
+											<div class="input-el outline require">
+												<input type="text" placeholder="Width" id="input-width" data-validate="require">
+											</div>
+										</div>
+
+										<div class="col-4">
+											<label for="height">Height</label>
+											<div class="input-el outline require">
+												<input type="text" placeholder="Height" id="input-height" data-validate="require">
+											</div>
+										</div>
+
+										<div class="col-4">
+											<label for="length">Length</label>
+											<div class="input-el outline require">
+												<input type="text" placeholder="Length" id="input-length" data-validate="require">
+											</div>
+										</div>
+
+										<div class="col-6">
+											<label for="license">License Plate</label>
+											<div class="input-el outline require">
+												<input type="text" placeholder="License Plate" id="input-plate" data-validate="require">
+											</div>
+										</div>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-12 col-6 ">
+							<div class="border-left upload-wrapper">
+								<div class="header-upload content">
+									<div class="ds-image"></div>
+									<div><h3>Upload Image</h3></div>
+								</div>
+								
+								<div class="ds-container-fluid push-top content">
+									<div class="ds-row">
+										<div class="col-12">
+											<p>You can upload up to 5 image</p>
+											<div class="image-uploaded push-top">
+												<!-- <div class="img-thumb" style="background:url(./assets/images/site/1.png)"><div class="ds-delete"></div></div>
+												<div class="img-thumb" style="background:url(./assets/images/site/2.png)"><div class="ds-delete"></div></div>
+												<div class="img-thumb" style="background:url(./assets/images/site/3.png)"><div class="ds-delete"></div></div>
+												<div class="img-thumb" style="background:url(./assets/images/site/4.png)"><div class="ds-delete"></div></div>
+												<div class="img-thumb" style="background:url(./assets/images/site/5.png)"><div class="ds-delete"></div></div> -->
+												
+											</div>
+											<input type="file" class="hide" id="file-upload">
+											<div class="upload-container">
+												<div class="ds-add-image"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+
+					<div class="ds-row push-top">
+						<div class="col-12">
+							<mark>*) required field</mark>
+						</div>
+						<div class="col-md-offset-2 col-md-8 col-4 push-top">
+							<button class="btn-site btn-blue">Save</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="ds-row push-top">
+					<div class="col-12">
+						<table class="table-profile">
+							<thead>
+								<tr>
+									<th>No</th>
+									<th>Brand</th>
+									<th>Year</th>
+									<th>Size</th>
+									<th>License Plate</th>
+									<th>Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>Toyota</td>
+									<td>2009</td>
+									<td>width : 190 cm <br> length : 350 cm <br> height : 210 cm</td>
+									<td>Ed 1230 XX</td>
+									<td class="action">
+										<button>
+											<div class="ds-edit"></div> <span>Edit</span>
+										</button> 
+										<button>
+											<div class="ds-delete"></div> <span>Delete</span> 
+										</button>
+									</td>
+								</tr>
+
+								<tr>
+									<td>1</td>
+									<td>Toyota</td>
+									<td>2009</td>
+									<td>width : 190 cm <br> length : 350 cm <br> height : 210 cm</td>
+									<td>Ed 1230 XX</td>
+									<td class="action">
+										<button>
+											<div class="ds-edit"></div> <span>Edit</span>
+										</button> 
+										<button>
+											<div class="ds-delete"></div> <span>Delete</span> 
+										</button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				
+			</div>
+		</section>
+
+		<section>
+			<div class="ds-container-fluid section footer-section">
+				<div class="ds-row">
+					<div class="ds-container-1200">
+						<div class="ds-row">
+							
+							<div class="col-md-12 col-8">
+								<div class="menu-footer">
+									<h4>Company</h4>	
+									<ul>
+										<li><a href="">About Us</a></li>
+										<li><a href="">Information</a></li>
+										<li><a href="">Press</a></li>
+									</ul>
+								</div>
+
+								<div class="menu-footer">
+									<h4>Support</h4>
+						            <ul>
+						             	<li><a href="">Contact Us</a></li>
+						              	<li><a href="">Help</a></li>
+						              	<li><a href="">Privacy</a></li>
+						              	<li><a href="">Term of Use</a></li>
+						              	<li><a href="">Site Map</a></li>
+						            </ul>
+								</div>
+
+								<div class="menu-footer social-icon">
+									<h4>Get Exclusive Content from Us</h4>
+						            <ul class="no-tab">
+						            	<li><a href=""><img src="./assets/images/facebook.png" alt="" height="50"></a></li>
+						              	<li><a href=""><img src="./assets/images/twitter.png" alt="" height="50"></a></li>
+						              	<li><a href=""><img src="./assets/images/google_plus.png" alt="" height="50"></a></li>
+						            </ul>
+								</div>
+								
+							</div>
+
+							<div class="col-md-12 col-4">
+				            <!-- <div class="form-wrapper"> -->
+				            	<h4>Leave a comment</h4>
+				            	<div class="input-el">
+				              		<input type="text" placeholder="Your Email">
+				            	</div>
+				            	<div class="input-el push-top">
+				              		<input type="text" placeholder="Your Name">
+				            	</div>
+				            	<div class="input-el push-top">
+				              		<textarea name="" id="" cols="30" rows="10" placeholder="Input your comment here"></textarea>
+				            	</div>	
+				            	<button class="send-comment push-top">Send Comment</button>
+				            <!-- </div> -->
+				          	</div>
+
+						</div>
+
+						<div class="ds-row copyright">
+				          	2016 DriveStays. All rights reserved
+				        </div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<div class="modal modal-container hide" id="modal-upload">
+		<div class="modal-table">
+			<div class="modal-cell">
+				<div class="modal-content-container small">
+					<div class="ds-close modal-close"></div>
+					<div class="modal-content content">
+						<div class="upload-container-modal">
+							<div class="text">Upload File Here</div>
+						</div>
+						<button class="btn-site push-top" id="btn-crop">Crop</button>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+<script src="./script/jquery.min.js"></script>
+<!-- <script src="./script/jquery.mobile-1.4.5.min.js"></script> -->
+<script src="./script/underscore-min.js"></script>
+<script type="text/javascript" src="./script/moment.min.js"></script>
+<script type="text/javascript" src="./script/pikaday.js"></script>
+<script src="./script/ds-script.js"></script>
+<script src="./script/ds-cookies.js"></script>
+<script src="./script/ds-element.js"></script>
+<script src="./script/croppie.js"></script>
+<script src="./script/validation.js"></script>
+<script src="./script/app/my_caravan.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+$greyLight:#f1f1f1;
+$white : #FFF;
+
+$blueDark:#175484;
+$blueLight:#2a78b5;
+
+$blueLight2:#4198dc;
+$blueDark2:#1977c1;
+
+$orangeLight:#fe6339;
+$orangeDark:#cf411b;
+
+$greyDark:#818181;
+$greyBg:#e6e6e6;
+
+$redDark : #b50000;
+
+@mixin gradient-bg($from, $to){
+	background: red; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(left,$from,$to); /*Safari 5.1-6*/
+	background: -o-linear-gradient(right,$from,$to); /*Opera 11.1-12*/
+	background: -moz-linear-gradient(right,$from,$to); /*Fx 3.6-15*/
+	background: linear-gradient(to right, $from, $to); /*Standard*/
+}
+
+@mixin gradient-bg-top($from, $to){
+	background: red; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient($from 0%,$to 60%); /*Safari 5.1-6*/
+	background: -o-linear-gradient($from 0%,$to 60%); /*Opera 11.1-12*/
+	background: -moz-linear-gradient($from 0%,$to 60%); /*Fx 3.6-15*/
+	background: linear-gradient($from 0%, $to 60%); /*Standard*/
+}

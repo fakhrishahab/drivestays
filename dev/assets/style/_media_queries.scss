@@ -1,0 +1,164 @@
+@media (max-width: 800px) {
+	.toggle-menu{
+		display: block;
+		position:fixed;
+		z-index:4;
+		left:10px;
+		transition: all ease 0.4s;
+	}
+
+	.toggle-menu-active{
+		left:250px;
+		transition: all ease 0.4s;
+	}
+
+	.logo-wrapper{
+		text-align: center;
+		width: 100%;
+		padding:12px 0;
+	}
+
+
+	.btn-register{
+		margin:18px 10px;
+	}
+
+	.main-search-wrapper{
+
+		#btn-find-site{
+			margin-top: 1px;
+		}
+	}
+
+	.menu-wrapper{
+		background:$white;
+		top:0;
+		left:-270px;
+		z-index:4;
+		height:100%;
+		width:250px;
+		position:fixed;
+		box-shadow:0px 0px 10px #000;
+		transition: all ease 0.5s;
+
+		.main-menu{
+			display:block;
+			float:left;
+			margin-left:0;
+			width: 100%;
+		}
+
+		.main-menu-user{
+			display:block;
+			float:left;
+		}
+
+		.menu-header{
+			width: 100%;
+			display:block;
+			text-align: left;
+			li{
+				width: 100%;
+				display:block;
+
+				a{
+					width:100%;
+					padding:15px 10px;
+					box-sizing:border-box;
+					border:none;
+					border-bottom:1px solid $greyBg;
+
+					&:hover{
+						&:after{
+							content:none;
+						}
+					} 
+				}
+			}
+		}
+	}
+	.menu-wrapper-active{
+		left:0;
+		transition: all ease 0.5s;
+	}
+	.main-menu-user{
+		width: 100%;
+	}
+	.user-wrapper{
+		width: 100%;
+		display: block!important;
+		float:none;
+	}
+	.user-menu-trigger{
+		display: none!important;
+	}
+
+	.user-menu{
+		clear:both;
+		top:10px;	
+		position:relative;
+		margin-left:0;
+		box-sizing:border-box;
+		width:100%;
+		display: block;
+
+		&:before, &:after{
+			content:none;
+		}
+
+		li{
+			margin-bottom:0px;
+
+			a{
+				[class^='ds-']{
+					font-size: 20px;
+					margin-right: 10px;
+				}
+				padding:15px;
+				width:100%;
+				text-decoration:none;
+				color:$greyDark;
+				display:inline-block;
+			}
+		}
+	}
+
+	.form-search-home{
+		padding:0 0 20px 0;
+	}
+
+	.form-home-wrapper{
+		[class^='ds-row']{
+			margin-bottom: 0;
+		}
+
+		[class^='col-']{
+			margin-bottom: 20px;
+		}
+	}
+
+	.main-highlight-wrapper{
+		padding-top:0;
+	}
+
+	.site-top-wrapper{
+		margin-bottom: 20px;
+	}
+
+	.form-login-wrapper{
+		margin-bottom: 20px;
+	}
+
+	.user-unit-wrapper{
+		margin-left:0;
+		margin-right:0;
+		padding:20px;
+	}
+}
+
+@media (max-width: 540px) {
+	
+}
+
+@media (max-width: 350px) {
+}

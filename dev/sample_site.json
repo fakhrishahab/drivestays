@@ -1,0 +1,215 @@
+[
+    {
+        "id" : "1",
+        "title" : "Greenpoint",
+        "description" : "We are the coolest family",
+        "lat" : 40.737998,
+        "long" : -73.928678,
+        "rate" : "50",
+        "image" : "./assets/images/site/1.png",
+        "profile" : "./assets/images/user-profile.png",
+        "city" : "Long Island City, NY 11101",
+        "price" : "320",
+        "facilities_desc" : "We also served you with our premium facilities",
+        "facilities" : [
+            {
+                "id" : "1",
+                "name" : "Private Bathroom",
+                "desc" : "Enjoy the privacy of your own bathroom and use its facilities along with your loved ones",
+                "price" : 35
+            },
+            {
+                "id" : "2",
+                "name" : "Power Supply 220 Volts",
+                "desc" : "Power supply for 220 volts / 16 amps (CEE-plug)",
+                "price" : 65
+            },
+            {
+                "id" : "3",
+                "name" : "TV Connection",
+                "desc" : "Family Time",
+                "price" : 15
+            },
+            {
+                "id" : "4",
+                "name" : "Sanitary Facilities",
+                "desc" : "In the services area of the Waldbad, the discharge for waste water from the chemical toilets is located, along with a bathroom for giving dogs a bath.",
+                "price" : 30
+            }
+        ]
+    },
+    {
+        "id" : "2",
+        "title" : "Astoria",
+        "description" : "This is a good place to enjoy your holiday",
+        "lat" : 40.753893,
+        "long" : -73.925052,
+        "rate" : "",
+        "image" : "./assets/images/site/2.png",
+        "profile" : "./assets/images/user-profile.png",
+        "city" : "Long Island City, NY 11101",
+        "price" : "285",
+        "facilities_desc" : "We have extraordinary facilities",
+        "facilities" : [
+            {
+                "id" : "1",
+                "name" : "Private Bathroom",
+                "desc" : "Enjoy the privacy of your own bathroom and use its facilities along with your loved ones",
+                "price" : 35
+            },
+            {
+                "id" : "2",
+                "name" : "Power Supply 220 Volts",
+                "desc" : "Power supply for 220 volts / 16 amps (CEE-plug)",
+                "price" : 65
+            },
+            {
+                "id" : "3",
+                "name" : "TV Connection",
+                "desc" : "Family Time",
+                "price" : 15
+            },
+            {
+                "id" : "4",
+                "name" : "Kitchen",
+                "desc" : "Cook your dishes",
+                "price" : 25
+            }
+        ]
+    },
+    {
+        "id" : "3",
+        "title" : "Astoria",
+        "description" : "We are a happy camper!",
+        "lat" : 40.755118,
+        "long" : -73.927925,
+        "rate" : "",
+        "image" : "./assets/images/site/3.png",
+        "profile" : "./assets/images/user-profile.png",
+        "city" : "Long Island City, NY 11101",
+        "price" : "235",
+        "facilities_desc" : "We also served you with our premium facilities",
+        "facilities" : [
+            {
+                "id" : "1",
+                "name" : "Private Bathroom",
+                "desc" : "Enjoy the privacy of your own bathroom and use its facilities along with your loved ones",
+                "price" : 35
+            },
+            {
+                "id" : "2",
+                "name" : "Power Supply 220 Volts",
+                "desc" : "Power supply for 220 volts / 16 amps (CEE-plug)",
+                "price" : 65
+            },
+            {
+                "id" : "3",
+                "name" : "Laundry",
+                "desc" : "the laundry with coin-operated washing machines and dryers",
+                "price" : 17
+            }
+        ]
+    },
+    {
+        "id" : "4",
+        "title" : "Great, Long Island City",
+        "description" : "We host, therefore we are!",
+        "lat" : 40.757694,
+        "long" : -73.933971,
+        "rate" : "",
+        "image" : "./assets/images/site/4.png",
+        "profile" : "./assets/images/user-profile.png",
+        "city" : "Long Island City, NY 11101",
+        "price" : "188",
+        "facilities_desc" : "We also served you with our premium facilities",
+        "facilities" : [
+            {
+                "id" : "1",
+                "name" : "Private Bathroom",
+                "desc" : "Enjoy the privacy of your own bathroom and use its facilities along with your loved ones",
+                "price" : 35
+            },
+            {
+                "id" : "2",
+                "name" : "Power Supply 220 Volts",
+                "desc" : "Power supply for 220 volts / 16 amps (CEE-plug)",
+                "price" : 65
+            },
+            {
+                "id" : "3",
+                "name" : "TV Connection",
+                "desc" : "Family Time",
+                "price" : 15
+            }
+        ]
+    },
+    {
+        "id" : "5",
+        "title" : "Astoria",
+        "description" : "Land with us, and you won’t be sorry!!",
+        "lat" : 40.758295,
+        "long" : -73.935731,
+        "rate" : "",
+        "image" : "./assets/images/site/5.png",
+        "profile" : "./assets/images/user-profile.png",
+        "city" : "Long Island City, NY 11101",
+        "price" : "325",
+        "facilities_desc" : "We also served you with our premium facilities",
+        "facilities" : [
+            {
+                "id" : "1",
+                "name" : "Private Bathroom",
+                "desc" : "Enjoy the privacy of your own bathroom and use its facilities along with your loved ones",
+                "price" : 35
+            },
+            {
+                "id" : "2",
+                "name" : "Power Supply 220 Volts",
+                "desc" : "Power supply for 220 volts / 16 amps (CEE-plug)",
+                "price" : 65
+            },
+            {
+                "id" : "3",
+                "name" : "TV Connection",
+                "desc" : "Family Time",
+                "price" : 15
+            }
+        ]
+    },
+    {
+        "id" : "6",
+        "title" : "Astoria",
+        "description" : "You are what you eat.  Therefore we provide meals!",
+        "lat" : 40.752933,
+        "long" : -73.936391,
+        "rate" : "",
+        "image" : "./assets/images/site/6.png",
+        "profile" : "./assets/images/user-profile.png",
+        "city" : "Long Island City, NY 11101",
+        "price" : "330",
+        "facilities_desc" : "We also served you with our premium facilities",
+        "facilities" : [
+            {
+                "id" : "1",
+                "name" : "Private Bathroom",
+                "desc" : "Enjoy the privacy of your own bathroom and use its facilities along with your loved ones",
+                "price" : 35
+            },
+            {
+                "id" : "2",
+                "name" : "Power Supply 220 Volts",
+                "desc" : "Power supply for 220 volts / 16 amps (CEE-plug)",
+                "price" : 65
+            },
+            {
+                "id" : "3",
+                "name" : "TV Connection",
+                "desc" : "Family Time",
+                "price" : 15
+            }
+        ]
+    }
+ 
+ 
+ 
+]

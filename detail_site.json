@@ -1,0 +1,100 @@
+{
+	"resultID" : 1,
+	"propertyID" : 275,
+	"lastName" : "Norris",
+	"firstName" : "Zorita",
+	"addressLine1" : "93 Maker Street",
+	"addressLine2" : "",
+	"addressLine3" : "",
+	"description" : "We are coolest family",
+	"city" :  "Poughkeepsie",
+	"state" : "NY",
+	"postalCode" : "12601",
+	"width" : 350,
+	"length" : 700,
+	"height" : null,
+	"security" : 0,
+	"long" : -73.9302179,
+	"lang" : 41.7005061,
+	"profile" : "./assets/images/user-profile.png",
+	"image" : "./assets/images/site/4.png",
+	"imageThumb" : [
+		{
+			"idImg" : "1",
+			"img_small" : "./assets/images/site/1.png",
+			"img_big" : "./assets/images/site/1.png"
+		},
+		{
+			"idImg" : "2",
+			"img_small" : "./assets/images/site/2.png",
+			"img_big" : "./assets/images/site/2.png"
+		},
+		{
+			"idImg" : "3",
+			"img_small" : "./assets/images/site/3.png",
+			"img_big" : "./assets/images/site/4.png"
+		},
+		{
+			"idImg" : "4",
+			"img_small" : "./assets/images/site/5.png",
+			"img_big" : "./assets/images/site/5.png"
+		}
+	],
+	"availability" : [
+		{
+			"date" : "2016-12-23",
+			"available" : 1,
+			"rate" : 100
+		},
+		{
+			"date" : "2016-12-24",
+			"available" : 1,
+			"rate" : 125
+		},
+		{
+			"date" : "2016-12-25",
+			"available" : 1,
+			"rate" : 150
+		},
+		{
+			"date" : "2016-12-26",
+			"available" : 1,
+			"rate" : 170
+		},
+		{
+			"date" : "2016-12-27",
+			"available" : 0,
+			"rate" : 100
+		}
+	],
+	"facilities" : [
+        {
+            "id" : "1",
+            "icon" : "bathroom",
+            "name" : "Private Bathroom",
+            "desc" : "Enjoy the privacy of your own bathroom and use its facilities along with your loved ones",
+            "price" : 35
+        },
+        {
+            "id" : "2",
+            "icon" : "power",
+            "name" : "Power Supply 220 Volts",
+            "desc" : "Power supply for 220 volts / 16 amps (CEE-plug)",
+            "price" : 65
+        },
+        {
+            "id" : "3",
+            "icon" : "kitchen",
+            "name" : "Kitchen",
+            "desc" : "Family Time",
+            "price" : 15
+        },
+        {
+            "id" : "4",
+            "icon" : "laundry",
+            "name" : "Laundry",
+            "desc" : "In the services area of the Waldbad, the discharge for waste water from the chemical toilets is located, along with a bathroom for giving dogs a bath.",
+            "price" : 30
+        }
+    ]
+}

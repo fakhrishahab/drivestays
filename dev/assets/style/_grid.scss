@@ -1,0 +1,252 @@
+/* *********************************************************************************************************************
+	One% CSS Grid - 12 Columns Fluid CSS Grid System
+
+	Why One% ? Let’s count ...
+		we have 12 columns (magic number divided by 2, 3, 4, 6)
+
+		for 12 columns we need 11 margins
+
+		so if we count margin 3%, then 3% * 11 margins = 33%
+
+		and if we count width of 1 column 5.5%, than 5.5% * 12 columns = 66%
+
+		in the end we have 33% + 66% = 99% aaand ???
+
+		1% is still here so that's the name - One%
+
+	2 starting options ? Let’s count a bit more ...
+		1200px - perfectly fits 1280 screens
+			12 columns
+			margin 3% / 36px (full-width)
+			col1 5.5% / 66px (full-width)
+
+		1000px - perfectly fits 1024 screens
+			12 columns
+			margin 3% / 30px (full-width)
+			col1 5.5% / 55px (full-width)
+*/
+
+
+
+
+
+/* *********************************************************************************************************************
+ * Main container for all
+ */
+.ds-container-1000, .ds-container-1200 {
+	box-sizing: border-box; 
+	margin: 0 auto;
+	padding: 0 ; /* THAT'S THE NAME ;) */
+}
+
+.ds-container-fluid{
+	box-sizing: border-box; 
+	max-width:100%;
+}
+
+.ds-container-1200 {
+	max-width: 1200px;
+}
+
+.ds-container-1000 {
+	max-width: 1020px;
+}
+
+.ds-row {
+	clear: both;
+	padding: 0;
+
+	&:before, 
+	&:after {
+	    content:"";
+	    display: table ;
+	    clear:both;
+	}
+}
+
+.space{
+	padding:0 10px!important;
+}
+
+
+
+
+/* *********************************************************************************************************************
+ * Common columns definitions
+ */
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+	float: left;
+	//padding:0 0 0 0;
+	padding:0;
+	box-sizing:border-box;
+	position: relative;
+	// border:1px solid red;
+}
+
+.col-1.fluid, .col-2.fluid, .col-3.fluid, .col-4.fluid, .col-5.fluid, .col-6.fluid, .col-7.fluid, .col-8.fluid, .col-9.fluid, .col-10.fluid, .col-11.fluid, .col-12.fluid {
+	padding:0;
+}
+
+
+.col-1.last, .col-2.last, .col-3.last, .col-4.last, .col-5.last, .col-6.last, .col-7.last, .col-8.last, .col-9.last, .col-10.last, .col-11.last, .col-12 {
+	//padding-right: 0;
+}
+
+.col-1 { width: 8.33%; }
+.col-2 { width: 16.667%; }
+.col-3 { width: 25%; }
+.col-4 { width: 33.332%; }
+.col-5 { width: 41.667%; }
+.col-6 { width: 50%; }
+.col-7 { width: 58.33%; }
+.col-8 { width: 66.667%; }
+.col-9 { width: 74.99%; }
+.col-10 { width: 83.33%; }
+.col-11 { width: 91.667%; }
+.col-12 { width: 100%; margin: 0; }
+
+.col-offset-1{margin-left:8.33%;}
+.col-offset-2{margin-left:16.667%;}
+.col-offset-3{margin-left:25%;}
+.col-offset-4{margin-left:33.332%;}
+.col-offset-5{margin-left:41.667%;}
+.col-offset-6{margin-left:50%;}
+.col-offset-7{margin-left:58.33%;}
+.col-offset-8{margin-left:66.667%;}
+.col-offset-9{margin-left:74.99%;}
+.col-offset-10{margin-left:83.33%;}
+
+.col-skip-6{margin-right:48%;}
+
+
+.col-1 img, .col-2 img, .col-3 img, .col-4 img, .col-5 img, .col-6 img, .col-7 img, .col-8 img, .col-9 img, .col-10 img, .col-11 img, .col-12 img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+
+
+
+
+/* *********************************************************************************************************************
+ * Disable padding left/right 10px if I'm 1024 or gibber - correct percentage math
+ */
+@media all and (min-width: 1024px) {
+	.ds-container-1000 {
+		max-width: 1000px;
+	}
+
+	.ds-container-1000 .ds-row {
+		padding: 0;
+	}
+}
+
+
+
+
+
+/* *********************************************************************************************************************
+ * Small devices
+ */
+// @media all and (max-width: 768px) {
+// 	.ds-row {
+// 	}
+
+// 	// .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11 {
+// 	// 	float: none;
+// 	// 	width: 99%;
+// 	// }
+// }
+
+@media (max-width: 1200px) {
+	.col-lg-1 { width: 5.5%; }
+	.col-lg-2 { width: 16.667%; }
+	.col-lg-3 { width: 24.64%; }
+	.col-lg-4 { width: 33.332%; }
+	.col-lg-5 { width: 41.667%; }
+	.col-lg-6 { width: 50%; }
+	.col-lg-7 { width: 58.33%; }
+	.col-lg-8 { width: 66.667%; }
+	.col-lg-9 { width: 74.99%; }
+	.col-lg-10 { width: 83.33%; }
+	.col-lg-11 { width: 91.667%; }
+	.col-lg-12 { width: 100%; margin: 0; }
+
+	.col-lg-offset-1{margin-left:5.5%;}
+	.col-lg-offset-2{margin-left:16.667%;}
+	.col-lg-offset-3{margin-left:24.64%;}
+	.col-lg-offset-4{margin-left:33.332%;}
+	.col-lg-offset-5{margin-left:41.667%;}
+	.col-lg-offset-6{margin-left:50%;}
+	.col-lg-offset-7{margin-left:58.33%;}
+	.col-lg-offset-8{margin-left:66.667%;}
+	.col-lg-offset-9{margin-left:74.99%;}
+	.col-lg-offset-10{margin-left:83.33%;}
+}
+
+@media (max-width: 540px) {
+	.ds-container-1200{
+		padding:0 5px;
+	}
+
+	[class^='col-md']{
+		padding-right:0;
+	}
+
+	.col-md-1 { width: 5.5%; }
+	.col-md-2 { width: 16.667%; }
+	.col-md-3 { width: 24.64%; }
+	.col-md-4 { width: 33.332%; }
+	.col-md-5 { width: 41.667%; }
+	.col-md-6 { width: 50%; }
+	.col-md-7 { width: 58.33%; }
+	.col-md-8 { width: 66.667%; }
+	.col-md-9 { width: 74.99%; }
+	.col-md-10 { width: 83.33%; }
+	.col-md-11 { width: 91.667%; }
+	.col-md-12 { width: 100%; }
+
+	.col-md-offset-1{margin-left:5.5%;}
+	.col-md-offset-2{margin-left:16.667%;}
+	.col-md-offset-3{margin-left:24.64%;}
+	.col-md-offset-4{margin-left:33.332%;}
+	.col-md-offset-5{margin-left:41.667%;}
+	.col-md-offset-6{margin-left:50%;}
+	.col-md-offset-7{margin-left:58.33%;}
+	.col-md-offset-8{margin-left:66.667%;}
+	.col-md-offset-9{margin-left:74.99%;}
+	.col-md-offset-10{margin-left:83.33%;}
+
+	.col-md-no-offset{margin-left:0;}
+}
+
+@media (max-width: 350px) {
+	[class^='col-sm']{
+		padding-right:0;
+	}
+
+	.col-sm-1 { width: 5.5%; }
+	.col-sm-2 { width: 16.667%; }
+	.col-sm-3 { width: 24.64%; }
+	.col-sm-4 { width: 33.332%; }
+	.col-sm-5 { width: 41.667%; }
+	.col-sm-6 { width: 50%; }
+	.col-sm-7 { width: 58.33%; }
+	.col-sm-8 { width: 66.667%; }
+	.col-sm-9 { width: 74.99%; }
+	.col-sm-10 { width: 83.33%; }
+	.col-sm-11 { width: 91.667%; }
+	.col-sm-12 { width: 100%; margin: 0; }
+
+	.col-sm-offset-1{margin-left:5.5%;}
+	.col-sm-offset-2{margin-left:16.667%;}
+	.col-sm-offset-3{margin-left:24.64%;}
+	.col-sm-offset-4{margin-left:33.332%;}
+	.col-sm-offset-5{margin-left:41.667%;}
+	.col-sm-offset-6{margin-left:50%;}
+	.col-sm-offset-7{margin-left:58.33%;}
+	.col-sm-offset-8{margin-left:66.667%;}
+	.col-sm-offset-9{margin-left:74.99%;}
+	.col-sm-offset-10{margin-left:83.33%;}
+}
