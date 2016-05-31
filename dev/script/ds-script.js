@@ -6,6 +6,8 @@ var SITE = {
 }
 
 $(document).ready(function(){
+	$('.scrollbar-macosx').scrollbar();	
+	
 	var user_info = _cookies.getObject('reg_cookies');
 	var profile_username = $('#profile-username'),
 		btn_logout = $('#btn-logout');

@@ -10,6 +10,7 @@
 	<title>Drive Stays</title>
 	<!-- <link rel="stylesheet" type="text/css" href="./assets/style/bootstrap.css" /> -->
 	<link rel="stylesheet" href="./assets/style/normalize.css">
+	<link rel="stylesheet" href="./assets/style/jquery.scrollbar.css">
 	<link rel="stylesheet" href="./assets/style/style.css">
 	<link rel="stylesheet" type="text/css" href="./assets/style/pikaday.css" />
 </head>
@@ -55,7 +56,67 @@
 				                		<li id="btn-logout"><a><div class="ds-lock"></div>Logout</a></li>
 				              		</ul>
 				            	</div>
-				          </div>
+				          	</div>
+
+				          	<div class="header-notif">
+				          		<div class="notification-trigger">
+				          			<div class="notification-count">12</div>
+				          			<div class="ds-notification"></div>	
+				          		</div>
+
+				          		<div class="notification-wrapper" style="display:none">
+				          			<div class="notification-list scrollbar-macosx">
+				          				<div>
+				          					<div class="notification-list-wrapper">
+					          					<div class="notif-image"> <image src="./assets/images/notification.svg"/> </div>
+					          					<div class="notif-content">
+					          						<div class="notif-content-title">You got 1 message from John Doe</div>
+					          						<div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? </div>
+					          					</div>
+					          				</div>
+					          				<div class="notification-list-wrapper">
+					          					<div class="notif-image"> <image src="./assets/images/message.svg"/> </div>
+					          					<div class="notif-content">
+					          						<div class="notif-content-title">You got 1 message from John Doe</div>
+					          						<div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? ..... </div>
+					          					</div>
+					          				</div>
+					          				<div class="notification-list-wrapper">
+					          					<div class="notif-image"> <image src="./assets/images/notification.svg"/> </div>
+					          					<div class="notif-content">
+					          						<div class="notif-content-title">You got 1 message from John Doe</div>
+					          						<div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? ..... </div>
+					          					</div>
+					          				</div>
+					          				<div class="notification-list-wrapper">
+					          					<div class="notif-image"> <image src="./assets/images/message.svg"/> </div>
+					          					<div class="notif-content">
+					          						<div class="notif-content-title">You got 1 message from John Doe</div>
+					          						<div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? ..... </div>
+					          					</div>
+					          				</div>
+					          				<div class="notification-list-wrapper">
+					          					<div class="notif-image"> <image src="./assets/images/message.svg"/> </div>
+					          					<div class="notif-content">
+					          						<div class="notif-content-title">You got 1 message from John Doe</div>
+					          						<div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? ..... </div>
+					          					</div>
+					          				</div>
+					          				<div class="notification-list-wrapper">
+					          					<div class="notif-image"> <image src="./assets/images/message.svg"/> </div>
+					          					<div class="notif-content">
+					          						<div class="notif-content-title">You got 1 message from John Doe</div>
+					          						<div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? ..... </div>
+					          					</div>
+					          				</div>
+					          			</div>
+				          				</div>
+				          				
+				          			<div class="notification-footer">
+				          				<a href="">See All Notification</a>
+				          			</div>
+				          		</div>
+				          	</div>
 
 				        </div>
 					</div>
@@ -423,6 +484,7 @@
 <script src="./script/jquery.min.js"></script>
 <script type="text/javascript" src="./script/moment.min.js"></script>
 <script type="text/javascript" src="./script/pikaday.js"></script>
+<script src="./script/jquery.scrollbar.min.js"></script>
 <script src="./script/ds-script.js"></script>
 <script src="./script/ds-cookies.js"></script>
 <script src="./script/ds-element.js"></script>
@@ -431,5 +493,6 @@
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfSvkBOL2nOfLZKDWaf66EbbO9poShFaA&libraries=places&callback=initMap">
 </script>
+
 </body>
 </html>

@@ -151,6 +151,151 @@ header{
 	display:inline-block;
 	float:right;
 	position:relative;
+	// border:1px solid red;
+}
+
+.header-notif{
+	display:inline-block;
+	float:right;
+	position:relative;
+	// border:1px solid red;
+
+	.notification-trigger{
+		// border:1px solid blue;
+		margin:21px 10px 12px 10px;
+		position:relative;
+
+		.notification-count{
+			border-radius:8px;
+			background:$orangeDark;
+			color:$white;
+			text-align:center;
+			position:absolute;
+			display:block;
+			font-size:12px;
+			right:-10px;
+			top:-10px;
+			padding:3px;
+		}
+
+		.ds-notification{
+			font-size:30px;	
+			line-height:1;
+			cursor:pointer;
+		}
+		
+	}
+}
+
+.notification-wrapper{
+	position:absolute;
+	background:$white;
+	width:300px;
+	right:0;
+	border:1px solid $greyLight;
+	box-shadow:0px 0px 5px rgba(0,0,0,0.4);
+	top:80px;
+
+	&:before{
+		z-index: 2;
+		content:'';
+		position:absolute;
+		width:0;
+		height:0;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-bottom: 10px solid $white;
+		right:10px;
+		top:-10px;
+	}
+
+	&:after{
+		z-index: 1;
+		content:'';
+		position:absolute;
+		width:0;
+		height:0;
+		border-left: 11px solid transparent;
+		border-right: 11px solid transparent;
+		border-bottom: 11px solid $greyBg;
+		right:9px;
+		top:-11px;
+	}
+
+	.notification-list{
+		margin:0;
+		padding:0;
+		display:table;
+		height:300px;
+		width:100%!important;
+		border-collapse:collapse;
+		cursor:pointer;
+		position:relative;
+
+		& > div{
+			position:absolute;
+			display:table-cell;
+			border-collapse:collapse;
+
+			.notification-list-wrapper{
+				width:100%;
+				display:table-row;
+				margin-bottom: 20px;
+				height:80px;
+				top:0;
+				box-sizing:content-box!important;
+				position:relative;
+
+				&:hover{
+					background:$greyLight;
+				}
+
+				& > div{
+					display:table-cell;
+					vertical-align: middle;
+					padding-top:10px;
+					padding-bottom: 10px;
+
+
+					&:first-child{
+						padding-left: 10px;
+						padding-right:10px;
+					}
+
+					&:last-child{
+						padding-right:10px;
+					}
+
+					.notif-content-title{
+						font-weight:bold;
+						color:#000;
+					}
+
+					.notif-content-desc{
+						font-style:italic;
+						color:$greyDark;
+						overflow:hidden;
+						max-height:45px;
+					}
+
+				}
+			}
+		}
+
+		
+	}
+
+	.notification-footer{
+		background:$greyBg;
+		padding:10px;
+		text-align:right;
+		position:relative;
+
+		a{
+			text-decoration:none;
+			color:$blueLight;
+		}
+	}
 }
 
 .menu-header{
@@ -2296,6 +2441,10 @@ hr{
 		margin:0 auto;
 		color:$orangeDark;
 	}
+}
+
+.scroll-element.scroll-x {
+    display: none !important;
 }
 
 svg path,

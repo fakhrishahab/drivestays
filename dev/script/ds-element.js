@@ -4,6 +4,7 @@ var input_select = $('.input-select'),
 	input_element = $('.input-el'),
     site_access_toggle = $('.input-toggle'),
     btn_logout = $('#btn-logout'),
+    notification_trigger = $('.notification-trigger'),
 key,listTrigger,
 user_menu = $('.user-menu-trigger');
 
@@ -35,6 +36,7 @@ user_menu = $('.user-menu-trigger');
 			input_element.find('ul').removeClass('active')
 		}
 		$('.user-menu').removeClass('active')
+		$('.notification-wrapper').hide();
 	})
 
 	listTrigger = function(){
@@ -155,6 +157,11 @@ site_access_toggle.on('click', function(){
       $(this).find('.toggle-status').html(value[0])
       $(this).find('input[type=checkbox]').val(0)
   }
+})
+
+notification_trigger.on('click', function(e){
+	$('.notification-wrapper').toggle();
+	e.stopPropagation();
 })
 
 var checkToggle = function () {
