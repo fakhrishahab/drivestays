@@ -2,6 +2,7 @@
 
 var element = {
 	orderWrapper : $('.order-wrapper'),
+	orderHeader : $('.order-header'),
 	tab_trigger : $('.site-tab-wrapper div'),
 	form_wrapper : $('.form-add-site'),
 	target : {
@@ -13,8 +14,8 @@ var element = {
 	stay_wrapper : $('.stay-wrapper')
 }
 
-element.orderWrapper.on('click', function(){
-	$(this).toggleClass('order-wrapper-collapse');
+element.orderHeader.on('click', function(){
+	$(this).parent().toggleClass('order-wrapper-collapse');
 })
 
 var tab_handler = new Function();
@@ -59,4 +60,8 @@ $.extend(tab_stay.prototype, {
 
 element.stay_tab_trigger.on('click', function(){
 	tab_stay.prototype.click($(this))
+})
+
+$('.btn-cancel').on('click', function(){
+	preload.show($(this).parents('.order-wrapper'));
 })
