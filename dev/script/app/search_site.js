@@ -67,7 +67,7 @@ function initMap(offset, limit, type) {
 	element.resultList.empty();
 	element.preloadWrapper.addClass('show')
 	$.ajax({
-	    url: SITE.API_PATH_DEV+'/properties/search',
+	    url: SITE.API_PATH+'/properties/search',
 	    type: 'POST',
 	    data: {
 	        "VehicleID" : 10,
@@ -623,6 +623,20 @@ $('.photo-nav').on('click', function(){
 	$('#index-image').html(indexImg+1);
 	// $('#total-image').html(data.imageThumb.length);
 })
+
+$('#test-modal').on('click', function(){
+	DS_MODAL.open({
+		status : 'confirm-success',
+		image : './assets/images/success.svg',
+		message : 'Your request has successfully submitted, check on your transaction list menu',
+		redirect: {
+            timeout : 4000,
+            dest : './transaction_list.html'
+        }
+	})
+})
+
+
 
 // $('.map-list').hide()
 // $('.map-list').siblings('div').show()

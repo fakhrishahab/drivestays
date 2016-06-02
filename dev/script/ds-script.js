@@ -1,7 +1,7 @@
 
 var SITE = {
 	API_KEY : 'AIzaSyDfSvkBOL2nOfLZKDWaf66EbbO9poShFaA',
-	API_PATH : 'http://travellers.azurewebsites.net',
+	API_PATH : 'https://travellers.azurewebsites.net',
 	API_PATH_DEV : 'http://localhost:58777'
 }
 

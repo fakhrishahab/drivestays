@@ -296,6 +296,13 @@ label{
 	}
 }
 
+button{
+	&:disabled{
+		background:#ccc!important;
+		border-bottom:2px solid #999!important;
+	}	
+}
+
 .send-comment{
 	background:#000;
 	color:$white;

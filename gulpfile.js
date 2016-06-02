@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
 	del = require('del'),
+	plumber = require('gulp-plumber'),
 	sass = require('gulp-sass');
 
 
@@ -34,6 +35,7 @@ gulp.task('fonts', function(){
 
 gulp.task('sass', function(){
 	return gulp.src('./dev/assets/style/*.scss')
+		.pipe(plumber())
 		.pipe(sass({outputStyle: 'compressed'}))
 		.pipe(sass.sync().on('Error', sass.logError))
 		.pipe(gulp.dest('public/assets/./style'))

@@ -73,9 +73,27 @@
 
 	.modal-content{
 		width:100%;
+		text-align:center;
 		// height: 100px;
 		// border:1px solid red;
 		// margin:40px 0;
+
+		.modal-confirm{
+
+			.confirm-icon{
+
+				img{
+					width:80px;
+				}
+
+			}
+
+			.confirm-desc{
+				margin-top: 20px;
+				font-size:17px;
+
+			}
+		}
 	}
 
 	.modal-close{
@@ -88,6 +106,7 @@
 		color: $greyDark;
 		cursor: pointer;
 	}
+
 }
 
 .modal-photo{

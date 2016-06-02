@@ -2026,12 +2026,14 @@ header{
 		}
 
 		.order-content-image{
-			width: 20%;
+			// width: 20%;
 			padding-left: 20px;
 		}
 
 		.order-content-title{
-			width: 50%;
+			// width: 50%;
+			height:100%;
+			display:block!important;
 			span{
 				display: block;
 
@@ -2042,7 +2044,7 @@ header{
 		}
 
 		.order-content-action{
-			width: 20%;
+			// width: 20%;
 			vertical-align: top;
 			padding-right:20px;
 
@@ -2050,6 +2052,14 @@ header{
 				font-size: 14px;
 				padding:10px;
 				margin-bottom: 10px;
+			}
+		}
+
+		.box-content-status{
+			padding:15px 10px!important;
+
+			.box-status-icon{
+				font-size:40px;
 			}
 		}
 	}
@@ -2149,6 +2159,10 @@ header{
 			}
 		}
 	}
+}
+
+.stay-request-container{
+	position:relative;
 }
 
 .stay-wrapper{
@@ -2533,6 +2547,39 @@ svg rect{
 		color:$white!important;
 		cursor:pointer;
 	}
+}
+
+.box-content-status{
+	background:$white;
+	padding:40px 20px;
+	position:relative;
+	// display:block;
+	text-align:center;
+
+	.box-status-icon{
+		display:block;
+		font-size:60px;
+		position:relative;
+
+		&:after{
+			content:'';
+			width:80%;
+			height:1px;
+			display:block;
+			background:$orangeLight;
+			position:relative;
+			top: 10px;
+			margin:0 auto;
+		}
+	}
+
+	.box-description{
+		margin-top:30px;
+	}
+}
+
+.border-grey{
+	border:1px solid $greyBg;
 }
 // END GOOGLE AUTOCOMPLETE STYLE
 @import 'element';
