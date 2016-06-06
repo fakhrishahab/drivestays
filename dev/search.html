@@ -1,555 +1,620 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Drive Stays</title>
+    <meta charset="UTF-8">
+    <title>Drive Stays</title>
 
-	<meta charset="UTF-8">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width"/>
-	<title>Drive Stays</title>
-	<link rel="stylesheet" href="./assets/style/normalize.css">
-	<link rel="stylesheet" href="./assets/style/jquery.scrollbar.css">
-	<link rel="stylesheet" href="./assets/style/jquery-ui-slider.css">
-	<link rel="stylesheet" href="./assets/style/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Drive Stays</title>
+    <link rel="stylesheet" href="./assets/style/normalize.css">
+    <link rel="stylesheet" href="./assets/style/jquery.scrollbar.css">
+    <link rel="stylesheet" href="./assets/style/jquery-ui-slider.css">
+    <link rel="stylesheet" href="./assets/style/style.css">
 
-	<link rel="stylesheet" type="text/css" href="./assets/style/pikaday.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/style/pikaday.css" />
 
 </head>
 <body>
-	
-	<div class="wrapper-body">
-		<header class="header-flat">
-			<div class="ds-container-1200">
-				<div class="ds-row">
-					<div class="content ds-header-fix">
-						<div class="toggle-menu">
-							<div></div>
-							<div></div>
-							<div></div>
-				        </div>
+    <div class="float-alert">
+        <span class="ds-close close-alert"></span>
+        <div class="content"></div>
+    </div>
+    <div class="wrapper-body">
+        <header class="header-flat">
+            <div class="ds-container-1200">
+                <div class="ds-row">
+                    <div class="content ds-header-fix">
+                        <div class="toggle-menu">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
 
-				        <div class="logo-wrapper">
-				        	<a href="./"><img src="./assets/images/drivestays_logo.png" height="55" class="img-logo" alt=""></a>
-				        </div>
+                        <div class="logo-wrapper">
+                            <a href="./"><img src="./assets/images/drivestays_logo.png" height="55" class="img-logo" alt=""></a>
+                        </div>
 
-				        <div class="menu-wrapper">
-				        	<div class="main-menu">
-				        		<ul class="menu-header">
-				            		<li><a href="">List a Site</a></li>
-				            		<button id="test-modal">Open Modal</button>
-				                	<!-- <li><a href="">List a Site</a></li> -->
-				                </ul>
-				          	</div>
+                        <div class="menu-wrapper">
+                            <div class="main-menu">
+                                <ul class="menu-header">
+                                    <li><a href="">List a Site</a></li>
+                                    <!-- <li><a href="">List a Site</a></li> -->
+                                </ul>
+                            </div>
 
-				          	<div class="main-menu-user">
-				            	<a href="login.html" class="register-head"><button class="btn-register">Sign In / Register</button></a>
-				            	<div class="user-wrapper">
-				              		<img src="./assets/images/user-upload.png" align="middle" alt="">
-				              		<div class="user-name"> Hi, <strong id="profile-username">Steve</strong> </div>
-				              		<div class="icon ds-chevron-down user-menu-trigger"></div>
+                            <div class="main-menu-user">
+                                <a href="login.html" class="register-head"><button class="btn-register">Sign In / Register</button></a>
+                                <div class="user-wrapper">
+                                    <img src="./assets/images/user-upload.png" align="middle" alt="">
+                                    <div class="user-name"> Hi, <strong id="profile-username">Steve</strong> </div>
+                                    <div class="icon ds-chevron-down user-menu-trigger"></div>
 
-				              		<ul class="user-menu">
-				                		<li><a href="register.html"><div class="ds-user"></div>	My Profile</a></li>
-				                		<li><a href="my_caravan.html"><div class="ds-caravan"></div>My Caravan</a></li>
-				                		<li><a href="my_site.html"><div class="ds-site"></div>My Sites</a></li>
-				                		<li><a href="transaction_list.html"><div class="ds-booked"></div>Transaction List</a></li>
-				                		<li><a href="account_setting.html"><div class="ds-setting"></div>Account Setting</a></li>
-				                		<li><a href="my_payment.html"><div class="ds-card"></div>Account Payment</a></li>
-				                		<li id="btn-logout"><a><div class="ds-lock"></div>Logout</a></li>
-				              		</ul>
-				            	</div>
-				          </div>
+                                    <ul class="user-menu">
+                                        <li><a href="register.html"><div class="ds-user"></div>	My Profile</a></li>
+                                        <li><a href="my_caravan.html"><div class="ds-caravan"></div>My Caravan</a></li>
+                                        <li><a href="my_site.html"><div class="ds-site"></div>My Sites</a></li>
+                                        <li><a href="transaction_list.html"><div class="ds-booked"></div>Transaction List</a></li>
+                                        <li><a href="account_setting.html"><div class="ds-setting"></div>Account Setting</a></li>
+                                        <li><a href="my_payment.html"><div class="ds-card"></div>Account Payment</a></li>
+                                        <li id="btn-logout"><a><div class="ds-lock"></div>Logout</a></li>
+                                    </ul>
+                                </div>
+                            </div>
 
-				        </div>
-					</div>
-				</div>
-			</div>
-		</header>
+                            <div class="header-notif">
+                                <div class="notification-trigger">
+                                    <div class="notification-count">12</div>
+                                    <div class="ds-notification"></div>
+                                </div>
 
-		<section class="section-form">
-			<div class="ds-container-1200">
-				<div class="ds-row" id="form-search">
+                                <div class="notification-wrapper" style="display:none">
+                                    <div class="notification-list scrollbar-macosx">
+                                        <div>
+                                            <div class="notification-list-wrapper">
+                                                <div class="notif-image"> <image src="./assets/images/notification.svg" /> </div>
+                                                <div class="notif-content">
+                                                    <div class="notif-content-title">You got 1 message from John Doe</div>
+                                                    <div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? </div>
+                                                </div>
+                                            </div>
+                                            <div class="notification-list-wrapper">
+                                                <div class="notif-image"> <image src="./assets/images/message.svg" /> </div>
+                                                <div class="notif-content">
+                                                    <div class="notif-content-title">You got 1 message from John Doe</div>
+                                                    <div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? ..... </div>
+                                                </div>
+                                            </div>
+                                            <div class="notification-list-wrapper">
+                                                <div class="notif-image"> <image src="./assets/images/notification.svg" /> </div>
+                                                <div class="notif-content">
+                                                    <div class="notif-content-title">You got 1 message from John Doe</div>
+                                                    <div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? ..... </div>
+                                                </div>
+                                            </div>
+                                            <div class="notification-list-wrapper">
+                                                <div class="notif-image"> <image src="./assets/images/message.svg" /> </div>
+                                                <div class="notif-content">
+                                                    <div class="notif-content-title">You got 1 message from John Doe</div>
+                                                    <div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? ..... </div>
+                                                </div>
+                                            </div>
+                                            <div class="notification-list-wrapper">
+                                                <div class="notif-image"> <image src="./assets/images/message.svg" /> </div>
+                                                <div class="notif-content">
+                                                    <div class="notif-content-title">You got 1 message from John Doe</div>
+                                                    <div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? ..... </div>
+                                                </div>
+                                            </div>
+                                            <div class="notification-list-wrapper">
+                                                <div class="notif-image"> <image src="./assets/images/message.svg" /> </div>
+                                                <div class="notif-content">
+                                                    <div class="notif-content-title">You got 1 message from John Doe</div>
+                                                    <div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? ..... </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-					<div class="col-md-12 col-4">
-						<div class="input-el outline">
-                        	<span class="ds-pin"></span>
-                        	<input type="text" placeholder="Input your destination" tabindex="1" id="search-location" data-validate="required">
-                        	<input type="hidden" id="location-lat">
-						    <input type="hidden" id="location-long">
-                      	</div>
-					</div>
+                                    <div class="notification-footer">
+                                        <a href="">See All Notification</a>
+                                    </div>
+                                </div>
+                            </div>
 
-					<div class="col-md-12 col-2">
-						<div class="input-el outline">
-                        	<span class="ds-garage"></span>
-                        	<div class="select-area" tabindex="2">Stay Type</div>
-                        	<span class="ds-chevron-down"></span>
-                        	<input type="hidden" id="stay-type" name="stay-type" data-validate="required">
-                        	<ul>
-                          		<li class="selected" value="1">Overnight</li>
-	                          		<li value="2">Short Stay</li>
-                        	</ul>
-                      </div>
-					</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-					<div class="col-md-12 col-2">
-						<div class="input-el outline">
-                    		<span class="ds-calendar"></span>
-                    		<input type="text" placeholder="Arrival" tabindex="4" class="datepicker-from" id="search-arrival" data-validate="required" data-date-type="start">
-                    		<div class="float-calendar"></div>
-                      	</div>
-					</div>
+        <section class="section-form">
+            <div class="ds-container-1200">
+                <div class="ds-row" id="form-search">
 
-					<div class="col-md-12 col-2">
-						<div class="input-el outline">
-                        	<span class="ds-calendar"></span>
-                        	<input type="text" placeholder="Departure" tabindex="5" class="datepicker-to" id="search-departure" data-validate="required" data-date-type="end">
-                      	</div>
-					</div>
+                    <div class="col-md-12 col-6">
+                        <div class="input-el outline">
+                            <span class="ds-pin"></span>
+                            <input type="text" placeholder="Input your destination" tabindex="1" id="search-location" data-validate="required">
+                            <input type="hidden" id="location-lat">
+                            <input type="hidden" id="location-long">
+                        </div>
+                    </div>
 
-					<div class="col-md-12 col-2">
-						<button class="btn-find" id="btn-find-site" tabindex="6" data-target-form="form-search">Search</button>
-					</div>
+                    <!--<div class="col-md-12 col-2">
+                        <div class="input-el outline">
+                            <span class="ds-garage"></span>
+                            <div class="select-area" tabindex="2">Stay Type</div>
+                            <span class="ds-chevron-down"></span>
+                            <input type="hidden" id="stay-type" name="stay-type" data-validate="required">
+                            <ul>
+                                <li class="selected" value="1">Overnight</li>
+                                <li value="2">Short Stay</li>
+                            </ul>
+                        </div>
+                    </div>-->
 
-				</div>
-			</div>
-		</section>
+                    <div class="col-md-12 col-2">
+                        <div class="input-el outline">
+                            <span class="ds-calendar"></span>
+                            <input type="text" placeholder="Arrival" tabindex="4" class="datepicker-from" id="search-arrival" data-validate="required" data-date-type="start">
+                            <div class="float-calendar"></div>
+                        </div>
+                    </div>
 
-		<section class="push-top">
-			<div class="">
-				<div class="ds-container-fluid">
-					<div class="ds-row">
-						<div class="col-md-12 col-4">
-							<div class="head-list">
-								<div class="ds-list"></div><div>Search Result</div><div class="ds-config config-filter"></div>
-							</div>
-							<div class="refine-wrapper">
-								<h4>Refine Search</h4>
-								
+                    <div class="col-md-12 col-2">
+                        <div class="input-el outline">
+                            <span class="ds-calendar"></span>
+                            <input type="text" placeholder="Departure" tabindex="5" class="datepicker-to" id="search-departure" data-validate="required" data-date-type="end">
+                        </div>
+                    </div>
 
-								<div class="ds-container-fluid">
-									<div class="ds-row">
-										<div class="col-12">
-											<label for="price">Price Range : <span id="amount"></span></label>
-											<div id="slider-range">
-												
-											</div>
-										</div>
-									</div>
-									<div class="ds-row">
-										<div class="col-6">
-											<label for="width">Width</label>
-											<div class="input-el outline">
-												<div class="input-el outline">
-													<div class="select-area" tabindex="2">Width</div>
-						                        	<span class="ds-chevron-down"></span>
-						                        	<input type="hidden" id="refine-price" name="refine-price" tabindex="2" data-validate="required">
-						                        	<ul>
-						                          		<li class="selected" value="1"> < 100 cm</li>
-						                          		<li value="2">< 200cm</li>
-						                          		<li value="3">< 300cm</li>
-						                          		<li value="4">> 500cm</li>
-						                        	</ul>
-												</div>
-											</div>
-										</div>
-										<div class="col-6">
-											<label for="length">Length</label>
-											<div class="input-el outline">
-												<div class="input-el outline">
-													<div class="select-area" tabindex="2">Length</div>
-						                        	<span class="ds-chevron-down"></span>
-						                        	<input type="hidden" id="refine-price" name="refine-price" tabindex="2" data-validate="required">
-						                        	<ul>
-						                          		<li class="selected" value="1"> < 100 cm</li>
-						                          		<li value="2">< 200cm</li>
-						                          		<li value="3">< 300cm</li>
-						                          		<li value="4">> 500cm</li>
-						                        	</ul>
-												</div>
-											</div>
-										</div>
-									</div>
+                    <div class="col-md-12 col-2">
+                        <button class="btn-find" id="btn-find-site" tabindex="6" data-target-form="form-search">Search</button>
+                    </div>
 
-									<div class="ds-row push-top">
-										<div class="col-12">
-											<button class="btn-site">Refine</button>
-										</div>
-									</div>
-								</div>
-								
-							</div>
-							<div class="content-list">
-								<div class="ordering-wrapper">
-									<div class="input-el outline">
-										<div class="input-el outline">
-											<div class="select-area" tabindex="2">Order By</div>
-				                        	<span class="ds-chevron-down"></span>
-				                        	<input type="hidden" id="filter-order" name="filter-order" tabindex="2" data-validate="required">
-				                        	<ul>
-				                          		<li class="selected" value="1"> Rate</li>
-				                          		<li value="2">Min Price</li>
-				                          		<li value="3">Max Price</li>
-				                        	</ul>
-										</div>
-									</div>
-								</div>
+                </div>
+            </div>
+        </section>
 
-								<div class="ds-row search-result-list">
-									
-								</div>
+        <section class="push-top">
+            <div class="">
+                <div class="ds-container-fluid">
+                    <div class="ds-row">
+                        <div class="col-md-12 col-4">
+                            <div class="head-list">
+                                <div class="ds-list"></div><div>Search Result</div><div class="ds-config config-filter"></div>
+                            </div>
+                            <div class="refine-wrapper">
+                                <h4>Refine Search</h4>
 
-								<div class="reload-search show">
-									<div class="loader loader--style4" title="3">
-									  	<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="44px" height="44px" viewBox="0 0 24 24" style="enable-background:new 0 0 50 50;" xml:space="preserve">
-									    	<rect x="0" y="0" width="4" height="7" fill="#333">
-									      		<animateTransform  attributeType="xml" attributeName="transform" type="scale" values="1,1; 1,3; 1,1" begin="0s" dur="0.6s" repeatCount="indefinite" />       
+
+                                <div class="ds-container-fluid">
+                                    <div class="ds-row">
+                                        <div class="col-12">
+                                            <label for="price">Price Range : <span id="amount"></span></label>
+                                            <div id="slider-range">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ds-row">
+                                        <div class="col-6">
+                                            <label for="width">Width</label>
+                                            <div class="input-el outline">
+                                                <div class="input-el outline">
+                                                    <div class="select-area" tabindex="2">Width</div>
+                                                    <span class="ds-chevron-down"></span>
+                                                    <input type="hidden" id="refine-price" name="refine-price" tabindex="2" data-validate="required">
+                                                    <ul>
+                                                        <li class="selected" value="1"> < 100 cm</li>
+                                                        <li value="2">< 200cm</li>
+                                                        <li value="3">< 300cm</li>
+                                                        <li value="4">> 500cm</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="length">Length</label>
+                                            <div class="input-el outline">
+                                                <div class="input-el outline">
+                                                    <div class="select-area" tabindex="2">Length</div>
+                                                    <span class="ds-chevron-down"></span>
+                                                    <input type="hidden" id="refine-price" name="refine-price" tabindex="2" data-validate="required">
+                                                    <ul>
+                                                        <li class="selected" value="1"> < 100 cm</li>
+                                                        <li value="2">< 200cm</li>
+                                                        <li value="3">< 300cm</li>
+                                                        <li value="4">> 500cm</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="ds-row push-top">
+                                        <div class="col-12">
+                                            <button class="btn-site">Refine</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="content-list">
+                                <div class="ordering-wrapper">
+                                    <div class="input-el outline">
+                                        <div class="input-el outline">
+                                            <div class="select-area" tabindex="2">Order By</div>
+                                            <span class="ds-chevron-down"></span>
+                                            <input type="hidden" id="filter-order" name="filter-order" tabindex="2" data-validate="required">
+                                            <ul>
+                                                <li class="selected" value="1"> Rate</li>
+                                                <li value="2">Min Price</li>
+                                                <li value="3">Max Price</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="ds-row search-result-list">
+
+                                </div>
+
+                                <div class="reload-search show">
+                                    <div class="loader loader--style4" title="3">
+                                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="44px" height="44px" viewBox="0 0 24 24" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                                        <rect x="0" y="0" width="4" height="7" fill="#333">
+                                        <animateTransform attributeType="xml" attributeName="transform" type="scale" values="1,1; 1,3; 1,1" begin="0s" dur="0.6s" repeatCount="indefinite" />
+       
 									    	</rect>
-
-									    	<rect x="10" y="0" width="4" height="7" fill="#333">
-									      		<animateTransform  attributeType="xml" attributeName="transform" type="scale" values="1,1; 1,3; 1,1" begin="0.2s" dur="0.6s" repeatCount="indefinite" />
+                                        <rect x="10" y="0" width="4" height="7" fill="#333">
+                                        <animateTransform attributeType="xml" attributeName="transform" type="scale" values="1,1; 1,3; 1,1" begin="0.2s" dur="0.6s" repeatCount="indefinite" />
 									      	</rect>
 									    	
-									    	<rect x="20" y="0" width="4" height="7" fill="#333">
-									      		<animateTransform  attributeType="xml" attributeName="transform" type="scale" values="1,1; 1,3; 1,1" begin="0.4s" dur="0.6s" repeatCount="indefinite" />
+                                        <rect x="20" y="0" width="4" height="7" fill="#333">
+                                        <animateTransform attributeType="xml" attributeName="transform" type="scale" values="1,1; 1,3; 1,1" begin="0.4s" dur="0.6s" repeatCount="indefinite" />
 									      	</rect>
 									  	</svg>
-									</div>
-								</div>
+                                    </div>
+                                </div>
 
-							</div>
+                            </div>
 
-							<div class="search-list-pagination">
-								<ul class="pagination">	
-								</ul>
-							</div>
-						</div>
+                            <div class="search-list-pagination">
+                                <ul class="pagination"></ul>
+                            </div>
+                        </div>
 
-						<div class="col-md-12 col-8">
-							<div class="head-map">
-								<ul id="detail-menu">
-									<li data-window-target="map-list" class="active"><div class="ds-map"></div><div>Map</div></li>
-									<li data-window-target="site-detail" disabled="disabled" class="inactive" ><div class="ds-site-list"></div><div>Site Detail</div></li>
-								</ul>
-							</div>
-							<div class="site-map-wrapper">
-								<div class="reload-search show">
-									<div class="loader loader--style4" title="3">
-									  	<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="44px" height="44px" viewBox="0 0 24 24" style="enable-background:new 0 0 50 50;" xml:space="preserve">
-									    	<rect x="0" y="0" width="4" height="7" fill="#333">
-									      		<animateTransform  attributeType="xml" attributeName="transform" type="scale" values="1,1; 1,3; 1,1" begin="0s" dur="0.6s" repeatCount="indefinite" />       
+                        <div class="col-md-12 col-8">
+                            <div class="head-map">
+                                <ul id="detail-menu">
+                                    <li data-window-target="map-list" class="active"><div class="ds-map"></div><div>Map</div></li>
+                                    <li data-window-target="site-detail" disabled="disabled" class="inactive"><div class="ds-site-list"></div><div>Site Detail</div></li>
+                                </ul>
+                            </div>
+                            <div class="site-map-wrapper">
+                                <div class="reload-search show">
+                                    <div class="loader loader--style4" title="3">
+                                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="44px" height="44px" viewBox="0 0 24 24" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                                        <rect x="0" y="0" width="4" height="7" fill="#333">
+                                        <animateTransform attributeType="xml" attributeName="transform" type="scale" values="1,1; 1,3; 1,1" begin="0s" dur="0.6s" repeatCount="indefinite" />
+
+
+       
 									    	</rect>
-
-									    	<rect x="10" y="0" width="4" height="7" fill="#333">
-									      		<animateTransform  attributeType="xml" attributeName="transform" type="scale" values="1,1; 1,3; 1,1" begin="0.2s" dur="0.6s" repeatCount="indefinite" />
+                                        <rect x="10" y="0" width="4" height="7" fill="#333">
+                                        <animateTransform attributeType="xml" attributeName="transform" type="scale" values="1,1; 1,3; 1,1" begin="0.2s" dur="0.6s" repeatCount="indefinite" />
 									      	</rect>
 									    	
-									    	<rect x="20" y="0" width="4" height="7" fill="#333">
-									      		<animateTransform  attributeType="xml" attributeName="transform" type="scale" values="1,1; 1,3; 1,1" begin="0.4s" dur="0.6s" repeatCount="indefinite" />
+                                        <rect x="20" y="0" width="4" height="7" fill="#333">
+                                        <animateTransform attributeType="xml" attributeName="transform" type="scale" values="1,1; 1,3; 1,1" begin="0.4s" dur="0.6s" repeatCount="indefinite" />
 									      	</rect>
 									  	</svg>
-									</div>
-								</div>
-								<div class="site-map-content map-list" id="map-list">
-									
-								</div>
-								<div class="site-detail-container site-detail" id="site-detail">
-									<div class="ds-container-fluid">
-										<div class="ds-row">
-											<div class="col-12 detail-site-pic" style="background:url(./assets/images/site/1.png)">
-												<div class="ds-row">
-													<div class="col-md-6 col-3 detail-user-info">
-														<div class="ds-row">
-															<div class="col-12">
-																<img src="./assets/images/user-profile.png" alt="">
-															</div>
-														</div>
-														<div class="ds-row push-top">
-															<div class="col-12">
-																<h2 id="fullname">John Doe</h2>
-															</div>
-														</div>
+                                    </div>
+                                </div>
 
-														<div class="ds-row push-top">
-															<div class="col-12">
-																<div class="detail-user-table">
-																	<div class="ds-email"></div>
-																	<div><h3>john_doe@gmail.com</h3></div>
-																</div>
-															</div>
-														</div>
+                                <div class="site-map-content map-list" id="map-list">
+                                    
+                                </div>
+                                <div class="site-detail-container site-detail" id="site-detail">
+                                    <input type="hidden" name="property-detail-id" id="property-detail-id"/>
+                                    <div class="ds-container-fluid">
+                                        <div class="ds-row">
+                                            <div class="col-12 detail-site-pic" style="background:url(./assets/images/site/1.png)">
+                                                <div class="ds-row">
+                                                    <div class="col-md-6 col-3 detail-user-info">
+                                                        <div class="ds-row">
+                                                            <div class="col-12">
+                                                                <img src="./assets/images/user-profile.png" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="ds-row push-top">
+                                                            <div class="col-12">
+                                                                <h2 id="site-info-fullname">John Doe</h2>
+                                                            </div>
+                                                        </div>
 
-														<div class="ds-row push-top detail-user-icon">
-															<div class="col-4">
-																<div class="ds-site"></div>
-																<div class="detail-user-desc">4 Sites</div>
-															</div>
-															<div class="col-4">
-																<div class="ds-comment"></div>
-																<div class="detail-user-desc">Review</div>
-															</div>
-															<div class="col-4">
-																<div class="ds-star"></div>
-																<div class="detail-user-desc">Rate</div>
-															</div>
-														</div>
-													</div>
-												</div>
+                                                        <div class="ds-row push-top">
+                                                            <div class="col-12">
+                                                                <div class="detail-user-table">
+                                                                    <div class="ds-email"></div>
+                                                                    <div><h3 id="site-info-email">john_doe@gmail.com</h3></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
 
-												<button class="btn-border-white" id="open-modal" data-target="modal-photo">
-													See All Image
-												</button>
-											</div>
-										</div>
-										<div class="ds-row">
-											<div class="col-md-12 col-7">
-												<div class="content">
-													<div class="detail-site-header">
-														<h3 id="title-site">Tidings Hill, Halstead CO9</h3>
-														<div id="location-site">Chicago</div>
-														<div class="site-rate">
-															<div class="ds-star"></div>
-															<div class="ds-star"></div>
-															<div class="ds-star"></div>
-															<div class="ds-star"></div>
-															<div class="ds-star"></div>
-											                <div>(5)</div>
-														</div>
-														<!-- <p id="desc-site">Located in a sought after location we are pleased to offer this spacious two bedroom house offering off road parking Located in a sought after location we are pleased to offer this spacious two bedroom house offering off road parking Located in a sought after location we are pleased to offer this spacious two bedroom house offering off road parking</p> -->
-													</div>
+                                                        <div class="ds-row push-top detail-user-icon">
+                                                            <div class="col-4">
+                                                                <div class="ds-site"></div>
+                                                                <div class="detail-user-desc" id="site-info-countsite">4 Sites</div>
+                                                            </div>
+                                                            <div class="col-4">
+                                                                <div class="ds-comment"></div>
+                                                                <div class="detail-user-desc">Review</div>
+                                                            </div>
+                                                            <div class="col-4">
+                                                                <div class="ds-star"></div>
+                                                                <div class="detail-user-desc">Rate</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-													<div class="detail-facilities">
-														<div class="ds-row push-top">
-															<div class="facilities-item">
-																<div class="ds-bathroom"></div>
-																<div>Private Bathroom</div>
-																<div class="price">$ 15.00 /day</div>
-															</div>
+                                                <button class="btn-border-white" id="open-modal" data-target="modal-photo">
+                                                    See All Image
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="ds-row">
+                                            <div class="col-md-12 col-7">
+                                                <div class="content">
+                                                    <div class="detail-site-header">
+                                                        <h3 id="title-site">Tidings Hill, Halstead CO9</h3>
+                                                        <div id="location-site">Chicago</div>
+                                                        <div class="site-rate">
+                                                            <div class="ds-star"></div>
+                                                            <div class="ds-star"></div>
+                                                            <div class="ds-star"></div>
+                                                            <div class="ds-star"></div>
+                                                            <div class="ds-star"></div>
+                                                            <div>(5)</div>
+                                                        </div>
+                                                        <!-- <p id="desc-site">Located in a sought after location we are pleased to offer this spacious two bedroom house offering off road parking Located in a sought after location we are pleased to offer this spacious two bedroom house offering off road parking Located in a sought after location we are pleased to offer this spacious two bedroom house offering off road parking</p> -->
+                                                    </div>
 
-															<div class="facilities-item">
-																<div class="ds-kitchen"></div>
-																<div>Kitchen</div>
-																<div class="price">$ 15.00 /day</div>
-															</div>
-														</div>
-														
-													</div>
+                                                    <div class="detail-facilities">
+                                                        <div class="ds-row push-top">
+                                                            <div class="facilities-item">
+                                                                <div class="ds-bathroom"></div>
+                                                                <div>Private Bathroom</div>
+                                                                <div class="price">$ 15.00 /day</div>
+                                                            </div>
 
-													<div class="site-information-wrapper">
-														<h4>Site Information</h4>
-														<div class="ds-row site-information">
-															<div class="col-4">
-																<span>Width : <span id="width">240</span> cm</span>
-																<span>Length : <span id="length">325</span> cm</span>
-																<span>Height : <span id="height">195</span> cm</span>
-															</div>
+                                                            <div class="facilities-item">
+                                                                <div class="ds-kitchen"></div>
+                                                                <div>Kitchen</div>
+                                                                <div class="price">$ 15.00 /day</div>
+                                                            </div>
+                                                        </div>
 
-															<div class="col-4">
-																<span>Access : <span id="access">No Lock</span></span>
-																<span>Security : <span id="security">Yes</span></span>
-																<span>Power : <span id="power">Yes</span></span>
-															</div>
+                                                    </div>
 
-															<div class="col-4">
-																<span>Noise Level : <span id="noise">2</span> of 5</span>
-																<span>Power Capacity : <span id="power_capacity">1300</span> mAH</span>
-															</div>
-														</div>
-													</div>
+                                                    <div class="site-information-wrapper">
+                                                        <h4>Site Information</h4>
+                                                        <div class="ds-row site-information">
+                                                            <div class="col-4">
+                                                                <span>Width : <span id="width">240</span> cm</span>
+                                                                <span>Length : <span id="length">325</span> cm</span>
+                                                                <span>Height : <span id="height">195</span> cm</span>
+                                                            </div>
 
-												</div>
-											</div>
+                                                            <div class="col-4">
+                                                                <span>Access : <span id="access">No Lock</span></span>
+                                                                <span>Security : <span id="security">Yes</span></span>
+                                                                <span>Power : <span id="power">Yes</span></span>
+                                                            </div>
 
-											<div class="col-md-12 col-5">
-												<div class="content">
-													<div class="billing-info-wrapper">
-														<div class="billing-row-head">
-															<div class="ds-garage"></div>
-															<div class="title title-site" >Tiddings Hill</div>
-															<div class="price title-price">$ 200.00 /day</div>
-														</div>
+                                                            <div class="col-4">
+                                                                <span>Noise Level : <span id="noise">2</span> of 5</span>
+                                                                <span>Power Capacity : <span id="power_capacity">1300</span> mAH</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
-														<div class="billing-calendar">
-															<div class="ds-container-fluid">
-																<div class="ds-row">
-																	<div class="col-6">
-																		<div class="input-el outline">
-												                    		<span class="ds-calendar"></span>
-												                    		<input type="text" placeholder="Arrival" tabindex="4" id="search-arrival2" data-validate="required" data-date-type="start">
-												                    		<div class="float-calendar"></div>
-												                      	</div>
-																	</div>
-																	<div class="col-6">
-																		<div class="input-el outline">
-												                        	<span class="ds-calendar"></span>
-												                        	<input type="text" placeholder="Departure" tabindex="5" id="search-departure2" data-validate="required" data-date-type="end">
-												                      	</div>
-																	</div>
-																</div>
-																<div class="ds-row push-top">
-																	<div class="col-8">
-																		<div class="input-el outline">
-																			<span class="ds-list"></span>
-													                        <div class="select-area" tabindex="2">Add Facilites</div>
-													                        <span class="ds-chevron-down"></span>
-													                        <input type="hidden" id="add-facilities" name="add-facilities" data-validate="required">
-													                        <ul id="list-facilities">
-													                          <li class="selected" value="1">Private Bathroom</li>
-													                          <li value="2">Kitchen</li>
-													                          <li value="3">Power</li>
-													                          <li value="4">Laundry</li>
-													                        </ul>
-																		</div>
-																	</div>
-																	<div class="col-4">
-																		<div class="input-el">
-																			<button class="btn-site btn-blue small" id="btn-add-facilities">Add</button>	
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
+                                                </div>
+                                            </div>
 
-														<div class="billing-content">
-															<div class="billing-row billing-total">
-																<div class="title">Total</div>
-																<div class="price title-price" >$ 427.00</div>
-															</div>
+                                            <div class="col-md-12 col-5">
+                                                <div class="content">
+                                                    <div class="billing-info-wrapper">
+                                                        <div class="billing-row-head">
+                                                            <div class="ds-garage"></div>
+                                                            <div class="title title-site">Tiddings Hill</div>
+                                                            <div class="price title-price">$ 200.00 /day</div>
+                                                        </div>
 
-															<div class="billing-row billing-terms">
-																<div class="title"><input type="checkbox" tabindex="3"></div>
-																<div>By selecting this box, I agree that i have read, understood and agree to the DriveStays <mark>Terms and Conditions</mark> and <mark>Privacy Policy</mark></div>
-															</div>
+                                                        <div class="billing-calendar">
+                                                            <div class="ds-container-fluid">
+                                                                <div class="ds-row">
+                                                                    <div class="col-6">
+                                                                        <div class="input-el outline">
+                                                                            <span class="ds-calendar"></span>
+                                                                            <input type="text" placeholder="Arrival" tabindex="4" id="search-arrival2" data-validate="required" data-date-type="start">
+                                                                            <div class="float-calendar"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <div class="input-el outline">
+                                                                            <span class="ds-calendar"></span>
+                                                                            <input type="text" placeholder="Departure" tabindex="5" id="search-departure2" data-validate="required" data-date-type="end">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="ds-row push-top row-add-facilites">
+                                                                    <div class="col-8">
+                                                                        <div class="input-el outline">
+                                                                            <span class="ds-list"></span>
+                                                                            <div class="select-area" tabindex="2">Add Facilites</div>
+                                                                            <span class="ds-chevron-down"></span>
+                                                                            <input type="hidden" id="add-facilities" name="add-facilities" data-validate="required">
+                                                                            <ul id="list-facilities">
+                                                                                <li class="selected" value="1">Private Bathroom</li>
+                                                                                <li value="2">Kitchen</li>
+                                                                                <li value="3">Power</li>
+                                                                                <li value="4">Laundry</li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-4">
+                                                                        <div class="input-el">
+                                                                            <button class="btn-site btn-blue small" id="btn-add-facilities">Add</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
 
-															<div class="billing-row">
-																<button class="btn-site btn-blue">Book</button>
-															</div>
-														</div>
-														
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>		
-			</div>	
-		</section>
+                                                        <div class="billing-content">
+                                                            <div class="billing-row billing-total">
+                                                                <div class="title">Total</div>
+                                                                <div class="price title-price">$ 427.00</div>
+                                                            </div>
 
-		<section>
-			<div class="ds-container-fluid section footer-section push-top">
-				<div class="ds-row">
-					<div class="ds-container-1200">
-						<div class="ds-row">
-							
-							<div class="col-md-12 col-8">
-								<div class="menu-footer">
-									<h4>Company</h4>	
-									<ul>
-										<li><a href="">About Us</a></li>
-										<li><a href="">Information</a></li>
-										<li><a href="">Press</a></li>
-									</ul>
-								</div>
+                                                            <div class="billing-row billing-terms">
+                                                                <div class="title"><input type="checkbox" tabindex="3"></div>
+                                                                <div>By selecting this box, I agree that i have read, understood and agree to the DriveStays <mark>Terms and Conditions</mark> and <mark>Privacy Policy</mark></div>
+                                                            </div>
 
-								<div class="menu-footer">
-									<h4>Support</h4>
-						            <ul>
-						             	<li><a href="">Contact Us</a></li>
-						              	<li><a href="">Help</a></li>
-						              	<li><a href="">Privacy</a></li>
-						              	<li><a href="">Term of Use</a></li>
-						              	<li><a href="">Site Map</a></li>
-						            </ul>
-								</div>
+                                                            <div class="billing-row">
+                                                                <button class="btn-site btn-blue btn-book-site">Book</button>
+                                                            </div>
+                                                        </div>
 
-								<div class="menu-footer social-icon">
-									<h4>Get Exclusive Content from Us</h4>
-						            <ul class="no-tab">
-						            	<li><a href=""><img src="./assets/images/facebook.png" alt="" height="50"></a></li>
-						              	<li><a href=""><img src="./assets/images/twitter.png" alt="" height="50"></a></li>
-						              	<li><a href=""><img src="./assets/images/google_plus.png" alt="" height="50"></a></li>
-						            </ul>
-								</div>
-								
-							</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-							<div class="col-md-12 col-4">
-				            <!-- <div class="form-wrapper"> -->
-				            	<h4>Leave a comment</h4>
-				            	<div class="input-el">
-				              		<input type="text" placeholder="Your Email">
-				            	</div>
-				            	<div class="input-el push-top">
-				              		<input type="text" placeholder="Your Name">
-				            	</div>
-				            	<div class="input-el push-top">
-				              		<textarea name="" id="" cols="30" rows="10" placeholder="Input your comment here"></textarea>
-				            	</div>	
-				            	<button class="send-comment push-top">Send Comment</button>
-				            <!-- </div> -->
-				          	</div>
+        <section>
+            <div class="ds-container-fluid section footer-section push-top">
+                <div class="ds-row">
+                    <div class="ds-container-1200">
+                        <div class="ds-row">
 
-						</div>
+                            <div class="col-md-12 col-8">
+                                <div class="menu-footer">
+                                    <h4>Company</h4>
+                                    <ul>
+                                        <li><a href="">About Us</a></li>
+                                        <li><a href="">Information</a></li>
+                                        <li><a href="">Press</a></li>
+                                    </ul>
+                                </div>
 
-						<div class="ds-row copyright">
-				          	2016 DriveStays. All rights reserved
-				        </div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</div>
+                                <div class="menu-footer">
+                                    <h4>Support</h4>
+                                    <ul>
+                                        <li><a href="">Contact Us</a></li>
+                                        <li><a href="">Help</a></li>
+                                        <li><a href="">Privacy</a></li>
+                                        <li><a href="">Term of Use</a></li>
+                                        <li><a href="">Site Map</a></li>
+                                    </ul>
+                                </div>
 
-	<!-- <div class="modal-container hide" id="modal-content">
-		<div class="modal-table">
-			<div class="modal-cell">
-				<div class="modal-content-container small">
-					<div class="ds-close modal-close"></div>
-					
-				</div>
-			</div>	
-		</div>
-	</div> -->
+                                <div class="menu-footer social-icon">
+                                    <h4>Get Exclusive Content from Us</h4>
+                                    <ul class="no-tab">
+                                        <li><a href=""><img src="./assets/images/facebook.png" alt="" height="50"></a></li>
+                                        <li><a href=""><img src="./assets/images/twitter.png" alt="" height="50"></a></li>
+                                        <li><a href=""><img src="./assets/images/google_plus.png" alt="" height="50"></a></li>
+                                    </ul>
+                                </div>
 
-	<div class="modal modal-photo hide" id="modal-photo">
-		<div class="ds-close modal-close"></div>
-		<div class="modal-table">
-			<div class="modal-cell">
-				<div class="modal-content-container large">
-					<div class="photo-wrapper">
-						<!-- <img src="./assets/images/stock.jpg" alt="" align="abs-middle">	 -->
-					</div>
-					<div class="photo-number">Photo <span id="index-image">1</span> of <span id="total-image">5</span></div>
-				</div>
-				<div class="photo-nav static-left" data-type="prev">
-					<div class="ds-chevron-left"></div>
-				</div>
-				<div class="photo-nav static-right" data-type="next">
-					<div class="ds-chevron-right"></div>
-				</div>
-			</div>	
-		</div>
-	</div>
-<script src="./script/jquery.min.js"></script>
-<script src="./script/underscore-min.js"></script>
-<script type="text/javascript" src="./script/moment.min.js"></script>
-<script type="text/javascript" src="./script/pikaday.js"></script>
-<script src="./script/jquery.scrollbar.min.js"></script>
-<script src="./script/jquery-ui-slider.js"></script>
-<script src="./script/ds-modal.js"></script>
-<script src="./script/ds-cookies.js"></script>
-<script src="./script/ds-element.js"></script>
-<script src="./script/ds-script.js"></script>
-<script src="./script/validation.js"></script>
-<script src="./script/app/search_site.js"></script>
-<!--<script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfSvkBOL2nOfLZKDWaf66EbbO9poShFaA&libraries=places&callback=initMap">
-  </script>-->
+                            </div>
+
+                            <div class="col-md-12 col-4">
+                                <!-- <div class="form-wrapper"> -->
+                                <h4>Leave a comment</h4>
+                                <div class="input-el">
+                                    <input type="text" placeholder="Your Email">
+                                </div>
+                                <div class="input-el push-top">
+                                    <input type="text" placeholder="Your Name">
+                                </div>
+                                <div class="input-el push-top">
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="Input your comment here"></textarea>
+                                </div>
+                                <button class="send-comment push-top">Send Comment</button>
+                                <!-- </div> -->
+                            </div>
+
+                        </div>
+
+                        <div class="ds-row copyright">
+                            2016 DriveStays. All rights reserved
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- <div class="modal-container hide" id="modal-content">
+        <div class="modal-table">
+            <div class="modal-cell">
+                <div class="modal-content-container small">
+                    <div class="ds-close modal-close"></div>
+
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="modal modal-photo hide" id="modal-photo">
+        <div class="ds-close modal-close"></div>
+        <div class="modal-table">
+            <div class="modal-cell">
+                <div class="modal-content-container large">
+                    <div class="photo-wrapper">
+                        <!-- <img src="./assets/images/stock.jpg" alt="" align="abs-middle">	 -->
+                    </div>
+                    <div class="photo-number">Photo <span id="index-image">1</span> of <span id="total-image">5</span></div>
+                </div>
+                <div class="photo-nav static-left" data-type="prev">
+                    <div class="ds-chevron-left"></div>
+                </div>
+                <div class="photo-nav static-right" data-type="next">
+                    <div class="ds-chevron-right"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./script/jquery.min.js"></script>
+    <script src="./script/underscore-min.js"></script>
+    <script type="text/javascript" src="./script/moment.min.js"></script>
+    <script type="text/javascript" src="./script/pikaday.js"></script>
+    <script src="./script/jquery.scrollbar.min.js"></script>
+    <script src="./script/jquery-ui-slider.js"></script>
+    <script src="./script/ds-cookies.js"></script>
+    <script src="./script/ds-modal.js"></script>
+    <script src="./script/ds-element.js"></script>
+    <script src="./script/ds-script.js"></script>
+    <script src="./script/validation.js"></script>
+    <script src="./script/app/search_site.js"></script>
+    <!--<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfSvkBOL2nOfLZKDWaf66EbbO9poShFaA&libraries=places&callback=initMap">
+      </script>-->
 </body>
 
 </html>

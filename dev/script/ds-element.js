@@ -135,39 +135,39 @@ function check_user(){
 		$('.register-head').addClass('hide')
 		$('.user-wrapper').addClass('show')
 		$('#profile-username').html(user_data.firstname)
+		$('.header-notif').show();
 	}else{
 		$('.register-head').removeClass('hide')
 		$('.user-wrapper').removeClass('show')
+		$('.header-notif').hide();
 	}
 }
 
 check_user()
 
-site_access_toggle.on('click', function(){
-  var value = $(this).data('toggle').split(',');
-  $(this).find('input[type=checkbox]').click();
-  var checked_stat = $(this).find('input[type=checkbox]').prop('checked');
-  console.log(checked_stat)
-  if(checked_stat === true){
-      $(this).addClass('active')
-      $(this).find('.toggle-status').html(value[1])
-      $(this).find('input[type=checkbox]').val(1)
-  }else{
-      $(this).removeClass('active')
-      $(this).find('.toggle-status').html(value[0])
-      $(this).find('input[type=checkbox]').val(0)
-  }
+site_access_toggle.on('click', function () {
+    var value = $(this).data('toggle').split(',');
+    $(this).find('input[type=checkbox]').click();
+    var checked_stat = $(this).find('input[type=checkbox]').prop('checked');
+    if (checked_stat === true) {
+        $(this).addClass('active')
+        $(this).find('.toggle-status').html(value[1])
+        $(this).find('input[type=checkbox]').val(1)
+    } else {
+        $(this).removeClass('active')
+        $(this).find('.toggle-status').html(value[0])
+        $(this).find('input[type=checkbox]').val(0)
+    }
 })
 
-notification_trigger.on('click', function(e){
-	$('.notification-wrapper').toggle();
-	e.stopPropagation();
+notification_trigger.on('click', function (e) {
+    $('.notification-wrapper').toggle();
+    e.stopPropagation();
 })
 
 var checkToggle = function () {
     $('.input-toggle').each(function (item, value) {
         var value = $(this).find('input[type=checkbox]').val()
-        console.log(value)
         if (value == 1 || value === 'true') {
             $(this).addClass('active')
         } else {

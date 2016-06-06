@@ -1,755 +1,769 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Drive Stays</title>
+    <meta charset="UTF-8">
+    <title>Drive Stays</title>
 
-	<meta charset="UTF-8">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width"/>
-	<title>Drive Stays</title>
-	<!-- <link rel="stylesheet" type="text/css" href="./assets/style/bootstrap.css" /> -->
-	<link rel="stylesheet" href="./assets/style/normalize.css">
-	<link rel="stylesheet" href="./assets/style/jquery-ui-slider.css">
-	<link rel="stylesheet" href="./assets/style/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Drive Stays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/style/bootstrap.css" /> -->
+    <link rel="stylesheet" href="./assets/style/normalize.css">
+    <link rel="stylesheet" href="./assets/style/jquery.scrollbar.css">
+    <link rel="stylesheet" href="./assets/style/jquery-ui-slider.css">
+    <link rel="stylesheet" href="./assets/style/style.css">
 
-	<link rel="stylesheet" type="text/css" href="./assets/style/pikaday.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/style/pikaday.css" />
 
 </head>
 <body>
-	
-	<div class="wrapper-body">
-		<header class="header-flat">
-			<div class="ds-container-1200">
-				<div class="ds-row">
-					<div class="content ds-header-fix">
-						<div class="toggle-menu">
-							<div></div>
-							<div></div>
-							<div></div>
-				        </div>
-
-				        <div class="logo-wrapper">
-				        	<a href="./"><img src="./assets/images/drivestays_logo.png" height="55" class="img-logo" alt=""></a>
-				        </div>
-
-				        <div class="menu-wrapper">
-				        	<div class="main-menu">
-				        		<ul class="menu-header">
-				            		<li><a href="">List a Site</a></li>
-				                	<!-- <li><a href="">List a Site</a></li> -->
-				                </ul>
-				          	</div>
-
-				          	<div class="main-menu-user">
-				            	<a href="login.html" class="register-head"><button class="btn-register">Sign In / Register</button></a>
-				            	<div class="user-wrapper">
-				              		<img src="./assets/images/user-upload.png" align="middle" alt="">
-				              		<div class="user-name"> Hi, <strong id="profile-username">Steve</strong> </div>
-				              		<div class="icon ds-chevron-down user-menu-trigger"></div>
-
-				              		<ul class="user-menu">
-				                		<li><a href="register.html"><div class="ds-user"></div>	My Profile</a></li>
-				                		<li><a href="my_caravan.html"><div class="ds-caravan"></div>My Caravan</a></li>
-				                		<li><a href="my_site.html"><div class="ds-site"></div>My Sites</a></li>
-				                		<li><a href="transaction_list.html"><div class="ds-booked"></div>Transaction List</a></li>
-				                		<li><a href="account_setting.html"><div class="ds-setting"></div>Account Setting</a></li>
-				                		<li><a href="my_payment.html"><div class="ds-card"></div>Account Payment</a></li>
-				                		<li id="btn-logout"><a><div class="ds-lock"></div>Logout</a></li>
-				              		</ul>
-				            	</div>
-				          </div>
-
-				        </div>
-					</div>
-				</div>
-			</div>
-		</header>
-
-		<section>
-			<div class="ds-container-1200 section">
-				<!-- <div class="pre-content">
-					<h1>My Caravan</h1>					
-				</div> -->
-
-				<!-- <div class="headline-wrapper">
-					<div class="headline-thumb"><div class="ds-setting"></div></div>
-					<div class="headline-text">
-						<h1>You</h1>
-						<h3>Change your password periodically for more security</h3>
-					</div>
-				</div> -->
-				<!-- <div class="ds-row push-top content-center form-register-container" id="profile-form">
-					<div class="col-12"><h1>My Caravan</h1></div>
-					<div class="col-12 push-top"><h3>Input your caravan data here</h3></div>
-				</div> -->
-				
-					<!-- START FORM SITE INFO -->
-				<div class="ds-row" id="profile-form">
-					<div class="col-12" id="site-info">						
-						<h3>My Transaction List</h3>
-					</div>
-				</div>
-
-				<div class="site-tab-wrapper push-top">
-					<div class="active" data-target="booking-list">Booking List</div>
-					<div data-target="stay-request">Stay Request</div>
-					<div data-target="transaction-complete">Transaction Complete</div>
-				</div>
-
-				<!-- START BOOKING LIST VIEW -->
-				<div class="ds-row form-add-site amenities-wrapper" id="booking-list">
-					<div class="content">
-						<h3>Your Booking List</h3>
-						<p>This page will show all your booking history which still on progress</p>
-						<div class="ds-row push-top">
-							<div class="col-md-12 col-3">
-								<div class="input-el outline">
-									<div class="select-area" tabindex="2">Show Data</div>
-		                        	<span class="ds-chevron-down"></span>
-		                        	<input type="hidden" id="show-filter" name="show-filter" tabindex="2" data-validate="required">
-		                        	<ul>
-		                          		<li class="selected" value="1">Last Month</li>
-		                          		<li value="2">Last 6 Month</li>
-		                          		<li value="3">2015</li>
-		                          		<li value="4">2014</li>
-		                        	</ul>
-								</div>
-							</div>
-						</div>
-
-						<div class="ds-row">
-							<div class="col-12">
-								 
-								<div class="order-wrapper order-wrapper-collapse">
-									<div class="order-header">
-										<div class="order-charet">
-											<div class="ds-chevron-right"></div>
-										</div>
-										<div class="order-title">
-											<span>83 Woods Hill Road, Horsnell Gully, South Australia, Australia</span>
-											<span>Booking Date 04/09/2016</span>
-										</div>
-
-										<div class="order-total">
-											<span>TOTAL</span>
-											<span>$ 320.00</span>
-										</div>
-
-										<div class="order-status">
-											<span class="ds-wait"></span>
-											<span>Wait</span>
-										</div>
-									</div>
-									<div class="order-content">
-										<div class="order-content-image">
-											<img src="./assets/images/site/1.png" alt="">
-										</div>
-
-										<div class="order-content-title">
-											<span>83 Woods Hill Road, Horsnell Gully, South Australia, Australia</span>
-											<span>Date 04/12/2016 - 04/15/2016 (2 days)</span>
-											<div class="order-content-amenities">
-												<div><div class="ds-bathroom"></div><div>Bathroom</div></div>
-												<div><div class="ds-laundry"></div><div>Laundry</div></div>
-												<div><div class="ds-power"></div><div>Power</div></div>
-												<div><div class="ds-wifi"></div><div>Wifi</div></div>
-											</div>
-										</div>
-
-										
-
-										<div class="order-content-action">
-											<div class="alert alert-warning">You dont have any payment method, please input on your <a href="./my_payment.html">payment method</a> menu</div>
-											<button class="btn-site">Continue To Payment</button>
-											<button class="btn-site btn-blue btn-cancel">Cancel Order</button>
-										</div>
-									</div>
-								</div>
-
-								<div class="order-wrapper order-wrapper-collapse">
-									<div class="order-header">
-										<div class="order-charet">
-											<div class="ds-chevron-right"></div>
-										</div>
-										<div class="order-title">
-											<span>83 Woods Hill Road, Horsnell Gully, South Australia, Australia</span>
-											<span>Booking Date 04/09/2016</span>
-										</div>
-
-										<div class="order-total">
-											<span>TOTAL</span>
-											<span>$ 320.00</span>
-										</div>
-
-										<div class="order-status">
-											<span class="ds-review"></span>
-											<span>Owner Review</span>
-										</div>
-									</div>
-									<div class="order-content">
-										<div class="order-content-image">
-											<img src="./assets/images/site/1.png" alt="">
-										</div>
-
-										<div class="order-content-title">
-											<span>83 Woods Hill Road, Horsnell Gully, South Australia, Australia</span>
-											<span>Date 04/12/2016 - 04/15/2016 (2 days)</span>
-											<div class="order-content-amenities">
-												<div><div class="ds-bathroom"></div><div>Bathroom</div></div>
-												<div><div class="ds-laundry"></div><div>Laundry</div></div>
-												<div><div class="ds-power"></div><div>Power</div></div>
-												<div><div class="ds-wifi"></div><div>Wifi</div></div>
-											</div>
-										</div>
-
-										<div class="order-content-action">
-											<button class="btn-site">Continue To Payment</button>
-											<button class="btn-site btn-blue">Cancel Order</button>
-										</div>
-									</div>
-								</div>
-
-								<div class="order-wrapper order-wrapper-collapse">
-									<div class="order-header">
-										<div class="order-charet">
-											<div class="ds-chevron-right"></div>
-										</div>
-										<div class="order-title">
-											<span>83 Woods Hill Road, Horsnell Gully, South Australia, Australia</span>
-											<span>Booking Date 04/09/2016</span>
-										</div>
-
-										<div class="order-total">
-											<span>TOTAL</span>
-											<span>$ 320.00</span>
-										</div>
-
-										<div class="order-status">
-											<span class="ds-booked"></span>
-											<span>Booked</span>
-										</div>
-									</div>
-									<div class="order-content">
-										<div class="ds-row">
-											<div class="col-3">
-												<div class="order-content-image">
-													<img src="./assets/images/site/1.png" alt="">
-												</div>
-											</div>
-
-											<div class="col-4 pull-left">
-												<div class="order-content-title">
-													<span>83 Woods Hill Road, Horsnell Gully, South Australia, Australia</span>
-													<span>Date 04/12/2016 - 04/15/2016 (2 days)</span>
-													<div class="order-content-amenities">
-														<div><div class="ds-bathroom"></div><div>Bathroom</div></div>
-														<div><div class="ds-laundry"></div><div>Laundry</div></div>
-														<div><div class="ds-power"></div><div>Power</div></div>
-														<div><div class="ds-wifi"></div><div>Wifi</div></div>
-													</div>
-												</div>
-											</div>
-
-											<div class="col-2">
-												<div class="border-grey box-content-status">
-													<div class="box-status-icon ds-book-submit"></div>
-													<div class="box-description">
-														This Request is awaiting your response
-													</div>
-												</div>
-											</div>
-
-											<div class="col-3 pull-left">
-												<div class="order-content-action">
-													<button class="btn-site">Continue To Payment</button>
-													<button class="btn-site btn-blue">Cancel Order</button>
-												</div>
-											</div>
-										</div>
-										
-
-										
-
-										
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- END BOOKING LIST VIEW -->
-
-				<!-- START STAY REQUEST VIEW -->
-				<div class="ds-row form-add-site amenities-wrapper" id="stay-request">
-					<div class="content">
-						<h3>Request Stay</h3>
-						<p>Please confirm all of stay request from user, <br>check all information of user, make sure your site, facilities and payment method is match with your criteria</p>
-
-						<div class="ds-row push-top">
-							<div class="col-md-12 col-3">
-								<ul class="review-menu">
-									<li class="active"><div><span class="title">Sansa Stark</span> <span>05/12/2016 to 08/12/2016 (3 days)</span></div></li>
-									<li><div><span class="title">Tyrion Lannister</span> <span>05/12/2016 to 08/12/2016 (3 days)</span></div></li>
-									<li><div><span class="title">John Doe</span> <span>05/12/2016 to 08/12/2016 (3 days)</span></div></li>
-								</ul>
-							</div>
-							<div class="col-md-12 col-9">
-								<div class="stay-wrapper">
-									<!-- <h3>227 Mill St ,Poughkeepsie, NY  12601</h3> -->
-									<!-- <h4>Booking Date : 05/12/2016 to 08/12/2016 (3 days)</h4> -->
-									<div class="ds-row">
-										<div class="col-8">
-											<div class="review-user-wrapper">
-												<div class="header">
-													Renter Info
-												</div>
-												<div class="content-review">
-													<div class="ds-row">
-														<div class="col-6">
-															<img src="./assets/images/users.jpg" alt="">
-														</div>
-														<div class="col-6">
-															<div class="ds-row">
-																<div class="col-12 pull-left">
-																	<h3 class="header-title">Sansa Stark</h3>
-																</div>
-															</div>
-															<div class="ds-row">
-																<div class="content">
-																	<div class="col-12">
-																		<div class="label-inline">
-																			<div class="ds-pin"></div>
-																			<div class="label-content">11377 Woodside, NY</div>
-																		</div>
-																		<div class="label-inline">
-																			<div class="ds-email"></div>
-																			<div class="label-content">sansa_stark@gmail.com</div>
-																		</div>
-																		<div class="label-inline">
-																			<div class="ds-user"></div>
-																			<div class="label-content">+62 8656 2332 2332</div>
-																		</div>
-																		<button class="btn-site small">View Detail</button>
-																	</div>	
-																</div>
-																
-															</div>
-														</div>	
-<!-- 
-														<div class="col-4">
-															Sansa Stark
-															sansa@gmail.com
-															Member since : <br> June 12, 2015	
-														</div> -->
-													</div>
-													
-													<!-- <div class="img-user-review" style="background:url(./assets/images/users.jpg)"></div>
-													<div class="user-review-name">Sansa Stark</div>
-													<div class="user-review-info">sansa@gmail.com</div>
-													<div class="user-review-info">Member since : <br> June 12, 2015</div> -->
-												</div>
-											</div>												
-											<!-- <div class="col-4">
-												<img src="./assets/images/users.jpg" alt="">
-											</div> -->
-										</div>
-
-										<div class="col-4">
-											<div class="review-user-wrapper">
-												<div class="header">
-													Vehicle
-												</div>
-												<div class="content-review">
-													<div class="img-user-review" style="background:url(./assets/images/caravan.jpg)"></div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="ds-row push-top">
-										<div class="col-md-12 col-8">
-											<div class="ds-row">
-												<div class="col-12 site-review-info">
-													<h3>227 Mill St ,Poughkeepsie, NY  12601</h3>
-
-													<div class="ds-row">
-														<div class="col-6">
-															<div class="site-review-detail">
-																<div class="label"><div class="ds-calendar"></div><div>Arrival Date:</div></div>
-																<div class="info">05/12/2016</div>
-															</div>
-														</div>
-
-														<div class="col-6">
-															<div class="site-review-detail">
-																<div class="label"><div class="ds-calendar"></div><div>Departure Date:</div></div>
-																<div class="info">05/15/2016</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="ds-row push-top">
-												<div class="content">
-													<h3>Detail Site : </h3>
-													<div class="push-top">
-														<div>Width : 510 cm</div>
-														<div>Height : 1250 cm</div>
-														<div>Length : 2230 cm</div>
-													</div>
-												</div>
-											</div>
-											<div class="ds-row push-top">
-												<div class="content">
-													<h3>Facilities : </h3>
-													<div class="order-content-amenities bg-blue">
-														<div><div class="ds-bathroom"></div><div>Bathroom</div></div>
-														<div><div class="ds-laundry"></div><div>Laundry</div></div>
-														<div><div class="ds-power"></div><div>Power</div></div>
-														<div><div class="ds-wifi"></div><div>Wifi</div></div>
-													</div>
-												</div>
-											</div>
-
-											<div class="ds-row push-top">
-												<div class="content">
-													<h3>Billing : </h3>
-													<div class="review-billing-wrapper">
-														<div class="row">
-															<div class="title">227 Mill St ,Poughkeepsie, NY  12601 <br> 05/12/2016 to 05/15/2016 (3 days)</div>
-															<div class="price">$ 200.00</div>
-														</div>
-
-														<div class="row">
-															<div class="title">
-																<div class="has-facilities"><div class="ds-bathroom"></div><div>Bathroom</div></div>
-															</div>
-															<div class="price">$ 5.00</div>
-														</div>
-
-														<div class="row">
-															<div class="title">
-																<div class="has-facilities"><div class="ds-laundry"></div><div>Laundry</div></div>
-															</div>
-															<div class="price">$ 10.00</div>
-														</div>
-
-														<div class="row">
-															<div class="title">
-																<div class="has-facilities"><div class="ds-power"></div><div>Power</div></div>
-															</div>
-															<div class="price">$ 3.00</div>
-														</div>
-
-														<div class="row">
-															<div class="title">
-																<div class="has-facilities"><div class="ds-wifi"></div><div>Wifi</div></div>
-															</div>
-															<div class="price">$ 2.00</div>
-														</div>
-
-														<div class="row total-billing">
-															<div class="title">
-																Total
-															</div>
-															<div class="price">$ 220.00</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-
-										<div class="col-4 pull-left">
-											<div class="border-grey box-content-status">
-												<div class="box-status-icon ds-book-submit"></div>
-												<div class="box-description">
-													This Request is awaiting your response
-												</div>
-											</div>
-										</div>
-
-										<!-- <div class="col-md-8 col-4">
-											<div class="review-user-wrapper">
-												<div class="header">
-													Renter Info
-												</div>
-												<div class="content-review">
-													<div class="img-user-review" style="background:url(./assets/images/users.jpg)"></div>
-													<div class="user-review-name">Sansa Stark</div>
-													<div class="user-review-info">sansa@gmail.com</div>
-													<div class="user-review-info">Member since : <br> June 12, 2015</div>
-												</div>
-												<div class="header">
-													Caravan Info
-												</div>
-												<div class="content-review">
-													<div class="img-user-review" style="background:url(./assets/images/caravan.jpg)"></div>
-													<div class="user-review-info push-top">Width : 210 cm</div>
-													<div class="user-review-info">Height : 225 cm</div>
-													<div class="user-review-info">Length : 334 cm</div>
-												</div>
-											</div>
-										</div> -->
-									</div>
-
-									<div class="ds-row push-top">
-										<div class="content">
-											<div class="col-4">
-												<button class="btn-site">Accept Request</button>
-											</div>
-											<div class="col-4">
-												<button class="btn-site btn-blue">Cancel Request</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- END STAY REQUEST VIEW -->
-
-				<!-- START COMPLETE TRANSACTION LIST VIEW -->
-				<div class="ds-row form-add-site amenities-wrapper" id="transaction-complete">
-					<div class="content">
-						<h3>Complete Transaction</h3>
-						<p>This page is a history about your activity</p>	
-
-						<div class="ds-row push-top">
-							<div class="col-md-12 col-3">
-								<div class="input-el outline">
-									<div class="select-area" tabindex="2">Show Data</div>
-		                        	<span class="ds-chevron-down"></span>
-		                        	<input type="hidden" id="show-filter" name="show-filter" tabindex="2" data-validate="required">
-		                        	<ul>
-		                          		<li class="selected" value="1">Last Month</li>
-		                          		<li value="2">Last 6 Month</li>
-		                          		<li value="3">2015</li>
-		                          		<li value="4">2014</li>
-		                        	</ul>
-								</div>
-							</div>
-						</div>
-
-						<div class="ds-row">
-							<div class="col-12">
-								<div class="order-wrapper order-wrapper-collapse">
-									<div class="order-header">
-										<div class="order-charet">
-											<div class="ds-chevron-right"></div>
-										</div>
-										<div class="order-title">
-											<span>83 Woods Hill Road, Horsnell Gully, South Australia, Australia</span>
-											<span>Booking Date 04/09/2016</span>
-										</div>
-
-										<div class="order-total">
-											<span>TOTAL</span>
-											<span>$ 320.00</span>
-										</div>
-
-										<div class="order-status">
-											<span class="ds-wait"></span>
-											<span>Wait</span>
-										</div>
-									</div>
-									<div class="order-content">
-										<div class="order-content-image">
-											<img src="./assets/images/site/1.png" alt="">
-										</div>
-
-										<div class="order-content-title">
-											<span>83 Woods Hill Road, Horsnell Gully, South Australia, Australia</span>
-											<span>Date 04/12/2016 - 04/15/2016 (2 days)</span>
-											<div class="order-content-amenities">
-												<div><div class="ds-bathroom"></div><div>Bathroom</div></div>
-												<div><div class="ds-laundry"></div><div>Laundry</div></div>
-												<div><div class="ds-power"></div><div>Power</div></div>
-												<div><div class="ds-wifi"></div><div>Wifi</div></div>
-											</div>
-										</div>
-
-										
-
-										<div class="order-content-action">
-											<div class="alert alert-warning">You dont have any payment method, please input on your <a href="./my_payment.html">payment method</a> menu</div>
-											<button class="btn-site">Continue To Payment</button>
-											<button class="btn-site btn-blue">Cancel Order</button>
-										</div>
-									</div>
-								</div>
-
-								<div class="order-wrapper order-wrapper-collapse">
-									<div class="order-header">
-										<div class="order-charet">
-											<div class="ds-chevron-right"></div>
-										</div>
-										<div class="order-title">
-											<span>83 Woods Hill Road, Horsnell Gully, South Australia, Australia</span>
-											<span>Booking Date 04/09/2016</span>
-										</div>
-
-										<div class="order-total">
-											<span>TOTAL</span>
-											<span>$ 320.00</span>
-										</div>
-
-										<div class="order-status">
-											<span class="ds-review"></span>
-											<span>Owner Review</span>
-										</div>
-									</div>
-									<div class="order-content">
-										<div class="order-content-image">
-											<img src="./assets/images/site/1.png" alt="">
-										</div>
-
-										<div class="order-content-title">
-											<span>83 Woods Hill Road, Horsnell Gully, South Australia, Australia</span>
-											<span>Date 04/12/2016 - 04/15/2016 (2 days)</span>
-											<div class="order-content-amenities">
-												<div><div class="ds-bathroom"></div><div>Bathroom</div></div>
-												<div><div class="ds-laundry"></div><div>Laundry</div></div>
-												<div><div class="ds-power"></div><div>Power</div></div>
-												<div><div class="ds-wifi"></div><div>Wifi</div></div>
-											</div>
-										</div>
-
-										<div class="order-content-action">
-											<button class="btn-site">Continue To Payment</button>
-											<button class="btn-site btn-blue">Cancel Order</button>
-										</div>
-									</div>
-								</div>
-
-								<div class="order-wrapper order-wrapper-collapse">
-									<div class="order-header">
-										<div class="order-charet">
-											<div class="ds-chevron-right"></div>
-										</div>
-										<div class="order-title">
-											<span>83 Woods Hill Road, Horsnell Gully, South Australia, Australia</span>
-											<span>Booking Date 04/09/2016</span>
-										</div>
-
-										<div class="order-total">
-											<span>TOTAL</span>
-											<span>$ 320.00</span>
-										</div>
-
-										<div class="order-status">
-											<span class="ds-booked"></span>
-											<span>Booked</span>
-										</div>
-									</div>
-									<div class="order-content">
-										<div class="order-content-image">
-											<img src="./assets/images/site/1.png" alt="">
-										</div>
-
-										<div class="order-content-title">
-											<span>83 Woods Hill Road, Horsnell Gully, South Australia, Australia</span>
-											<span>Date 04/12/2016 - 04/15/2016 (2 days)</span>
-											<div class="order-content-amenities">
-												<div><div class="ds-bathroom"></div><div>Bathroom</div></div>
-												<div><div class="ds-laundry"></div><div>Laundry</div></div>
-												<div><div class="ds-power"></div><div>Power</div></div>
-												<div><div class="ds-wifi"></div><div>Wifi</div></div>
-											</div>
-										</div>
-
-										<div class="order-content-action">
-											<button class="btn-site">Continue To Payment</button>
-											<button class="btn-site btn-blue">Cancel Order</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-				</div>
-				<!-- END COMPLETE TRANSACTION LIST VIEW -->
-				
-			</div>
-		</section>
-
-		<section>
-			<div class="ds-container-fluid section footer-section">
-				<div class="ds-row">
-					<div class="ds-container-1200">
-						<div class="ds-row">
-							
-							<div class="col-md-12 col-8">
-								<div class="menu-footer">
-									<h4>Company</h4>	
-									<ul>
-										<li><a href="">About Us</a></li>
-										<li><a href="">Information</a></li>
-										<li><a href="">Press</a></li>
-									</ul>
-								</div>
-
-								<div class="menu-footer">
-									<h4>Support</h4>
-						            <ul>
-						             	<li><a href="">Contact Us</a></li>
-						              	<li><a href="">Help</a></li>
-						              	<li><a href="">Privacy</a></li>
-						              	<li><a href="">Term of Use</a></li>
-						              	<li><a href="">Site Map</a></li>
-						            </ul>
-								</div>
-
-								<div class="menu-footer social-icon">
-									<h4>Get Exclusive Content from Us</h4>
-						            <ul class="no-tab">
-						            	<li><a href=""><img src="./assets/images/facebook.png" alt="" height="50"></a></li>
-						              	<li><a href=""><img src="./assets/images/twitter.png" alt="" height="50"></a></li>
-						              	<li><a href=""><img src="./assets/images/google_plus.png" alt="" height="50"></a></li>
-						            </ul>
-								</div>
-								
-							</div>
-
-							<div class="col-md-12 col-4">
-				            <!-- <div class="form-wrapper"> -->
-				            	<h4>Leave a comment</h4>
-				            	<div class="input-el">
-				              		<input type="text" placeholder="Your Email">
-				            	</div>
-				            	<div class="input-el push-top">
-				              		<input type="text" placeholder="Your Name">
-				            	</div>
-				            	<div class="input-el push-top">
-				              		<textarea name="" id="" cols="30" rows="10" placeholder="Input your comment here"></textarea>
-				            	</div>	
-				            	<button class="send-comment push-top">Send Comment</button>
-				            <!-- </div> -->
-				          	</div>
-
-						</div>
-
-						<div class="ds-row copyright">
-				          	2016 DriveStays. All rights reserved
-				        </div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</div>
-<script src="./script/jquery.min.js"></script>
-<!-- <script src="./script/jquery.mobile-1.4.5.min.js"></script> -->
-<script src="./script/underscore-min.js"></script>
-<script type="text/javascript" src="./script/moment.min.js"></script>
-<script type="text/javascript" src="./script/pikaday.js"></script>
-<script src="./script/jquery.scrollbar.min.js"></script>
-<script src="./script/ds-cookies.js"></script>
-<script src="./script/ds-script.js"></script>
-<script src="./script/ds-element.js"></script>
-<script src="./script/jquery-ui-slider.js"></script>
-<script src="./script/validation.js"></script>
-<script src="./script/app/transaction_list.js"></script>
+
+    <div class="wrapper-body">
+        <header class="header-flat">
+            <div class="ds-container-1200">
+                <div class="ds-row">
+                    <div class="content ds-header-fix">
+                        <div class="toggle-menu">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+
+                        <div class="logo-wrapper">
+                            <a href="./"><img src="./assets/images/drivestays_logo.png" height="55" class="img-logo" alt=""></a>
+                        </div>
+
+                        <div class="menu-wrapper">
+                            <div class="main-menu">
+                                <ul class="menu-header">
+                                    <li><a href="">List a Site</a></li>
+                                    <!-- <li><a href="">List a Site</a></li> -->
+                                </ul>
+                            </div>
+
+                            <div class="main-menu-user">
+                                <a href="login.html" class="register-head"><button class="btn-register">Sign In / Register</button></a>
+                                <div class="user-wrapper">
+                                    <img src="./assets/images/user-upload.png" align="middle" alt="">
+                                    <div class="user-name"> Hi, <strong id="profile-username">Steve</strong> </div>
+                                    <div class="icon ds-chevron-down user-menu-trigger"></div>
+
+                                    <ul class="user-menu">
+                                        <li><a href="register.html"><div class="ds-user"></div>	My Profile</a></li>
+                                        <li><a href="my_caravan.html"><div class="ds-caravan"></div>My Caravan</a></li>
+                                        <li><a href="my_site.html"><div class="ds-site"></div>My Sites</a></li>
+                                        <li><a href="transaction_list.html"><div class="ds-booked"></div>Transaction List</a></li>
+                                        <li><a href="account_setting.html"><div class="ds-setting"></div>Account Setting</a></li>
+                                        <li><a href="my_payment.html"><div class="ds-card"></div>Account Payment</a></li>
+                                        <li id="btn-logout"><a><div class="ds-lock"></div>Logout</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="header-notif">
+                                <div class="notification-trigger">
+                                    <div class="notification-count">12</div>
+                                    <div class="ds-notification"></div>
+                                </div>
+
+                                <div class="notification-wrapper" style="display:none">
+                                    <div class="notification-list scrollbar-macosx">
+                                        <div>
+                                            <div class="notification-list-wrapper">
+                                                <div class="notif-image"> <image src="./assets/images/notification.svg" /> </div>
+                                                <div class="notif-content">
+                                                    <div class="notif-content-title">You got 1 message from John Doe</div>
+                                                    <div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? </div>
+                                                </div>
+                                            </div>
+                                            <div class="notification-list-wrapper">
+                                                <div class="notif-image"> <image src="./assets/images/message.svg" /> </div>
+                                                <div class="notif-content">
+                                                    <div class="notif-content-title">You got 1 message from John Doe</div>
+                                                    <div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? ..... </div>
+                                                </div>
+                                            </div>
+                                            <div class="notification-list-wrapper">
+                                                <div class="notif-image"> <image src="./assets/images/notification.svg" /> </div>
+                                                <div class="notif-content">
+                                                    <div class="notif-content-title">You got 1 message from John Doe</div>
+                                                    <div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? ..... </div>
+                                                </div>
+                                            </div>
+                                            <div class="notification-list-wrapper">
+                                                <div class="notif-image"> <image src="./assets/images/message.svg" /> </div>
+                                                <div class="notif-content">
+                                                    <div class="notif-content-title">You got 1 message from John Doe</div>
+                                                    <div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? ..... </div>
+                                                </div>
+                                            </div>
+                                            <div class="notification-list-wrapper">
+                                                <div class="notif-image"> <image src="./assets/images/message.svg" /> </div>
+                                                <div class="notif-content">
+                                                    <div class="notif-content-title">You got 1 message from John Doe</div>
+                                                    <div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? ..... </div>
+                                                </div>
+                                            </div>
+                                            <div class="notification-list-wrapper">
+                                                <div class="notif-image"> <image src="./assets/images/message.svg" /> </div>
+                                                <div class="notif-content">
+                                                    <div class="notif-content-title">You got 1 message from John Doe</div>
+                                                    <div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? ..... </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="notification-footer">
+                                        <a href="">See All Notification</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <div class="ds-container-1200 section">
+                <!-- <div class="pre-content">
+                    <h1>My Caravan</h1>
+                </div> -->
+                <!-- <div class="headline-wrapper">
+                    <div class="headline-thumb"><div class="ds-setting"></div></div>
+                    <div class="headline-text">
+                        <h1>You</h1>
+                        <h3>Change your password periodically for more security</h3>
+                    </div>
+                </div> -->
+                <!-- <div class="ds-row push-top content-center form-register-container" id="profile-form">
+                    <div class="col-12"><h1>My Caravan</h1></div>
+                    <div class="col-12 push-top"><h3>Input your caravan data here</h3></div>
+                </div> -->
+                <!-- START FORM SITE INFO -->
+                <div class="ds-row" id="profile-form">
+                    <div class="col-12" id="site-info">
+                        <h3>My Transaction List</h3>
+                    </div>
+                </div>
+
+                <div class="site-tab-wrapper push-top">
+                    <div class="active" data-target="booking-list">Booking List</div>
+                    <div data-target="stay-request">Stay Request</div>
+                    <div data-target="transaction-complete">History</div>
+                </div>
+
+                <!-- START BOOKING LIST VIEW -->
+                <div class="ds-row form-add-site amenities-wrapper" id="booking-list">
+                    <div class="content">
+                        <h3>Your Booking List</h3>
+                        <p>This page will show all your booking history which still on progress</p>
+                        <div class="ds-row push-top">
+                            <div class="col-md-12 col-3">
+                                <div class="input-el outline">
+                                    <div class="select-area" tabindex="2">Filter Type</div>
+                                    <span class="ds-chevron-down"></span>
+                                    <input type="hidden" id="show-filter" name="show-filter" tabindex="2" data-validate="required">
+                                    <ul id="filter-type-booking">
+                                        <!--<li class="selected" value="1">Last Month</li>
+                                        <li value="2">Last 6 Month</li>
+                                        <li value="3">2015</li>
+                                        <li value="4">2014</li>-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ds-row">
+                            <div class="col-12" id="booking-list-wrapper">
+                                <div class="reload-search-block push-top show" id="booking-preload">
+                                    <div class="loader loader--style4" title="3">
+                                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="44px" height="44px" viewBox="0 0 24 24" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                                        <rect x="0" y="0" width="4" height="7" fill="#333">
+                                        <animateTransform attributeType="xml" attributeName="transform" type="scale" values="1,1; 1,3; 1,1" begin="0s" dur="0.6s" repeatCount="indefinite" />
+
+       
+									    	</rect>
+                                        <rect x="10" y="0" width="4" height="7" fill="#333">
+                                        <animateTransform attributeType="xml" attributeName="transform" type="scale" values="1,1; 1,3; 1,1" begin="0.2s" dur="0.6s" repeatCount="indefinite" />
+									      	</rect>
+									    	
+                                        <rect x="20" y="0" width="4" height="7" fill="#333">
+                                        <animateTransform attributeType="xml" attributeName="transform" type="scale" values="1,1; 1,3; 1,1" begin="0.4s" dur="0.6s" repeatCount="indefinite" />
+									      	</rect>
+                                        <rect x="20" y="0" width="4" height="7" fill="#333">
+									  	</svg>
+
+                                        <div class="title">Loading, Please Wait...</div>
+
+                                    </div>
+                                </div>
+                                
+
+                                <!-- <div class="order-wrapper order-wrapper-collapse">
+                                    <div class="order-header">
+                                        <div class="order-charet">
+                                            <div class="ds-chevron-right"></div>
+                                        </div>
+                                        <div class="order-title">
+                                            <span>83 Woods Hill Road, Horsnell Gully, South Australia, Australia</span>
+                                            <span>Booking Date 04/09/2016</span>
+                                        </div>
+
+                                        <div class="order-total">
+                                            <span>TOTAL</span>
+                                            <span>$ 320.00</span>
+                                        </div>
+
+                                        <div class="order-status">
+                                            <span class="ds-booked"></span>
+                                            <span>Booked</span>
+                                        </div>
+                                    </div>
+                                    <div class="order-content">
+                                        <div class="ds-row">
+                                            <div class="col-3">
+                                                <div class="order-content-image">
+                                                    <img src="./assets/images/site/1.png" alt="">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-4 pull-left">
+                                                <div class="order-content-title">
+                                                    <span>83 Woods Hill Road, Horsnell Gully, South Australia, Australia</span>
+                                                    <span>Date 04/12/2016 - 04/15/2016 (2 days)</span>
+                                                    <div class="order-content-amenities">
+                                                        <div><div class="ds-bathroom"></div><div>Bathroom</div></div>
+                                                        <div><div class="ds-laundry"></div><div>Laundry</div></div>
+                                                        <div><div class="ds-power"></div><div>Power</div></div>
+                                                        <div><div class="ds-wifi"></div><div>Wifi</div></div>
+                                                    </div>
+                                                </div>
+                                                <div class="box-content-owner">
+                                                    <h4>Site Owner</h4>
+                                                    <div><div class="ds-user"></div><div>Fakhri Shahab</div></div>
+                                                    <div><div class="ds-message"></div><div>fakhri1804asdasdasda@gmail.com</div></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-2">
+                                                <div class="border-grey box-content-status">
+                                                    <div class="box-status-icon ds-review"></div>
+                                                    <div class="box-description">
+                                                        statusMessage
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-3 pull-left">
+                                                <div class="order-content-action">
+                                                    <button class="btn-site">Continue To Payment</button>
+                                                    <button class="btn-site btn-blue">Cancel Order</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END BOOKING LIST VIEW -->
+                <!-- START STAY REQUEST VIEW -->
+                <div class="ds-row form-add-site amenities-wrapper" id="stay-request">
+                    <div class="content">
+                        <h3>Request Stay</h3>
+                        <p>Please confirm all of stay request from user, <br>check all information of user, make sure your site, facilities and payment method is match with your criteria</p>
+                        <div class="reload-search-block push-top show" id="request-preload">
+                            <div class="loader loader--style4" title="3">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="44px" height="44px" viewBox="0 0 24 24" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                                    <rect x="0" y="0" width="4" height="7" fill="#333">
+                                    <animateTransform attributeType="xml" attributeName="transform" type="scale" values="1,1; 1,3; 1,1" begin="0s" dur="0.6s" repeatCount="indefinite" />
+									    	    </rect>
+                                    <rect x="10" y="0" width="4" height="7" fill="#333">
+                                    <animateTransform attributeType="xml" attributeName="transform" type="scale" values="1,1; 1,3; 1,1" begin="0.2s" dur="0.6s" repeatCount="indefinite" />
+									      	    </rect>
+                                    <rect x="20" y="0" width="4" height="7" fill="#333">
+                                    <animateTransform attributeType="xml" attributeName="transform" type="scale" values="1,1; 1,3; 1,1" begin="0.4s" dur="0.6s" repeatCount="indefinite" />
+									      	    </rect>
+                                    <rect x="20" y="0" width="4" height="7" fill="#333">
+							    </svg>
+
+                                <div class="title">Loading, Please Wait...</div>
+
+                            </div>
+                        </div>
+                        <div class="ds-row push-top stay-request-container">
+                            <div class="col-md-12 col-3">
+                                <ul class="review-menu">
+                                    <!--<li class="active"><div><span class="title">Sansa Stark</span> <span>05/12/2016 to 08/12/2016 (3 days)</span></div></li>
+                                    <li><div><span class="title">Tyrion Lannister</span> <span>05/12/2016 to 08/12/2016 (3 days)</span></div></li>
+                                    <li><div><span class="title">John Doe</span> <span>05/12/2016 to 08/12/2016 (3 days)</span></div></li>-->
+                                </ul>
+                            </div>
+                            <div class="col-md-12 col-9">
+
+                                <div class="stay-wrapper" style="display:none">
+                                    <!-- <h3>227 Mill St ,Poughkeepsie, NY  12601</h3> -->
+                                    <!-- <h4>Booking Date : 05/12/2016 to 08/12/2016 (3 days)</h4> -->
+                                    <div class="ds-row">
+                                        <div class="col-8">
+                                            <div class="review-user-wrapper">
+                                                <div class="header">
+                                                    Renter Info
+                                                </div>
+                                                <div class="content-review">
+                                                    <div class="ds-row">
+                                                        <div class="col-6">
+                                                            <img src="./assets/images/users.jpg" alt="">
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="ds-row">
+                                                                <div class="col-12 pull-left">
+                                                                    <h3 class="header-title" id="user-info-name">Sansa Stark</h3>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ds-row">
+                                                                <div class="content">
+                                                                    <div class="col-12">
+                                                                        <div class="label-inline">
+                                                                            <div class="ds-pin"></div>
+                                                                            <div class="label-content" id="user-info-address">11377 Woodside, NY</div>
+                                                                        </div>
+                                                                        <div class="label-inline">
+                                                                            <div class="ds-email"></div>
+                                                                            <div class="label-content" id="user-info-email">sansa_stark@gmail.com</div>
+                                                                        </div>
+                                                                        <div class="label-inline">
+                                                                            <div class="ds-user"></div>
+                                                                            <div class="label-content" id="user-info-phone">+62 8656 2332 2332</div>
+                                                                        </div>
+                                                                        <button class="btn-site small">View Detail</button>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <!--
+                                                                                                                <div class="col-4">
+                                                                                                                    Sansa Stark
+                                                                                                                    sansa@gmail.com
+                                                                                                                    Member since : <br> June 12, 2015
+                                                                                                                </div> -->
+                                                    </div>
+
+                                                    <!-- <div class="img-user-review" style="background:url(./assets/images/users.jpg)"></div>
+                                                    <div class="user-review-name">Sansa Stark</div>
+                                                    <div class="user-review-info">sansa@gmail.com</div>
+                                                    <div class="user-review-info">Member since : <br> June 12, 2015</div> -->
+                                                </div>
+                                            </div>
+                                            <!-- <div class="col-4">
+                                                <img src="./assets/images/users.jpg" alt="">
+                                            </div> -->
+                                        </div>
+
+                                        <div class="col-4">
+                                            <div class="review-user-wrapper">
+                                                <div class="header">
+                                                    Vehicle
+                                                </div>
+                                                <div class="content-review">
+                                                    <div class="img-user-review" style="background:url(./assets/images/caravan.jpg)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ds-row push-top">
+                                        <div class="col-md-12 col-8">
+                                            <div class="ds-row">
+                                                <div class="col-12 site-review-info">
+                                                    <h3 id="site-info-address">---</h3>
+
+                                                    <div class="ds-row">
+                                                        <div class="col-6">
+                                                            <div class="site-review-detail">
+                                                                <div class="label"><div class="ds-calendar"></div><div>Arrival Date:</div></div>
+                                                                <div class="info" id="site-info-fromdate">05/12/2016</div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-6">
+                                                            <div class="site-review-detail">
+                                                                <div class="label"><div class="ds-calendar"></div><div>Departure Date:</div></div>
+                                                                <div class="info" id="site-info-todate">05/15/2016</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--<div class="ds-row push-top">
+                                                <div class="content">
+                                                    <h3>Detail Site : </h3>
+                                                    <div class="push-top">
+                                                        <div>Width : 510 cm</div>
+                                                        <div>Height : 1250 cm</div>
+                                                        <div>Length : 2230 cm</div>
+                                                    </div>
+                                                </div>
+                                            </div>-->
+                                            <!--<div class="ds-row push-top">
+                                                <div class="content">
+                                                    <h3>Facilities : </h3>
+                                                    <div class="order-content-amenities bg-blue">
+                                                        <div><div class="ds-bathroom"></div><div>Bathroom</div></div>
+                                                        <div><div class="ds-laundry"></div><div>Laundry</div></div>
+                                                        <div><div class="ds-power"></div><div>Power</div></div>
+                                                        <div><div class="ds-wifi"></div><div>Wifi</div></div>
+                                                    </div>
+                                                </div>
+                                            </div>-->
+
+                                            <div class="ds-row push-top">
+                                                <div class="content">
+                                                    <h3>Billing : </h3>
+                                                    <div class="review-billing-wrapper">
+                                                        <div class="row">
+                                                            <div class="title" id="site-info-address2">227 Mill St ,Poughkeepsie, NY  12601 <br> 05/12/2016 to 05/15/2016 (3 days)</div>
+                                                            <div class="price" id="site-price">$ 200.00</div>
+                                                        </div>
+
+                                                        <!--<div class="row">
+                                                            <div class="title">
+                                                                <div class="has-facilities"><div class="ds-bathroom"></div><div>Bathroom</div></div>
+                                                            </div>
+                                                            <div class="price">$ 5.00</div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="title">
+                                                                <div class="has-facilities"><div class="ds-laundry"></div><div>Laundry</div></div>
+                                                            </div>
+                                                            <div class="price">$ 10.00</div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="title">
+                                                                <div class="has-facilities"><div class="ds-power"></div><div>Power</div></div>
+                                                            </div>
+                                                            <div class="price">$ 3.00</div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="title">
+                                                                <div class="has-facilities"><div class="ds-wifi"></div><div>Wifi</div></div>
+                                                            </div>
+                                                            <div class="price">$ 2.00</div>
+                                                        </div>-->
+
+                                                        <div class="row total-billing">
+                                                            <div class="title">
+                                                                Total
+                                                            </div>
+                                                            <div class="price" id="site-price-total">$ 220.00</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-4 pull-left">
+                                            <div class="border-grey box-content-status">
+                                                <div class="box-status-icon"></div>
+                                                <div class="box-description">
+                                                    <!--This Request is awaiting your responsebox-status-icon-->
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="col-md-8 col-4">
+                                            <div class="review-user-wrapper">
+                                                <div class="header">
+                                                    Renter Info
+                                                </div>
+                                                <div class="content-review">
+                                                    <div class="img-user-review" style="background:url(./assets/images/users.jpg)"></div>
+                                                    <div class="user-review-name">Sansa Stark</div>
+                                                    <div class="user-review-info">sansa@gmail.com</div>
+                                                    <div class="user-review-info">Member since : <br> June 12, 2015</div>
+                                                </div>
+                                                <div class="header">
+                                                    Caravan Info
+                                                </div>
+                                                <div class="content-review">
+                                                    <div class="img-user-review" style="background:url(./assets/images/caravan.jpg)"></div>
+                                                    <div class="user-review-info push-top">Width : 210 cm</div>
+                                                    <div class="user-review-info">Height : 225 cm</div>
+                                                    <div class="user-review-info">Length : 334 cm</div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                    <input type="hidden" id="request-id"/>
+                                    <div class="ds-row push-top">
+                                        <div class="content btn-wrapper">
+                                            <!--<div class="col-3">
+                                                <button class="btn-site small btn-request-free">Accept for Free Stay</button>
+                                            </div>
+                                            <div class="col-3 pull-left">
+                                                <button class="btn-site small btn-request-accept">Accept Request</button>
+                                            </div>
+                                            <div class="col-3 pull-left">
+                                                <button class="btn-site small btn-blue btn-request-decline">Decline Request</button>
+                                            </div>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END STAY REQUEST VIEW -->
+                <!-- START COMPLETE TRANSACTION LIST VIEW -->
+                <div class="ds-row form-add-site amenities-wrapper" id="transaction-complete">
+                    <div class="content">
+                        <h3>Complete Transaction</h3>
+                        <p>This page is a history about your activity</p>
+
+                        <div class="ds-row push-top">
+                            <div class="col-md-12 col-3">
+                                <div class="input-el outline">
+                                    <div class="select-area" tabindex="2">Show Data</div>
+                                    <span class="ds-chevron-down"></span>
+                                    <input type="hidden" id="show-filter" name="show-filter" tabindex="2" data-validate="required">
+                                    <ul>
+                                        <li class="selected" value="1">Last Month</li>
+                                        <li value="2">Last 6 Month</li>
+                                        <li value="3">2015</li>
+                                        <li value="4">2014</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ds-row">
+                            <div class="col-12">
+                                <div class="order-wrapper order-wrapper-collapse">
+                                    <div class="order-header">
+                                        <div class="order-charet">
+                                            <div class="ds-chevron-right"></div>
+                                        </div>
+                                        <div class="order-title">
+                                            <span>83 Woods Hill Road, Horsnell Gully, South Australia, Australia</span>
+                                            <span>Booking Date 04/09/2016</span>
+                                        </div>
+
+                                        <div class="order-total">
+                                            <span>TOTAL</span>
+                                            <span>$ 320.00</span>
+                                        </div>
+
+                                        <div class="order-status">
+                                            <span class="ds-wait"></span>
+                                            <span>Wait</span>
+                                        </div>
+                                    </div>
+                                    <div class="order-content">
+                                        <div class="order-content-image">
+                                            <img src="./assets/images/site/1.png" alt="">
+                                        </div>
+
+                                        <div class="order-content-title">
+                                            <span>83 Woods Hill Road, Horsnell Gully, South Australia, Australia</span>
+                                            <span>Date 04/12/2016 - 04/15/2016 (2 days)</span>
+                                            <div class="order-content-amenities">
+                                                <div><div class="ds-bathroom"></div><div>Bathroom</div></div>
+                                                <div><div class="ds-laundry"></div><div>Laundry</div></div>
+                                                <div><div class="ds-power"></div><div>Power</div></div>
+                                                <div><div class="ds-wifi"></div><div>Wifi</div></div>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="order-content-action">
+                                            <div class="alert alert-warning">You dont have any payment method, please input on your <a href="./my_payment.html">payment method</a> menu</div>
+                                            <button class="btn-site">Continue To Payment</button>
+                                            <button class="btn-site btn-blue">Cancel Order</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="order-wrapper order-wrapper-collapse">
+                                    <div class="order-header">
+                                        <div class="order-charet">
+                                            <div class="ds-chevron-right"></div>
+                                        </div>
+                                        <div class="order-title">
+                                            <span>83 Woods Hill Road, Horsnell Gully, South Australia, Australia</span>
+                                            <span>Booking Date 04/09/2016</span>
+                                        </div>
+
+                                        <div class="order-total">
+                                            <span>TOTAL</span>
+                                            <span>$ 320.00</span>
+                                        </div>
+
+                                        <div class="order-status">
+                                            <span class="ds-review"></span>
+                                            <span>Owner Review</span>
+                                        </div>
+                                    </div>
+                                    <div class="order-content">
+                                        <div class="order-content-image">
+                                            <img src="./assets/images/site/1.png" alt="">
+                                        </div>
+
+                                        <div class="order-content-title">
+                                            <span>83 Woods Hill Road, Horsnell Gully, South Australia, Australia</span>
+                                            <span>Date 04/12/2016 - 04/15/2016 (2 days)</span>
+                                            <div class="order-content-amenities">
+                                                <div><div class="ds-bathroom"></div><div>Bathroom</div></div>
+                                                <div><div class="ds-laundry"></div><div>Laundry</div></div>
+                                                <div><div class="ds-power"></div><div>Power</div></div>
+                                                <div><div class="ds-wifi"></div><div>Wifi</div></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="order-content-action">
+                                            <button class="btn-site">Continue To Payment</button>
+                                            <button class="btn-site btn-blue">Cancel Order</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="order-wrapper order-wrapper-collapse">
+                                    <div class="order-header">
+                                        <div class="order-charet">
+                                            <div class="ds-chevron-right"></div>
+                                        </div>
+                                        <div class="order-title">
+                                            <span>83 Woods Hill Road, Horsnell Gully, South Australia, Australia</span>
+                                            <span>Booking Date 04/09/2016</span>
+                                        </div>
+
+                                        <div class="order-total">
+                                            <span>TOTAL</span>
+                                            <span>$ 320.00</span>
+                                        </div>
+
+                                        <div class="order-status">
+                                            <span class="ds-booked"></span>
+                                            <span>Booked</span>
+                                        </div>
+                                    </div>
+                                    <div class="order-content">
+                                        <div class="order-content-image">
+                                            <img src="./assets/images/site/1.png" alt="">
+                                        </div>
+
+                                        <div class="order-content-title">
+                                            <span>83 Woods Hill Road, Horsnell Gully, South Australia, Australia</span>
+                                            <span>Date 04/12/2016 - 04/15/2016 (2 days)</span>
+                                            <div class="order-content-amenities">
+                                                <div><div class="ds-bathroom"></div><div>Bathroom</div></div>
+                                                <div><div class="ds-laundry"></div><div>Laundry</div></div>
+                                                <div><div class="ds-power"></div><div>Power</div></div>
+                                                <div><div class="ds-wifi"></div><div>Wifi</div></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="order-content-action">
+                                            <button class="btn-site">Continue To Payment</button>
+                                            <button class="btn-site btn-blue">Cancel Order</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- END COMPLETE TRANSACTION LIST VIEW -->
+
+            </div>
+        </section>
+
+        <section>
+            <div class="ds-container-fluid section footer-section">
+                <div class="ds-row">
+                    <div class="ds-container-1200">
+                        <div class="ds-row">
+
+                            <div class="col-md-12 col-8">
+                                <div class="menu-footer">
+                                    <h4>Company</h4>
+                                    <ul>
+                                        <li><a href="">About Us</a></li>
+                                        <li><a href="">Information</a></li>
+                                        <li><a href="">Press</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="menu-footer">
+                                    <h4>Support</h4>
+                                    <ul>
+                                        <li><a href="">Contact Us</a></li>
+                                        <li><a href="">Help</a></li>
+                                        <li><a href="">Privacy</a></li>
+                                        <li><a href="">Term of Use</a></li>
+                                        <li><a href="">Site Map</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="menu-footer social-icon">
+                                    <h4>Get Exclusive Content from Us</h4>
+                                    <ul class="no-tab">
+                                        <li><a href=""><img src="./assets/images/facebook.png" alt="" height="50"></a></li>
+                                        <li><a href=""><img src="./assets/images/twitter.png" alt="" height="50"></a></li>
+                                        <li><a href=""><img src="./assets/images/google_plus.png" alt="" height="50"></a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-12 col-4">
+                                <!-- <div class="form-wrapper"> -->
+                                <h4>Leave a comment</h4>
+                                <div class="input-el">
+                                    <input type="text" placeholder="Your Email">
+                                </div>
+                                <div class="input-el push-top">
+                                    <input type="text" placeholder="Your Name">
+                                </div>
+                                <div class="input-el push-top">
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="Input your comment here"></textarea>
+                                </div>
+                                <button class="send-comment push-top">Send Comment</button>
+                                <!-- </div> -->
+                            </div>
+
+                        </div>
+
+                        <div class="ds-row copyright">
+                            2016 DriveStays. All rights reserved
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="./script/jquery.min.js"></script>
+    <!-- <script src="./script/jquery.mobile-1.4.5.min.js"></script> -->
+    <script src="./script/underscore-min.js"></script>
+    <script type="text/javascript" src="./script/moment.min.js"></script>
+    <script type="text/javascript" src="./script/pikaday.js"></script>
+    <script src="./script/jquery.scrollbar.min.js"></script>
+    <script src="./script/ds-modal.js"></script>
+    <script src="./script/ds-script.js"></script>
+    <script src="./script/ds-cookies.js"></script>
+    <script src="./script/ds-element.js"></script>
+    <script src="./script/jquery-ui-slider.js"></script>
+    <script src="./script/validation.js"></script>
+    <script src="./script/app/transaction_list.js"></script>
 </body>
 
 </html>

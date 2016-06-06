@@ -1,5 +1,20 @@
 'use strict';
 var geocoder;
+
+function loadScript(src, callback) {
+    if (!src) src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDfSvkBOL2nOfLZKDWaf66EbbO9poShFaA&libraries=places&callback=initMap';
+    var script = document.createElement('script');
+    script.type = "text/javascript";
+    if (callback) script.onload = callback;
+    document.getElementsByTagName("head")[0].appendChild(script);
+    script.src = src;
+}
+
+loadScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyDfSvkBOL2nOfLZKDWaf66EbbO9poShFaA&libraries=places&callback=initMap',
+		function () {
+		    console.log('google-loader has been loaded, but not the maps-API');
+		});
+
 var element = {
 	formSearchId : 'form-search',
 	inputLocation : $('#search-location'),
@@ -120,7 +135,8 @@ $.extend(datepicker.prototype, {
 	startPicker : '',
 	endPicker : '',
 	startDate : '',
-	endDate : '',
+	endDate: '',
+    selectedMonth: '',
 	set : function(id, type){
 		switch(type){
 			case 'start' : 
@@ -128,13 +144,12 @@ $.extend(datepicker.prototype, {
 					field : document.getElementById(id),
 					numberOfMonths: 2,
 					minDate: new Date(),
-					format: 'MM/DD/YYYY',
 					onSelect: function(){
 						datepicker.prototype.startDate = this.getDate();
 						datepicker.prototype.updateStartDate(this.getDate());
 
 						if(datepicker.prototype.endDate == ''){
-							datepicker.prototype.endPicker.show()
+						    datepicker.prototype.endPicker.show();
 						}
 					}
 				})
@@ -145,7 +160,6 @@ $.extend(datepicker.prototype, {
 					field : document.getElementById(id),
 					numberOfMonths: 2,
 					minDate: new Date(),
-					format: 'MM/DD/YYYY',
 					onSelect: function(){
 						datepicker.prototype.endDate = this.getDate();
 						datepicker.prototype.updateEndDate(this.getDate());
@@ -162,10 +176,12 @@ $.extend(datepicker.prototype, {
 		this.startPicker.setStartRange(date)
 		this.endPicker.setStartRange(date)
 		this.endPicker.setMinDate(date)
+        this.endPicker.gotoMonth(date.getMonth());
 	},
 	updateEndDate: function(date){
-		this.endPicker.setEndRange(date)
-		this.startPicker.setEndRange(date)
+	    this.endPicker.setEndRange(date);
+	    this.startPicker.setEndRange(date);
+		this.endPicker.gotoMonth(date.getMonth());
 	}
 
 })
@@ -221,24 +237,3 @@ element.btnSearch.on('click', function(){
 // 		}
 // 	})
 // });
-Date.prototype.addDays = function(days)
-{
-    var dat = new Date(this.valueOf());
-    dat.setDate(dat.getDate() + days);
-    return dat;
-}
-
-var from = "2016-05-18T07:00:00",
-	to = "2016-05-23T07:00:00";
-
-var fromDate = new Date(from),
-	toDate = new Date(to);
-
-// console.log(new Date());
-var dates = [];
-while(fromDate <= toDate){
-	dates.push(moment(fromDate).format('YYYYMMDD'));
-	fromDate = fromDate.addDays(1);
-}
-
-console.log(dates)

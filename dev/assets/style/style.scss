@@ -408,7 +408,7 @@ header{
 	margin:0;
 	background:$white;
 	position:absolute;
-	z-index:4;
+	z-index:9;
 	right:0;
 	top:79px;	
 	border:1px solid $greyBg;
@@ -1134,6 +1134,7 @@ header{
 	height:700px;
 	outline:1px solid $greyBg;
 	position:relative;
+	z-index:1;
 
 	.site-map-content{
 		width:100%;
@@ -1207,6 +1208,8 @@ header{
 
 		h3{
 			font-weight: normal;
+			font-size:13px!important;
+			word-break:break-all;
 		}
 	}
 
@@ -2351,6 +2354,11 @@ header{
 	border-bottom:2px solid $blueDark2;
 }
 
+.btn-orange{
+	background:$orangeLight!important;
+	border-bottom:2px solid $orangeDark!important;
+}
+
 .show{
 	display:block;
 }
@@ -2568,13 +2576,53 @@ svg rect{
 			display:block;
 			background:$orangeLight;
 			position:relative;
-			top: 10px;
+			// top: 35px;
 			margin:0 auto;
 		}
 	}
 
 	.box-description{
-		margin-top:30px;
+		margin-top:10px;
+	}
+}
+
+.box-content-owner{
+	display:block;
+	background:$greyLight;
+	padding:10px 0 0 0;
+	margin-right: 20px;
+	margin-top: 10px;
+	text-align:center;
+
+	> div{
+		display:inline-block;
+		padding: 10px 0;
+		width:49.5555%;
+		box-sizing:border-box;
+
+		[class^='ds']{
+			font-size:18px;
+			font-weight:1;
+			box-sizing:border-box;
+		}
+
+		&:last-child{
+			border-left:1px solid $orangeLight;
+		}
+		
+		div{
+			display:block;
+			box-sizing:border-box;
+			padding:0 5px;
+			word-break:break-all;
+		}
+	}
+
+	h4{
+		color:$orangeLight;
+		text-transform:uppercase;
+		padding-bottom: 10px;
+		border-bottom:1px solid $orangeLight;
 	}
 }
 

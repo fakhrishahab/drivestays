@@ -9,6 +9,7 @@ var element = {
     site_access: $('#site-access'),
     site_access_status: $('.toggle-status'),
     form_wrapper: $('#profile-form'),
+    form_validation : 'profile-form',
     btn_add_site: $('#btn-add-site'),
     site_address1: $('#site-address1'),
     site_address2: $('#site-address2'),
@@ -20,6 +21,7 @@ var element = {
     site_power: $('#site-power'),
     site_noise: $('#site-noise'),
     site_power_capacity: $('#site-power-capacity'),
+    site_defaut_rate: $('#site-default-rate'),
 
     image_container : $('.image-uploaded'),
     trigger_upload : $('.upload-container'),
@@ -49,24 +51,23 @@ $.ajax({
         element.table_body.append(template);
     },
     success: function (data) {
-        console.log(data)
         element.table_body.empty()
         if (data.length > 0) {
             for (var i = 0; i < data.length; i++) {
                 var template = `
-                    <tr>\
+                    <tr>
                         <td>`+ parseInt(i + 1) + `</td>
                         <td>`+ data[i].AddressLine1 + `</td>
                         <td>`+ data[i].City + ` / ` + data[i].State + `</td>
                         <td>width: `+ data[i].Width + ` cm <br> length: ` + data[i].Length + ` cm </td>
                         <td class ='action'>
                             
-                            <button class =' edit-site' data-id= `+ data[i].ID + ` >
+                            <button class ='edit-site' data-id= `+ data[i].ID + ` >
                                 <div class ='ds-edit'></div> <span>Edit</span>
                             </button>
                             
-                            <button>
-                                <div class ='ds-delete delete-site' data-id= `+ data[i].ID + ` ></div> <span>Delete</span>
+                            <button class ='delete-site' data-id= `+ data[i].ID + `>
+                                <div class ='ds-delete'></div> <span>Delete</span>
                             </button>
                         </td>
                     </tr>
@@ -76,8 +77,14 @@ $.ajax({
 
             $('.edit-site').on('click', function () {
                 var id = $(this).data('id');
+                console.log(id)
                 _cookies.put('site_id', id);
                 window.location.href = './edit_site.html';
+            })
+
+            $('.delete-site').on('click', function () {
+                var id = $(this).data('id');
+                confirmDelete(id, $(this));
             })
         } else {
             var template = `
@@ -95,6 +102,32 @@ $.ajax({
         console.log(result)
     }
 })
+
+function confirmDelete(id, elm) {
+    var message = confirm('Are you sure want to delete this data?')
+
+    if (message == true) {
+        // do delete
+        deleteSite(id, elm)
+    }
+}
+
+function deleteSite(id, elm) {
+    $.ajax({
+        url: SITE.API_PATH_DEV+'/property/delete/'+id,
+        type: 'delete',
+        success: function (result) {
+            elm.parents('tr').remove()
+        },
+        error: function (status) {
+            floatAlert('Data has successfully saved', 'error', function (result) {
+                _cookies.put('site_id', data);
+                window.location.href = './edit_site.html';
+            })
+            console.log(status)
+        }
+    })
+}
 
 element.form_wrapper.hide();
 
@@ -296,7 +329,7 @@ element.btn_save.on('click', function () {
         "Length": parseInt(element.site_length.val()) || null,
         "Height": parseInt(element.site_height.val()) || null,
         "Security": parseInt(element.site_security.val()),
-        "DefaultRate": 0,
+        "DefaultRate": parseInt(element.site_default_rate.val()),
         "Longitude": parseFloat(element.site_lng.val()),
         "Latitude": parseFloat(element.site_lat.val()),
         "CustomerID": parseInt(user_data.user_id),
@@ -306,20 +339,18 @@ element.btn_save.on('click', function () {
         "PropertyClosures": []
     }
 
-    console.log(dataSite);
-    $(this).validation(element.form_wrapper)
-    if ($(this).validation(element.form_wrapper) == undefined) {
+    if ($(this).validation(element.form_validation) == undefined) {
         $.ajax({
             url: SITE.API_PATH_DEV + '/property/save',
             type: 'POST',
             data: JSON.stringify(dataSite),
             contentType: "application/json",
-            dataType : 'json',
+            dataType: 'json',
             success: function (data) {
-                console.log(data)
-                floatAlert('Data has successfully saved', function(result){
+                //console.log(data)
+                floatAlert('Data has successfully saved', 'success', function (result) {
                     _cookies.put('site_id', data);
-                    window.location.href = '/edit_site.html';
+                    window.location.href = './edit_site.html';
                 })
             },
             error: function (status) {
@@ -329,11 +360,5 @@ element.btn_save.on('click', function () {
     }
 
     
-})
-
-$('.test').on('click', function(){
-    floatAlert('Test', function(){
-        
-    })
 })
 
