@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
 	del = require('del'),
 	plumber = require('gulp-plumber'),
+	plum = require('plumber'),
 	sass = require('gulp-sass');
 
 
