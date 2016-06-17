@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Drive Stays</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Drive Stays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/style/bootstrap.css" /> -->
+    <link rel="stylesheet" href="./assets/style/normalize.css">
+    <link rel="stylesheet" href="./assets/style/jquery.scrollbar.css">
+    <link rel="stylesheet" href="./assets/style/jquery-ui-slider.css">
+    <link rel="stylesheet" href="./assets/style/style.css">
+
+    <link rel="stylesheet" type="text/css" href="./assets/style/pikaday.css" />
+
+</head>
+<body>
+
+    <div class="wrapper-body">
+        <header class="header-flat">
+            <div class="ds-container-1200">
+                <div class="ds-row">
+                    <div class="content ds-header-fix">
+                        <div class="toggle-menu">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+
+                        <div class="logo-wrapper">
+                            <a href="./"><img src="./assets/images/drivestays_logo.png" height="55" class="img-logo" alt=""></a>
+                        </div>
+
+                        <div class="menu-wrapper">
+                            <div class="main-menu">
+                                <ul class="menu-header">
+                                    <li><a href="">List a Site</a></li>
+                                    <!-- <li><a href="">List a Site</a></li> -->
+                                </ul>
+                            </div>
+
+                            <div class="main-menu-user">
+                                <a href="login.html" class="register-head"><button class="btn-register">Sign In / Register</button></a>
+                                <div class="user-wrapper">
+                                    <img src="./assets/images/user-upload.png" align="middle" alt="">
+                                    <div class="user-name"> Hi, <strong id="profile-username">Steve</strong> </div>
+                                    <div class="icon ds-chevron-down user-menu-trigger"></div>
+
+                                    <ul class="user-menu">
+                                        <li><a href="register.html"><div class="ds-user"></div>	My Profile</a></li>
+                                        <li><a href="my_caravan.html"><div class="ds-caravan"></div>My Caravan</a></li>
+                                        <li><a href="my_site.html"><div class="ds-site"></div>My Sites</a></li>
+                                        <li><a href="transaction_list.html"><div class="ds-booked"></div>Transaction List</a></li>
+                                        <li><a href="account_setting.html"><div class="ds-setting"></div>Account Setting</a></li>
+                                        <li><a href="my_payment.html"><div class="ds-card"></div>Account Payment</a></li>
+                                        <li id="btn-logout"><a><div class="ds-lock"></div>Logout</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="header-notif">
+                                <div class="notification-trigger">
+                                    <div class="notification-count">12</div>
+                                    <div class="ds-notification"></div>
+                                </div>
+
+                                <div class="notification-wrapper" style="display:none">
+                                    <div class="notification-list scrollbar-macosx">
+                                        <div>
+                                            <div class="notification-list-wrapper">
+                                                <div class="notif-image"> <image src="./assets/images/notification.svg" /> </div>
+                                                <div class="notif-content">
+                                                    <div class="notif-content-title">You got 1 message from John Doe</div>
+                                                    <div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? </div>
+                                                </div>
+                                            </div>
+                                            <div class="notification-list-wrapper">
+                                                <div class="notif-image"> <image src="./assets/images/message.svg" /> </div>
+                                                <div class="notif-content">
+                                                    <div class="notif-content-title">You got 1 message from John Doe</div>
+                                                    <div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? ..... </div>
+                                                </div>
+                                            </div>
+                                            <div class="notification-list-wrapper">
+                                                <div class="notif-image"> <image src="./assets/images/notification.svg" /> </div>
+                                                <div class="notif-content">
+                                                    <div class="notif-content-title">You got 1 message from John Doe</div>
+                                                    <div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? ..... </div>
+                                                </div>
+                                            </div>
+                                            <div class="notification-list-wrapper">
+                                                <div class="notif-image"> <image src="./assets/images/message.svg" /> </div>
+                                                <div class="notif-content">
+                                                    <div class="notif-content-title">You got 1 message from John Doe</div>
+                                                    <div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? ..... </div>
+                                                </div>
+                                            </div>
+                                            <div class="notification-list-wrapper">
+                                                <div class="notif-image"> <image src="./assets/images/message.svg" /> </div>
+                                                <div class="notif-content">
+                                                    <div class="notif-content-title">You got 1 message from John Doe</div>
+                                                    <div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? ..... </div>
+                                                </div>
+                                            </div>
+                                            <div class="notification-list-wrapper">
+                                                <div class="notif-image"> <image src="./assets/images/message.svg" /> </div>
+                                                <div class="notif-content">
+                                                    <div class="notif-content-title">You got 1 message from John Doe</div>
+                                                    <div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? ..... </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="notification-footer">
+                                        <a href="">See All Notification</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <div class="ds-container-1200 section">
+                <!-- <div class="pre-content">
+                    <h1>My Caravan</h1>
+                </div> -->
+                <!-- <div class="headline-wrapper">
+                    <div class="headline-thumb"><div class="ds-setting"></div></div>
+                    <div class="headline-text">
+                        <h1>You</h1>
+                        <h3>Change your password periodically for more security</h3>
+                    </div>
+                </div> -->
+                <!-- <div class="ds-row push-top content-center form-register-container" id="profile-form">
+                    <div class="col-12"><h1>My Caravan</h1></div>
+                    <div class="col-12 push-top"><h3>Input your caravan data here</h3></div>
+                </div> -->
+                <!-- START FORM SITE INFO -->
+                <div class="ds-row" id="profile-form">
+                    <div class="col-12" id="site-info">
+                        <h2>INVOICE</h2>
+                    </div>
+                </div>
+
+                <div class="ds-row push-top">
+                    <div class="col-8 border-grey padding-tb">
+                        <div class="ds-row content">
+                            <p>INVOICE NUMBER #1231233123 </p>
+                            <p>Order Date : 03/06/2016</p>
+                        </div>
+                        <div class="ds-row push-top">
+                            <div class="col-6">
+                                <div class="content">
+                                    <h4 class="title-header">Your Detail</h4>
+                                    <p>sansa_grey@gmail.com</p>
+                                    <p>Sansa Stark, 0856 3464 7038</p>
+                                    <p>11377, Woodside, US</p>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="content">
+                                    <h4 class="title-header">Site Owner</h4>
+                                    <p>john_doe@gmail.com</p>
+                                    <p>John Doe, 0856 3464 7038</p>
+                                    <p>11377, Woodside, US</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ds-row push-top content">
+                            <table class="table-invoice">
+                                <thead>
+                                    <tr>
+                                        <td class="table-invoice-date_row">Date</td>
+                                        <td>Item</td>
+                                        <td>Quantity</td>
+                                        <td class="align-right">Subtotal</td>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <th rowspan="3">12/06/2016 to 16/06/2016</th>
+                                        <td>
+                                            <div class="invoice-data">
+                                                <div class="invoice-data-image">
+                                                    <img src="./assets/images/site/1.png" alt="">
+                                                </div>
+                                                <div class="invoice-data-body">
+                                                    <div class="invoice-data-name">40-27 Broadway</div>
+                                                    <p>11377, Woodeside US</p>
+                                                    <ul class="invoice-data-list">
+                                                        <li>12/06/2016 ( $ 75.00 )</li>
+                                                        <li>13/06/2016 ( $ 75.00 )</li>
+                                                        <li>14/06/2016 ( $ 75.00 )</li>
+                                                        <li>15/06/2016 ( $ 75.00 )</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="invoice-data-quantity">4 day(s)</td>
+                                        <td class="invoice-subtotal align-right">$ 300.00</td>
+                                    </tr>
+                                    <tr class="invoice-amenities">
+                                        <td>
+                                            <div class="invoice-data">
+                                                <span>Bathroom ( $ 20.00 )</span>
+                                            </div>
+                                        </td>
+                                        <td class="invoice-data-quantity">4 day(s)</td>
+                                        <td class="align-right">$ 80.00</td>
+                                    </tr>
+                                    <tr class="invoice-amenities">
+                                        <td>
+                                            <div class="invoice-data">
+                                                <span>Power ( $ 15.00 )</span>
+                                            </div>
+                                        </td>
+                                        <td class="invoice-data-quantity">4 day(s)</td>
+                                        <td class="align-right">$ 60.00</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot class="invoice-summary">
+                                    <tr>
+                                        <td></td>
+                                        <th colspan="2" class="invoice-summary-detail">TOTAL</th>
+                                        <td class="invoice-summary-detail">$ 440.00</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+
+                        <div class="row push-top content">
+                            <div class="col-3">
+                                <button class="btn-site small btn-orange">Pay with Paypal</button>    
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-4 map-aside">
+                        <div id="map" class="map-container-block"></div>
+                    </div>
+                    
+                </div>
+
+                
+
+            </div>
+        </section>
+
+        <section>
+            <div class="ds-container-fluid section footer-section">
+                <div class="ds-row">
+                    <div class="ds-container-1200">
+                        <div class="ds-row">
+
+                            <div class="col-md-12 col-8">
+                                <div class="menu-footer">
+                                    <h4>Company</h4>
+                                    <ul>
+                                        <li><a href="">About Us</a></li>
+                                        <li><a href="">Information</a></li>
+                                        <li><a href="">Press</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="menu-footer">
+                                    <h4>Support</h4>
+                                    <ul>
+                                        <li><a href="">Contact Us</a></li>
+                                        <li><a href="">Help</a></li>
+                                        <li><a href="">Privacy</a></li>
+                                        <li><a href="">Term of Use</a></li>
+                                        <li><a href="">Site Map</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="menu-footer social-icon">
+                                    <h4>Get Exclusive Content from Us</h4>
+                                    <ul class="no-tab">
+                                        <li><a href=""><img src="./assets/images/facebook.png" alt="" height="50"></a></li>
+                                        <li><a href=""><img src="./assets/images/twitter.png" alt="" height="50"></a></li>
+                                        <li><a href=""><img src="./assets/images/google_plus.png" alt="" height="50"></a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-12 col-4">
+                                <!-- <div class="form-wrapper"> -->
+                                <h4>Leave a comment</h4>
+                                <div class="input-el">
+                                    <input type="text" placeholder="Your Email">
+                                </div>
+                                <div class="input-el push-top">
+                                    <input type="text" placeholder="Your Name">
+                                </div>
+                                <div class="input-el push-top">
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="Input your comment here"></textarea>
+                                </div>
+                                <button class="send-comment push-top">Send Comment</button>
+                                <!-- </div> -->
+                            </div>
+
+                        </div>
+
+                        <div class="ds-row copyright">
+                            2016 DriveStays. All rights reserved
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="./script/jquery.min.js"></script>
+    <!-- <script src="./script/jquery.mobile-1.4.5.min.js"></script> -->
+    <script src="./script/underscore-min.js"></script>
+    <script type="text/javascript" src="./script/moment.min.js"></script>
+    <script type="text/javascript" src="./script/pikaday.js"></script>
+    <script src="./script/jquery.scrollbar.min.js"></script>
+    <script src="./script/ds-modal.js"></script>
+    <script src="./script/ds-script.js"></script>
+    <script src="./script/ds-cookies.js"></script>
+    <script src="./script/ds-element.js"></script>
+    <script src="./script/jquery-ui-slider.js"></script>
+    <script src="./script/validation.js"></script>
+    <script src="./script/app/invoice.js"></script>
+</body>
+
+</html>
