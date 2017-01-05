@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Drive Stays</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Drive Stays</title>
+    <link rel="stylesheet" href="./assets/style/normalize.css">
+    <link rel="stylesheet" href="./assets/style/jquery.scrollbar.css">
+    <link rel="stylesheet" href="./assets/style/jquery-ui-slider.css">
+    <link rel="stylesheet" href="./assets/style/style.css">
+
+    <link rel="stylesheet" type="text/css" href="./assets/style/pikaday.css" />
+
+</head>
+<body>
+    <div class="float-alert">
+        <span class="ds-close close-alert"></span>
+        <div class="content"></div>
+    </div>
+    <div class="wrapper-body">
+        <header class="header-flat">
+            <div class="ds-container-1200">
+                <div class="ds-row">
+                    <div class="content ds-header-fix">
+                        <div class="toggle-menu">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+
+                        <div class="logo-wrapper">
+                            <a href="./"><img src="./assets/images/drivestays_logo.png" height="55" class="img-logo" alt=""></a>
+                        </div>
+
+                        <div class="menu-wrapper">
+                            <div class="main-menu">
+                                <ul class="menu-header">
+                                    <li><a href="">List a Site</a></li>
+                                    <!-- <li><a href="">List a Site</a></li> -->
+                                </ul>
+                            </div>
+
+                            <div class="main-menu-user">
+                                <a href="login.html" class="register-head"><button class="btn-register">Sign In / Register</button></a>
+                                <div class="user-wrapper">
+                                    <img src="./assets/images/user-upload.png" align="middle" alt="">
+                                    <div class="user-name"> Hi, <strong id="profile-username">Steve</strong> </div>
+                                    <div class="icon ds-chevron-down user-menu-trigger"></div>
+
+                                    <ul class="user-menu">
+                                        <li><a href="register.html"><div class="ds-user"></div>	My Profile</a></li>
+                                        <li><a href="my_caravan.html"><div class="ds-caravan"></div>My Caravan</a></li>
+                                        <li><a href="my_site.html"><div class="ds-site"></div>My Sites</a></li>
+                                        <li><a href="transaction_list.html"><div class="ds-booked"></div>Transaction List</a></li>
+                                        <li><a href="account_setting.html"><div class="ds-setting"></div>Account Setting</a></li>
+                                        <li><a href="my_payment.html"><div class="ds-card"></div>Account Payment</a></li>
+                                        <li id="btn-logout"><a><div class="ds-lock"></div>Logout</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="header-notif">
+                                <div class="notification-trigger">
+                                    <div class="notification-count">12</div>
+                                    <div class="ds-notification"></div>
+                                </div>
+
+                                <div class="notification-wrapper" style="display:none">
+                                    <div class="notification-list scrollbar-macosx">
+                                        <div>
+                                            <div class="notification-list-wrapper">
+                                                <div class="notif-image"> <image src="./assets/images/notification.svg" /> </div>
+                                                <div class="notif-content">
+                                                    <div class="notif-content-title">You got 1 message from John Doe</div>
+                                                    <div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? </div>
+                                                </div>
+                                            </div>
+                                            <div class="notification-list-wrapper">
+                                                <div class="notif-image"> <image src="./assets/images/message.svg" /> </div>
+                                                <div class="notif-content">
+                                                    <div class="notif-content-title">You got 1 message from John Doe</div>
+                                                    <div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? ..... </div>
+                                                </div>
+                                            </div>
+                                            <div class="notification-list-wrapper">
+                                                <div class="notif-image"> <image src="./assets/images/notification.svg" /> </div>
+                                                <div class="notif-content">
+                                                    <div class="notif-content-title">You got 1 message from John Doe</div>
+                                                    <div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? ..... </div>
+                                                </div>
+                                            </div>
+                                            <div class="notification-list-wrapper">
+                                                <div class="notif-image"> <image src="./assets/images/message.svg" /> </div>
+                                                <div class="notif-content">
+                                                    <div class="notif-content-title">You got 1 message from John Doe</div>
+                                                    <div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? ..... </div>
+                                                </div>
+                                            </div>
+                                            <div class="notification-list-wrapper">
+                                                <div class="notif-image"> <image src="./assets/images/message.svg" /> </div>
+                                                <div class="notif-content">
+                                                    <div class="notif-content-title">You got 1 message from John Doe</div>
+                                                    <div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? ..... </div>
+                                                </div>
+                                            </div>
+                                            <div class="notification-list-wrapper">
+                                                <div class="notif-image"> <image src="./assets/images/message.svg" /> </div>
+                                                <div class="notif-content">
+                                                    <div class="notif-content-title">You got 1 message from John Doe</div>
+                                                    <div class="notif-content-desc">Hi Fakhri, Can you sent me your account payment detail? ..... </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="notification-footer">
+                                        <a href="">See All Notification</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+		
+		<section style="background:url(https://maps.googleapis.com/maps/api/streetview?size=600x300&location=-38.351023,144.756276&key=AIzaSyAT5L7QlWsBgKjtvLHZaCDWy8M2MdIEIiU)" class="detail-site-image">
+			<div class="detail-site-image__btn-image" id="open-modal" data-target="modal-photo">
+				See Image
+			</div>
+		</section>
+
+        <section>
+        	<div class="ds-container-1200 push-top">
+        		<div class="ds-row">
+        			<div class="col-8">
+        				<div class="ds-row">
+        					<div class="col-4">
+        						<div class="detail-site-info__host-wrapper">
+        							<div class="detail-site-info__host-wrapper__image" style="background:url(https://maps.googleapis.com/maps/api/streetview?size=600x300&location=-38.351023,144.756276&key=AIzaSyAT5L7QlWsBgKjtvLHZaCDWy8M2MdIEIiU)"></div>
+
+        							<div class="detail-site-info__host-wrapper__contact">
+        								<div class="detail-site-info__host-wrapper__image-user">
+                                            <div class="detail-site-info__host-wrapper__image-user__circle" style="background-image:url('./assets/images/users.jpg')">
+                                            </div>
+        									<!-- <img src="./assets/images/users.jpg" alt="user image"/> -->
+        								</div>
+        								<div class="detail-site-info__host-wrapper__contact__hosted">
+        									<div>Hosted by <strong>Fakhri</strong></div>
+        									
+        									<button class="btn-small btn-orange" id="btn-contact-host">Contact Host</button>		
+        								</div>
+        							</div>
+        							<!-- <img src="./assets/images/user-img.png" alt="" class="detail-site-info__host-wrapper__image">
+        							<div class="detail-site-info__host-wrapper__host-name">
+        								Fakhri
+        							</div>
+        							<button class="btn-small btn-orange">Contact Host</button> -->
+        						</div>
+        					</div>
+
+        					<div class="col-8 pulls-left">
+        						<div class="detail-site-info__site-wrapper">
+        							<div class="detail-site-info__site-wrapper__title">
+        								103 Maker Street
+        							</div>
+        							<div class="detail-site-info__site-wrapper__location">
+        								<div class="ds-pin"></div>
+        								<div>Poughkeepsie, New York, United State</div>
+        								<div class="detail-site-info__site-wrapper__location__rate pulls-left">
+                                            <div class="ds-star"></div>
+                                            <div class="ds-star"></div>
+                                            <div class="ds-star"></div>
+                                            <div class="ds-star"></div>
+                                            <div class="ds-star"></div>
+                                            <div>(5)</div>
+                                        </div>
+        							</div>
+        							<div class="detail-site-info__site-wrapper__amenities">
+        								<div class="detail-site-info__site-wrapper__amenities__item">
+                                            <!-- <div class="ds-bathroom"></div> -->
+                                            <div>Private Bathroom</div>
+                                            <div class="price">$ 15.00 /day</div>
+                                        </div>
+
+                                        <div class="detail-site-info__site-wrapper__amenities__item">
+                                            <!-- <div class="ds-bathroom"></div> -->
+                                            <div>Wifi</div>
+                                            <div class="price">$ 10.00 /day</div>
+                                        </div>
+
+                                        <div class="detail-site-info__site-wrapper__amenities__item">
+                                            <!-- <div class="ds-bathroom"></div> -->
+                                            <div>Kitchen</div>
+                                            <div class="price">$ 10.00 /day</div>
+                                        </div>
+        							</div>
+        						</div>
+        					</div>
+        				</div>
+
+        				<div class="ds-row detail-site-info__info-wrapper">
+        					<div class="detail-site-info__info-wrapper__title">
+        						Site Info
+        					</div>
+        					<div class="detail-site-info__info-wrapper__desc push-top">
+        						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at enim et ex iaculis porttitor volutpat at orci. Duis eu sem auctor, hendrerit quam ut, pellentesque sapien. Suspendisse tempor nibh eget justo tincidunt, a pellentesque arcu tempor. In et ultricies ex. In hac habitasse platea dictumst. Duis eget ipsum ac felis sollicitudin semper. Donec ultrices, enim et scelerisque mollis, dolor purus aliquet arcu, nec imperdiet justo diam a orci. Nullam vel orci eu nibh porta ultricies. Nunc hendrerit dolor tortor, non luctus felis pulvinar nec. Suspendisse potenti.
+        					</div>
+
+        					<div class="detail-site-info__info-wrapper__desc push-top">
+        						<div class="col-4">
+        							<div>Width : 140 (cm)</div>
+        							<div>Length : 200 (cm)</div>
+        							<div>Height : 300 (cm)</div>
+        						</div>
+        						<div class="col-4">
+        							<div>Access : No Lock</div>
+        							<div>Security : Yes</div>
+        							<div>Power : Yes</div>
+        						</div>
+        						<div class="col-4">
+        							<div>Noise Level : 1 of 5</div>
+        							<div>Power Capacity : 1300 mAH</div>
+        						</div>
+        					</div>
+        				</div>
+
+        				<div class="ds-row detail-site-info__map-wrapper push-top">
+        					<div class="detail-site-info__map-wrapper__map" id="detail-site-map"></div>
+        				</div>
+        			</div>
+
+        			<div class="col-4">
+        				<div class="content">
+                            <div class="billing-info-wrapper">
+                                <div class="billing-row-head">
+                                    <div class="ds-garage"></div>
+                                    <div class="title title-site">Tiddings Hill</div>
+                                    <div class="price title-price">$ 200.00 /day</div>
+                                </div>
+
+                                <div class="billing-calendar">
+                                    <div class="ds-container-fluid">
+                                        <div class="ds-row">
+                                            <div class="col-6">
+                                                <div class="input-el outline">
+                                                    <span class="ds-calendar"></span>
+                                                    <input type="text" placeholder="Arrival" tabindex="4" id="billing-arrival" data-validate="required" data-date-type="start">
+                                                    <div class="float-calendar"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="input-el outline">
+                                                    <span class="ds-calendar"></span>
+                                                    <input type="text" placeholder="Departure" tabindex="5" id="billing-departure" data-validate="required" data-date-type="end">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ds-row push-top row-add-facilites">
+                                            <div class="col-8">
+                                                <div class="input-el outline">
+                                                    <span class="ds-list"></span>
+                                                    <div class="select-area" tabindex="2">Add Facilites</div>
+                                                    <span class="ds-chevron-down"></span>
+                                                    <input type="hidden" id="add-facilities" name="add-facilities" data-validate="required">
+                                                    <ul id="list-facilities">
+                                                        <li class="selected" value="1">Private Bathroom</li>
+                                                        <li value="2">Kitchen</li>
+                                                        <li value="3">Power</li>
+                                                        <li value="4">Laundry</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="input-el">
+                                                    <button class="btn-site btn-blue small" id="btn-add-facilities">Add</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="billing-content">
+                                    <div class="billing-row billing-total">
+                                        <div class="title">Total</div>
+                                        <div class="price title-price">$ 427.00</div>
+                                    </div>
+
+                                    <div class="billing-row billing-terms">
+                                        <div class="title"><input type="checkbox" tabindex="3"></div>
+                                        <div>By selecting this box, I agree that i have read, understood and agree to the DriveStays <mark>Terms and Conditions</mark> and <mark>Privacy Policy</mark></div>
+                                    </div>
+
+                                    <div class="billing-row">
+                                        <button class="btn-site btn-blue btn-book-site">Book</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+        			</div>
+        		</div>
+        	</div>
+        </section>
+
+        <section>
+            <div class="ds-container-fluid section footer-section push-top">
+                <div class="ds-row">
+                    <div class="ds-container-1200">
+                        <div class="ds-row">
+
+                            <div class="col-md-12 col-8">
+                                <div class="menu-footer">
+                                    <h4>Company</h4>
+                                    <ul>
+                                        <li><a href="">About Us</a></li>
+                                        <li><a href="">Information</a></li>
+                                        <li><a href="">Press</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="menu-footer">
+                                    <h4>Support</h4>
+                                    <ul>
+                                        <li><a href="">Contact Us</a></li>
+                                        <li><a href="">Help</a></li>
+                                        <li><a href="">Privacy</a></li>
+                                        <li><a href="">Term of Use</a></li>
+                                        <li><a href="">Site Map</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="menu-footer social-icon">
+                                    <h4>Get Exclusive Content from Us</h4>
+                                    <ul class="no-tab">
+                                        <li><a href=""><img src="./assets/images/facebook.png" alt="" height="50"></a></li>
+                                        <li><a href=""><img src="./assets/images/twitter.png" alt="" height="50"></a></li>
+                                        <li><a href=""><img src="./assets/images/google_plus.png" alt="" height="50"></a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-12 col-4">
+                                <!-- <div class="form-wrapper"> -->
+                                <h4>Leave a comment</h4>
+                                <div class="input-el">
+                                    <input type="text" placeholder="Your Email">
+                                </div>
+                                <div class="input-el push-top">
+                                    <input type="text" placeholder="Your Name">
+                                </div>
+                                <div class="input-el push-top">
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="Input your comment here"></textarea>
+                                </div>
+                                <button class="send-comment push-top">Send Comment</button>
+                                <!-- </div> -->
+                            </div>
+
+                        </div>
+
+                        <div class="ds-row copyright">
+                            2016 DriveStays. All rights reserved
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="modal modal-photo hide" role="just-hide" id="modal-photo">
+        <div class="ds-close modal-close"></div>
+        <div class="modal-table">
+            <div class="modal-cell">
+                <div class="modal-content-container large">
+                    <div class="photo-wrapper" id="property-picture-modal">
+                         <!-- <img src="/assets/images/stock.jpg" alt="" align="abs-middle"> -->
+                    </div>
+                    <div class="photo-number">Photo <span id="index-image">1</span> of <span id="total-image">5</span></div>
+                </div>
+                <div class="photo-nav static-left" data-type="prev">
+                    <div class="ds-chevron-left"></div>
+                </div>
+                <div class="photo-nav static-right" data-type="next">
+                    <div class="ds-chevron-right"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./script/jquery.min.js"></script>
+    <script src="./script/underscore-min.js"></script>
+    <script type="text/javascript" src="./script/moment.min.js"></script>
+    <script type="text/javascript" src="./script/pikaday.js"></script>
+    <script src="./script/jquery.scrollbar.min.js"></script>
+    <script src="./script/jquery-ui-slider.js"></script>
+    <script src="./script/ds-cookies.js"></script>
+    <script src="./script/ds-modal.js"></script>
+    <script src="./script/ds-element.js"></script>
+    <script src="./script/ds-script.js"></script>
+    <script src="./script/validation.js"></script>
+    <script src="./script/app/detail_site.js"></script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfSvkBOL2nOfLZKDWaf66EbbO9poShFaA&libraries=places&callback=initMap">
+      </script>
+</body>
+
+</html>
