@@ -154,9 +154,44 @@
 		margin-right:0;
 		padding:20px;
 	}
+
+	.modal-content-container{
+		&.full{
+			width:90%!important;
+		}
+
+		&.large{
+			width:85%!important;
+		}
+
+		&.medium{
+			width: 70%!important;
+		}
+
+		&.small{
+			width: 50%!important;
+		}
+	}
 }
 
 @media (max-width: 540px) {
+	.modal-content-container{
+		&.full{
+			width:90%!important;
+		}
+
+		&.large{
+			width:90%!important;
+		}
+
+		&.medium{
+			width: 90%!important;
+		}
+
+		&.small{
+			width: 80%!important;
+		}
+	}
 	
 }
 

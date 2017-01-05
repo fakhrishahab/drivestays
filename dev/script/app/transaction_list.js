@@ -16,7 +16,13 @@ var element = {
     filter_type_booking: $('#filter-type-booking')
 };
 
-var user_data = _localStorage.get('user_data');
+var user_data = {
+    user_id : 371
+};
+
+$('.order-header').on('click', function () {
+        $(this).parent().toggleClass('order-wrapper-collapse');
+    });
 
 var tab_handler = new Function();
 
@@ -91,14 +97,18 @@ function bookingListTrigger() {
 };
 
 function getBookingList() {
+    console.log('ini aja')
     $.ajax({
-        url: SITE.API_PATH_DEV + '/requests/get/' + user_data.user_id,
+        url: SITE.API_PATH_DEV + '/requests/get',
         type: 'get',
+        headers: {
+            "Authorization": access_token
+        },
         success: function (result) {
-            if (result.length < 1) {
+            if (result.Data.length < 1) {
                 noDataBooking();
             } else {
-                renderBookingList(result);
+                renderBookingList(result.Data);
             };
         },
         error: function (status) {
@@ -228,7 +238,7 @@ function renderBookingList(result) {
                             </div>
                         </div>
 
-                        <div class="col-4 pull-left">
+                        <div class="col-4 pulls-left">
                             <div class ='order-content-title'>
                                 <span> `+ result[i].PropertyAddressLine1 + ` </span>
                                 <span>Date `+ moment(result[i].Request.FromDate).format('YYYY-MM-DD') + ` to ` + moment(result[i].Request.ToDate).format('YYYY-MM-DD') + ` (` + days + ` days) </span>
@@ -247,7 +257,7 @@ function renderBookingList(result) {
 							</div>
 						</div>
 
-                        <div class="col-3 pull-left">
+                        <div class="col-3 pulls-left">
                             <div class ='order-content-action' data-id=`+ result[i].Request.ID +`>
                                 <div class ='alert alert-warning'>You dont have any payment method, please input on your <a href='./my_payment.html'>payment method</a> menu</div>
                                 `+ btnPayment +`
@@ -290,6 +300,9 @@ function doCancelRenter(id, elm) {
         $.ajax({
             url: SITE.API_PATH_DEV + '/request/cancelbyrenter/'+id,
             type: 'DELETE',
+            headers: {
+                'Authorization': access_token
+            },
             beforeSent: function () {
                 preload.show(elm.parents('.order-wrapper'));
             },
@@ -359,6 +372,9 @@ function getRequestList(status = 0) {
     $.ajax({
         url: SITE.API_PATH_DEV+'/requests/getincoming/'+user_data.user_id+'/'+status,
         type: 'GET',
+        headers: {
+            'Authorization': access_token
+        },
         beforeSent: function(){
             element.request_preload.show();
             element.request_preload.addClass('show');
@@ -407,18 +423,18 @@ function getRequestList(status = 0) {
 var statusMessage='',
         statusIcon = '',
         btnAcceptFree = `<div class="col-3"><button class="btn-site small btn-request-free">Accept for Free Stay</button></div>`,
-        btnAccept = `<div class="col-3 pull-left"><button class="btn-site small btn-request-accept">Accept Request</button></div>`,
-        btnDecline = `<div class="col-3 pull-left"><button class="btn-site small btn-blue btn-request-decline">Decline Request</button></div>`,
-        btnCancel = `<div class="col-3 pull-left"><button class="btn-site small btn-blue btn-request-cancel">Cancel Request</button></div>`;
+        btnAccept = `<div class="col-3 pulls-left"><button class="btn-site small btn-request-accept">Accept Request</button></div>`,
+        btnDecline = `<div class="col-3 pulls-left"><button class="btn-site small btn-blue btn-request-decline">Decline Request</button></div>`,
+        btnCancel = `<div class="col-3 pulls-left"><button class="btn-site small btn-blue btn-request-cancel">Cancel Request</button></div>`;
 
 function renderStayRequest(index){
 
     statusMessage='';
     statusIcon = '';
     btnAcceptFree = `<div class="col-3"><button class="btn-site small btn-request-free">Accept for Free Stay</button></div>`;
-    btnAccept = `<div class="col-3 pull-left"><button class="btn-site small btn-request-accept">Accept Request</button></div>`;
-    btnDecline = `<div class="col-3 pull-left"><button class="btn-site small btn-blue btn-request-decline">Decline Request</button></div>`;
-    btnCancel = `<div class="col-3 pull-left"><button class="btn-site small btn-blue btn-request-cancel">Cancel Request</button></div>`;
+    btnAccept = `<div class="col-3 pulls-left"><button class="btn-site small btn-request-accept">Accept Request</button></div>`;
+    btnDecline = `<div class="col-3 pulls-left"><button class="btn-site small btn-blue btn-request-decline">Decline Request</button></div>`;
+    btnCancel = `<div class="col-3 pulls-left"><button class="btn-site small btn-blue btn-request-cancel">Cancel Request</button></div>`;
     
     element.btn_request_wrapper.empty();
     var data = choosenRequest[index];
@@ -590,6 +606,9 @@ function requestAccept(){
     $.ajax({
         url: SITE.API_PATH_DEV+'/request/accept/'+id,
         type: 'POST',
+        headers: {
+            'Authorization': access_token
+        },
         beforeSent: function(){
 
         },
@@ -625,6 +644,9 @@ function requestDecline(){
         $.ajax({
             url: SITE.API_PATH_DEV+'/request/decline/'+id,
             type: 'DELETE',
+            headers: {
+                'Authorization': access_token
+            },
             beforeSent: function(){
 
             },
@@ -661,6 +683,9 @@ function requestAcceptFree(){
     $.ajax({
         url: SITE.API_PATH_DEV+'/request/acceptforfree/'+id,
         type: 'POST',
+        headers: {
+            'Authorization': access_token
+        },
         beforeSent: function(){
 
         },
@@ -699,6 +724,9 @@ function requestCancel(){
             $.ajax({
                 url: SITE.API_PATH_DEV+'/request/cancelbyowner/'+id,
                 type: 'DELETE',
+                headers: {
+                    'Authorization': access_token
+                },
                 beforeSent: function(){
 
                 },

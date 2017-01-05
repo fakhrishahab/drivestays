@@ -130,11 +130,12 @@ function resize(){
 }
 
 function check_user(){
-	var user_data = _localStorage.get('user_data')
-	if(user_data){
+	var user_data = _localStorage.get('user_data');
+	var access_token = _cookies.get('DS');
+	if(access_token){
 		$('.register-head').addClass('hide')
 		$('.user-wrapper').addClass('show')
-		$('#profile-username').html(user_data.firstname)
+		// $('#profile-username').html(user_data.firstname)
 		$('.header-notif').show();
 	}else{
 		$('.register-head').removeClass('hide')
@@ -161,6 +162,7 @@ site_access_toggle.on('click', function () {
 })
 
 notification_trigger.on('click', function (e) {
+	console.log('te')
     $('.notification-wrapper').toggle();
     e.stopPropagation();
 })

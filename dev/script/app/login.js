@@ -4,6 +4,7 @@ $(document).ready(function () {
     var obj = {
         btn_register: $('#btn-register'),
         form_register: 'form-register',
+        form_login : 'form-login',
         regType: $('#user-type'),
         regFirstname: $('#register-firstname'),
         regLastname: $('#register-lastname'),
@@ -17,42 +18,127 @@ $(document).ready(function () {
         btn_login: $('.btn-login')
     }
 
-    obj.btn_login.on('click', function () {
-        $.ajax({
-            url: SITE.API_PATH_DEV + '/customer/getbyemail?email=' + obj.login_username.val(),
-            type: 'get',
-            beforeSend: function () {
-                obj.alertMsgLogin.show();
-                alertInfo({
-                    'type': 'html',
-                    'desc': '<img src=./assets/images/loading.svg style="width:40px;margin:0 auto">'
-                }, $('.alert-msg-login'))
-            },
-            success: function (result) {
-                console.log(result)
-                if (result != null) {
-                    var user_data = {
-                        'firstname': result.FirstName,
-                        'lastname': result.LastName,
-                        'email': result.EmailAddress,
-                        'password': '1234',
-                        'user_id': result.ID,
-                        'vehicle' : result.Vehicles.length > 0 ? result.Vehicles[0].ID : null
-                    };
+    function post(path, params, method) {
+        method = method || "post"; // Set method to post by default if not specified.
 
-                    _localStorage.put('user_data', user_data);
-                    window.location.href = './'
-                } else {
-                    floatAlert('Username is not exist ', 'error', function () { });
+        // The rest of this code assumes you are not using a library.
+        // It can be made less wordy if you use one.
+        var form = document.createElement("form");
+        form.setAttribute("method", method);
+        form.setAttribute("action", path);
+
+        for (var key in params) {
+            if (params.hasOwnProperty(key)) {
+                var hiddenField = document.createElement("input");
+                hiddenField.setAttribute("type", "hidden");
+                hiddenField.setAttribute("name", key);
+                hiddenField.setAttribute("value", params[key]);
+
+                form.appendChild(hiddenField);
+            }
+        }
+
+        document.body.appendChild(form);
+        form.submit();
+    }
+
+    obj.btn_login.on('click', function () {
+        var self = $(this);
+        var credentials = {}
+        if ($(this).validation(obj.form_login) == undefined) {
+            obj.alertMsgLogin.show();
+            alertInfo({
+                'type': 'html',
+                'desc': '<img src=/assets/images/loading.svg style="width:40px;margin:0 auto">'
+            }, $('.alert-msg-login'));
+
+            $.ajax({
+                type : 'get',
+                url : SITE.API_PATH_DEV+'/credentials?Email='+obj.login_username.val()+'&Password='+obj.login_password.val(),
+                success: function (resp) {
+                    if (param('ReturnUrl')) {
+                        credentials = {
+                            Email: obj.login_username.val(),
+                            Password: obj.login_password.val(),
+                            ReturnUrl: param('ReturnUrl')
+                        }
+                    }else{
+                        credentials = {
+                            Email: obj.login_username.val(),
+                            Password: obj.login_password.val()
+                        }
+                    }
+
+                    doLogin(credentials);
+                    // post('./', credentials);
+                },
+                error: function (err) {
+                    alertInfo.close(obj.alertMsgLogin);
+                    obj.alertLogin.show();
+                    obj.alertLogin.addClass('error');
+
+                    alertInfo({
+                        'type': 'text',
+                        'desc': 'Email and Password combination does not exist!'
+                    }, obj.alertLogin);
                 }
-                alertInfo.close($('.alert-msg-login'))
+            })
+
+            //$('#auth-login').submit();
+        //$.ajax({
+        //    url: SITE.API_PATH_DEV+ '/customer/getbyemail?email=' + obj.login_username.val(),
+        //    type: 'get',
+        //    beforeSend: function () {
+        //        obj.alertMsgLogin.show();
+        //        alertInfo({
+        //            'type': 'html',
+        //            'desc': '<img src=/assets/images/loading.svg style="width:40px;margin:0 auto">'
+        //        }, $('.alert-msg-login'))
+        //    },
+        //    success: function (result) {
+        //        console.log(result)
+        //        if (result != null) {
+        //            var user_data = {
+        //                'firstname': result.FirstName,
+        //                'lastname': result.LastName,
+        //                'email': result.EmailAddress,
+        //                'password': '1234',
+        //                'user_id': result.ID,
+        //                'vehicle': result.Vehicles ? result.Vehicles[0].id : null
+        //            };
+
+        //            _localStorage.put('user_data', user_data);
+        //            window.location.href = './';
+        //        } else {
+        //            floatAlert('username is not exist ', 'error', function () { });
+        //        }
+        //        alertInfo.close($('.alert-msg-login'))
+        //    },
+        //    error: function (status) {
+        //        floatalert('error login ' + status.status, 'error', function () { })
+        //        alertinfo.close($('.alert-msg-login'))
+        //    }
+        //})
+        } else {
+            return;
+        }
+        
+        // 
+    })
+
+    function doLogin(credentials){
+        $.ajax({
+            url: SITE.API_PATH_DEV+'/login?email='+credentials.Email+'&password='+credentials.Password,
+            type: 'GET',
+            success: function(result){
+                console.log(result)
+                _cookies.put('DS', result.Auth_Token)
             },
-            error: function (status) {
-                floatAlert('Error Login ' + status.status, 'error', function () { })
-                alertInfo.close($('.alert-msg-login'))
+            error: function(resp){
+                console.log(resp)
             }
         })
-    })
+    }
 
     obj.btn_register.on('click', function () {
         var data_register = {

@@ -48,7 +48,9 @@
                             <div class="main-menu-user">
                                 <a href="login.html" class="register-head"><button class="btn-register">Sign In / Register</button></a>
                                 <div class="user-wrapper">
-                                    <img src="./assets/images/user-upload.png" align="middle" alt="">
+                                    <div class="user-image-logedin" style="background-image:url('./assets/images/user-upload.png')">
+                                        </div>
+                                    <!-- <img src="./assets/images/user-upload.png" align="middle" alt=""> -->
                                     <div class="user-name"> Hi, <strong id="profile-username">Steve</strong> </div>
                                     <div class="icon ds-chevron-down user-menu-trigger"></div>
 
@@ -134,26 +136,29 @@
             <div class="ds-container-1200 section">
                 <div class="ds-row">
                     <div class="col-md-12 col-6">
-                        <div class="form-login-wrapper">
+                        <div class="form-login-wrapper" id="form-login">
                             <h3>Already a Member ?</h3>
                             <h1>Sign In</h1>
                             <div class="input-el outline">
-                                <input type="text" placeholder="Username" id="login-username">
+                                <input type="text" placeholder="Username" id="login-username" data-validate="required, min(5), email">
                             </div>
                             <div class="input-el outline">
                                 <input type="password" placeholder="Password" id="login-password">
                             </div>
-                            <div class="input-el push-top">
-                                <input type="checkbox">
-                                <div class="checkbox-label">Remember Me</div>
-                                <!-- <input type="checkbox" id="login-remember" tabindex="3"> Remember me -->
+                            <div class="ds-row push-top">
+                                <div class="col-6 align-left">
+                                    <input type="checkbox"> Remember me    
+                                </div>
+                                <div class="col-6 align-right">
+                                    <a href="" class="link-default">Forgot Password</a>
+                                </div>
                             </div>
 
                             <div class="alert-msg-login">
 
                             </div>
 
-                            <div class="input-el">
+                            <div class="input-el push-top">
                                 <button class="btn-site btn-blue btn-login">Sign In</button>
                             </div>
                         </div>

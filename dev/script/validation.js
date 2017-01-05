@@ -2,7 +2,8 @@ var callbacks = $.Callbacks();
 var message = {
 	'required' : 'This field is required',
 	'max' : 'Max character ',
-	'min' : 'Min character '
+	'min' : 'Min character ',
+	'email' : 'Format email is invalid'
 };
 
 var clearError = function(id){
@@ -30,6 +31,21 @@ var required,max, min
 		}else{
 			clearError(id)	
 		}	
+	};
+
+	email = function(rule, id, value){
+		var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    	if(!re.test(value)){
+    		$('<div/>',{
+				text : message.email,
+				'class' : 'error-label'
+			}).prependTo($('#'+id).parent())
+
+			showError(id);
+    	}else{
+    		clearError(id);
+    	}
 	};
 
 	max = function(rule, id, value){
